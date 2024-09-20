@@ -36,5 +36,33 @@ namespace proyecto1
             formCuent.Show();
             this.Close();
         }
+
+        private void btnInventarioMenu_Click(object sender, EventArgs e)
+        {
+            FormInventario formInvent = new FormInventario();
+            formInvent.Show();
+            this.Close();
+        }
+
+        private void btnVentasMenu_Click(object sender, EventArgs e)
+        {
+            FormVentas formvent = new FormVentas();
+            formvent.Show();
+            this.Close();
+        }
+
+        private void btnDevolucionesMenu_Click(object sender, EventArgs e)
+        {
+            FormDevolucionescs formDev = new FormDevolucionescs();
+            formDev.Show();
+            this.Close();
+        }
+
+        private void btnProveedoresMenu_Click(object sender, EventArgs e)
+        {
+            FormProveedores formprov = new FormProveedores();
+            formprov.Show();
+            this.Close();
+        }
     }
 }
