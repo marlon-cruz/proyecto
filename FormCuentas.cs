@@ -15,7 +15,7 @@ namespace proyecto1
         public FormCuentas()
         {
             InitializeComponent();
-            TemaColor.colorFondoVentana(this);
+            TemaColor.colorFondoVentana(this);            
         }
 
         private void FormCuentas_Load(object sender, EventArgs e)
