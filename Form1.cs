@@ -10,11 +10,54 @@ using System.Windows.Forms;
 
 namespace proyecto1
 {
-    public partial class Form1 : Form
+    public partial class FormLogin : Form
     {
-        public Form1()
+        public FormLogin()
         {
             InitializeComponent();
+            TemaColor.colorFondoVentana(this);
+        }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textUsuario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textContraseña_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnIniciarSesion_Click(object sender, EventArgs e)
+        {
+            if (textUsuario.Text == "Admin" && textContraseña.Text == "123")
+            {
+
+                textUsuario.Text = "";
+                textContraseña.Text = "";
+                //this.Hide();
+                //this.Close();
+
+                FormMenu form2 = new FormMenu();
+                // Cierra el formulario de inicio de sesión
+                form2.Show();
+
+            }
+            else
+            {
+
+                //Por ahora no hay nada
+            }
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
