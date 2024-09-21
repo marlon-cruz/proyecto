@@ -15,7 +15,15 @@ namespace proyecto1
         public FormCuentas()
         {
             InitializeComponent();
-            TemaColor.colorFondoVentana(this);            
+
+            TemaColor.colorFondoVentana(this);
+            //Button
+            TemaColor.colorBtn(btnCerrarCuentas);
+            TemaColor.colorBtn(btnBuscarCuenta);
+            TemaColor.colorBtn(btnCrearCuenta);
+            TemaColor.colorBtn(btnEditarCuenta);
+            TemaColor.colorBtn(btnEliminarCuenta);
+            TemaColor.colorBtn(btnGuardar);
         }
 
         private void FormCuentas_Load(object sender, EventArgs e)
@@ -63,6 +71,16 @@ namespace proyecto1
             FormMenu formMn = new FormMenu();
             formMn.Show();
             this.Close();
+        }
+
+        private void btnEliminarCuenta_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvCuentas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

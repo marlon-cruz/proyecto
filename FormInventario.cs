@@ -31,11 +31,22 @@ namespace proyecto1
             TemaColor.colorBtn(btnEditarInventario);
             TemaColor.colorBtn(btnEliminarInventario);
             TemaColor.colorBtn(btnGuardarInventario);
-            TemaColor.colorBtn(btnGuardarInventario);
+            TemaColor.colorBtn(btnAgregarInventario);
+            //txtbox
+            TemaColor.colorTextBox(txtBuscarInventario);
+            TemaColor.colorTextBox(txtCantidadInventario);
+            TemaColor.colorTextBox(txtCodigoInventario);
+            TemaColor.colorTextBox(txtNombreInventario);
+            TemaColor.colorTextBox(txtPdescuentoInventario);
+            TemaColor.colorTextBox(txtPrecioInventario);
+            //combobox
+            TemaColor.colorCombo(cmbTipoInventario);
             //Tabla
             TemaColor.colorDataGrid(dgvInventario);
             //fondo
             TemaColor.colorFondoVentana(this);
+            //dateTimePicker
+            TemaColor.colorDateTimePicker(dtpCalendarioInventario);
         }
 
         private void dgbInventario_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -99,6 +110,16 @@ namespace proyecto1
                 
             }
            
+        }
+
+        private void btnGuardarInventario_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormInventario_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

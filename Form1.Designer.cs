@@ -81,9 +81,9 @@ namespace proyecto1
             // 
             this.btnIniciarSesion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.btnIniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnIniciarSesion.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnIniciarSesion.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnIniciarSesion.Location = new System.Drawing.Point(360, 373);
+            this.btnIniciarSesion.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIniciarSesion.ForeColor = System.Drawing.Color.White;
+            this.btnIniciarSesion.Location = new System.Drawing.Point(370, 373);
             this.btnIniciarSesion.Name = "btnIniciarSesion";
             this.btnIniciarSesion.Size = new System.Drawing.Size(150, 43);
             this.btnIniciarSesion.TabIndex = 20;
@@ -153,6 +153,7 @@ namespace proyecto1
             this.Controls.Add(this.lblBienvenido);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Farmcia Divino Niño";
             this.Load += new System.EventHandler(this.FormLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

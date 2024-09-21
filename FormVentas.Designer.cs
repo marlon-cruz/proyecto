@@ -48,22 +48,22 @@ namespace proyecto1
             this.lblTipoVentas = new System.Windows.Forms.Label();
             this.btnAgregarVentas = new System.Windows.Forms.Button();
             this.dgvVentas = new System.Windows.Forms.DataGridView();
-            this.btnCancelarVentas = new System.Windows.Forms.Button();
-            this.txtCambioVentas = new System.Windows.Forms.TextBox();
-            this.lblCambioVentas = new System.Windows.Forms.Label();
-            this.txtTotalVentas = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnCerrarVentas = new System.Windows.Forms.Button();
-            this.txtRecibidoVentas = new System.Windows.Forms.TextBox();
-            this.lblRecibidoVentas = new System.Windows.Forms.Label();
-            this.btnRealizarVentas = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.ColumnaCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaMedicamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaPDescuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnCancelarVentas = new System.Windows.Forms.Button();
+            this.txtCambioVentas = new System.Windows.Forms.TextBox();
+            this.lblCambioVentas = new System.Windows.Forms.Label();
+            this.txtTotalVentas = new System.Windows.Forms.TextBox();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.btnCerrarVentas = new System.Windows.Forms.Button();
+            this.txtRecibidoVentas = new System.Windows.Forms.TextBox();
+            this.lblRecibidoVentas = new System.Windows.Forms.Label();
+            this.btnRealizarVentas = new System.Windows.Forms.Button();
+            this.btnEditarVentas = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCuentas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
             this.SuspendLayout();
@@ -110,12 +110,14 @@ namespace proyecto1
             // 
             // txtClienteVenta
             // 
+            this.txtClienteVenta.BackColor = System.Drawing.Color.Lavender;
             this.txtClienteVenta.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
-            this.txtClienteVenta.Location = new System.Drawing.Point(454, 63);
+            this.txtClienteVenta.Location = new System.Drawing.Point(454, 60);
             this.txtClienteVenta.Margin = new System.Windows.Forms.Padding(2);
             this.txtClienteVenta.Name = "txtClienteVenta";
             this.txtClienteVenta.Size = new System.Drawing.Size(134, 27);
             this.txtClienteVenta.TabIndex = 83;
+            this.txtClienteVenta.TextChanged += new System.EventHandler(this.txtClienteVenta_TextChanged);
             // 
             // txtMedicamentoVentas
             // 
@@ -158,6 +160,7 @@ namespace proyecto1
             this.lblClienteVentas.Size = new System.Drawing.Size(95, 29);
             this.lblClienteVentas.TabIndex = 79;
             this.lblClienteVentas.Text = "Cliente: ";
+            this.lblClienteVentas.Click += new System.EventHandler(this.lblClienteVentas_Click);
             // 
             // lblMedicamentoVentas
             // 
@@ -198,7 +201,7 @@ namespace proyecto1
             // btnAgregarVentas
             // 
             this.btnAgregarVentas.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold);
-            this.btnAgregarVentas.Location = new System.Drawing.Point(506, 255);
+            this.btnAgregarVentas.Location = new System.Drawing.Point(474, 243);
             this.btnAgregarVentas.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarVentas.Name = "btnAgregarVentas";
             this.btnAgregarVentas.Size = new System.Drawing.Size(102, 37);
@@ -240,7 +243,7 @@ namespace proyecto1
             this.dgvVentas.Enabled = false;
             this.dgvVentas.EnableHeadersVisualStyles = false;
             this.dgvVentas.GridColor = System.Drawing.Color.Black;
-            this.dgvVentas.Location = new System.Drawing.Point(10, 305);
+            this.dgvVentas.Location = new System.Drawing.Point(10, 295);
             this.dgvVentas.Name = "dgvVentas";
             this.dgvVentas.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgvVentas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -257,117 +260,6 @@ namespace proyecto1
             this.dgvVentas.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvVentas.Size = new System.Drawing.Size(1146, 188);
             this.dgvVentas.TabIndex = 90;
-            // 
-            // btnCancelarVentas
-            // 
-            this.btnCancelarVentas.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold);
-            this.btnCancelarVentas.Location = new System.Drawing.Point(68, 501);
-            this.btnCancelarVentas.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCancelarVentas.Name = "btnCancelarVentas";
-            this.btnCancelarVentas.Size = new System.Drawing.Size(112, 46);
-            this.btnCancelarVentas.TabIndex = 91;
-            this.btnCancelarVentas.Text = "Cancelar";
-            this.btnCancelarVentas.UseVisualStyleBackColor = true;
-            this.btnCancelarVentas.Click += new System.EventHandler(this.btnCancelarVentas_Click);
-            // 
-            // txtCambioVentas
-            // 
-            this.txtCambioVentas.Enabled = false;
-            this.txtCambioVentas.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCambioVentas.Location = new System.Drawing.Point(404, 513);
-            this.txtCambioVentas.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCambioVentas.Name = "txtCambioVentas";
-            this.txtCambioVentas.Size = new System.Drawing.Size(56, 30);
-            this.txtCambioVentas.TabIndex = 93;
-            this.txtCambioVentas.Text = "$ 0.00";
-            // 
-            // lblCambioVentas
-            // 
-            this.lblCambioVentas.AutoSize = true;
-            this.lblCambioVentas.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold);
-            this.lblCambioVentas.Location = new System.Drawing.Point(310, 508);
-            this.lblCambioVentas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblCambioVentas.Name = "lblCambioVentas";
-            this.lblCambioVentas.Size = new System.Drawing.Size(90, 29);
-            this.lblCambioVentas.TabIndex = 92;
-            this.lblCambioVentas.Text = "Cambio";
-            // 
-            // txtTotalVentas
-            // 
-            this.txtTotalVentas.Enabled = false;
-            this.txtTotalVentas.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalVentas.Location = new System.Drawing.Point(695, 507);
-            this.txtTotalVentas.Margin = new System.Windows.Forms.Padding(2);
-            this.txtTotalVentas.Name = "txtTotalVentas";
-            this.txtTotalVentas.Size = new System.Drawing.Size(54, 30);
-            this.txtTotalVentas.TabIndex = 95;
-            this.txtTotalVentas.Text = "$0.00";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(617, 507);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 29);
-            this.label1.TabIndex = 94;
-            this.label1.Text = "Total: ";
-            // 
-            // btnCerrarVentas
-            // 
-            this.btnCerrarVentas.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarVentas.Location = new System.Drawing.Point(1044, 498);
-            this.btnCerrarVentas.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCerrarVentas.Name = "btnCerrarVentas";
-            this.btnCerrarVentas.Size = new System.Drawing.Size(112, 46);
-            this.btnCerrarVentas.TabIndex = 96;
-            this.btnCerrarVentas.Text = "Cerrar";
-            this.btnCerrarVentas.UseVisualStyleBackColor = true;
-            this.btnCerrarVentas.Click += new System.EventHandler(this.btnCerrarVentas_Click);
-            // 
-            // txtRecibidoVentas
-            // 
-            this.txtRecibidoVentas.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
-            this.txtRecibidoVentas.Location = new System.Drawing.Point(709, 102);
-            this.txtRecibidoVentas.Margin = new System.Windows.Forms.Padding(2);
-            this.txtRecibidoVentas.Name = "txtRecibidoVentas";
-            this.txtRecibidoVentas.Size = new System.Drawing.Size(134, 27);
-            this.txtRecibidoVentas.TabIndex = 98;
-            // 
-            // lblRecibidoVentas
-            // 
-            this.lblRecibidoVentas.AutoSize = true;
-            this.lblRecibidoVentas.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold);
-            this.lblRecibidoVentas.Location = new System.Drawing.Point(724, 70);
-            this.lblRecibidoVentas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblRecibidoVentas.Name = "lblRecibidoVentas";
-            this.lblRecibidoVentas.Size = new System.Drawing.Size(100, 29);
-            this.lblRecibidoVentas.TabIndex = 97;
-            this.lblRecibidoVentas.Text = "Recibido";
-            // 
-            // btnRealizarVentas
-            // 
-            this.btnRealizarVentas.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold);
-            this.btnRealizarVentas.Location = new System.Drawing.Point(730, 141);
-            this.btnRealizarVentas.Margin = new System.Windows.Forms.Padding(2);
-            this.btnRealizarVentas.Name = "btnRealizarVentas";
-            this.btnRealizarVentas.Size = new System.Drawing.Size(102, 37);
-            this.btnRealizarVentas.TabIndex = 99;
-            this.btnRealizarVentas.Text = "Realizar";
-            this.btnRealizarVentas.UseVisualStyleBackColor = true;
-            this.btnRealizarVentas.Click += new System.EventHandler(this.btnRealizarVentas_Click);
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(908, 498);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(112, 46);
-            this.button1.TabIndex = 100;
-            this.button1.Text = "Editar";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // ColumnaCodigo
             // 
@@ -412,19 +304,130 @@ namespace proyecto1
             this.ColumnaTotal.Name = "ColumnaTotal";
             this.ColumnaTotal.Width = 125;
             // 
+            // btnCancelarVentas
+            // 
+            this.btnCancelarVentas.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold);
+            this.btnCancelarVentas.Location = new System.Drawing.Point(68, 488);
+            this.btnCancelarVentas.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCancelarVentas.Name = "btnCancelarVentas";
+            this.btnCancelarVentas.Size = new System.Drawing.Size(112, 46);
+            this.btnCancelarVentas.TabIndex = 91;
+            this.btnCancelarVentas.Text = "Cancelar";
+            this.btnCancelarVentas.UseVisualStyleBackColor = true;
+            this.btnCancelarVentas.Click += new System.EventHandler(this.btnCancelarVentas_Click);
+            // 
+            // txtCambioVentas
+            // 
+            this.txtCambioVentas.Enabled = false;
+            this.txtCambioVentas.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCambioVentas.Location = new System.Drawing.Point(419, 497);
+            this.txtCambioVentas.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCambioVentas.Name = "txtCambioVentas";
+            this.txtCambioVentas.Size = new System.Drawing.Size(56, 30);
+            this.txtCambioVentas.TabIndex = 93;
+            this.txtCambioVentas.Text = "$ 0.00";
+            // 
+            // lblCambioVentas
+            // 
+            this.lblCambioVentas.AutoSize = true;
+            this.lblCambioVentas.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold);
+            this.lblCambioVentas.Location = new System.Drawing.Point(325, 498);
+            this.lblCambioVentas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCambioVentas.Name = "lblCambioVentas";
+            this.lblCambioVentas.Size = new System.Drawing.Size(90, 29);
+            this.lblCambioVentas.TabIndex = 92;
+            this.lblCambioVentas.Text = "Cambio";
+            // 
+            // txtTotalVentas
+            // 
+            this.txtTotalVentas.Enabled = false;
+            this.txtTotalVentas.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalVentas.Location = new System.Drawing.Point(695, 498);
+            this.txtTotalVentas.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTotalVentas.Name = "txtTotalVentas";
+            this.txtTotalVentas.Size = new System.Drawing.Size(54, 30);
+            this.txtTotalVentas.TabIndex = 95;
+            this.txtTotalVentas.Text = "$0.00";
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold);
+            this.lblTotal.Location = new System.Drawing.Point(617, 498);
+            this.lblTotal.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(74, 29);
+            this.lblTotal.TabIndex = 94;
+            this.lblTotal.Text = "Total: ";
+            // 
+            // btnCerrarVentas
+            // 
+            this.btnCerrarVentas.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarVentas.Location = new System.Drawing.Point(1044, 489);
+            this.btnCerrarVentas.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCerrarVentas.Name = "btnCerrarVentas";
+            this.btnCerrarVentas.Size = new System.Drawing.Size(112, 46);
+            this.btnCerrarVentas.TabIndex = 96;
+            this.btnCerrarVentas.Text = "Cerrar";
+            this.btnCerrarVentas.UseVisualStyleBackColor = true;
+            this.btnCerrarVentas.Click += new System.EventHandler(this.btnCerrarVentas_Click);
+            // 
+            // txtRecibidoVentas
+            // 
+            this.txtRecibidoVentas.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
+            this.txtRecibidoVentas.Location = new System.Drawing.Point(709, 102);
+            this.txtRecibidoVentas.Margin = new System.Windows.Forms.Padding(2);
+            this.txtRecibidoVentas.Name = "txtRecibidoVentas";
+            this.txtRecibidoVentas.Size = new System.Drawing.Size(134, 27);
+            this.txtRecibidoVentas.TabIndex = 98;
+            // 
+            // lblRecibidoVentas
+            // 
+            this.lblRecibidoVentas.AutoSize = true;
+            this.lblRecibidoVentas.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold);
+            this.lblRecibidoVentas.Location = new System.Drawing.Point(724, 70);
+            this.lblRecibidoVentas.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRecibidoVentas.Name = "lblRecibidoVentas";
+            this.lblRecibidoVentas.Size = new System.Drawing.Size(100, 29);
+            this.lblRecibidoVentas.TabIndex = 97;
+            this.lblRecibidoVentas.Text = "Recibido";
+            // 
+            // btnRealizarVentas
+            // 
+            this.btnRealizarVentas.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold);
+            this.btnRealizarVentas.Location = new System.Drawing.Point(730, 141);
+            this.btnRealizarVentas.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRealizarVentas.Name = "btnRealizarVentas";
+            this.btnRealizarVentas.Size = new System.Drawing.Size(102, 37);
+            this.btnRealizarVentas.TabIndex = 99;
+            this.btnRealizarVentas.Text = "Realizar";
+            this.btnRealizarVentas.UseVisualStyleBackColor = true;
+            this.btnRealizarVentas.Click += new System.EventHandler(this.btnRealizarVentas_Click);
+            // 
+            // btnEditarVentas
+            // 
+            this.btnEditarVentas.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarVentas.Location = new System.Drawing.Point(908, 489);
+            this.btnEditarVentas.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEditarVentas.Name = "btnEditarVentas";
+            this.btnEditarVentas.Size = new System.Drawing.Size(112, 46);
+            this.btnEditarVentas.TabIndex = 100;
+            this.btnEditarVentas.Text = "Editar";
+            this.btnEditarVentas.UseVisualStyleBackColor = true;
+            // 
             // FormVentas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1180, 548);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1164, 546);
+            this.Controls.Add(this.btnEditarVentas);
             this.Controls.Add(this.btnRealizarVentas);
             this.Controls.Add(this.txtRecibidoVentas);
             this.Controls.Add(this.lblRecibidoVentas);
             this.Controls.Add(this.btnCerrarVentas);
             this.Controls.Add(this.txtTotalVentas);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.txtCambioVentas);
             this.Controls.Add(this.lblCambioVentas);
             this.Controls.Add(this.btnCancelarVentas);
@@ -444,8 +447,11 @@ namespace proyecto1
             this.Controls.Add(this.lblVentas);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MinimumSize = new System.Drawing.Size(1180, 585);
             this.Name = "FormVentas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Farmacia Divino Niño - Ventas";
+            this.Load += new System.EventHandler(this.FormVentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCuentas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).EndInit();
             this.ResumeLayout(false);
@@ -473,7 +479,7 @@ namespace proyecto1
         private System.Windows.Forms.TextBox txtCambioVentas;
         private System.Windows.Forms.Label lblCambioVentas;
         private System.Windows.Forms.TextBox txtTotalVentas;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Button btnCerrarVentas;
         private System.Windows.Forms.TextBox txtRecibidoVentas;
         private System.Windows.Forms.Label lblRecibidoVentas;
@@ -484,6 +490,6 @@ namespace proyecto1
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaPrecio;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaPDescuento;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaTotal;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEditarVentas;
     }
 }

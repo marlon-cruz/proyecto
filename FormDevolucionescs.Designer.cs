@@ -74,7 +74,7 @@ namespace proyecto1
             this.cmbMotivoDevoluciones.Location = new System.Drawing.Point(514, 258);
             this.cmbMotivoDevoluciones.Margin = new System.Windows.Forms.Padding(2);
             this.cmbMotivoDevoluciones.Name = "cmbMotivoDevoluciones";
-            this.cmbMotivoDevoluciones.Size = new System.Drawing.Size(134, 27);
+            this.cmbMotivoDevoluciones.Size = new System.Drawing.Size(173, 27);
             this.cmbMotivoDevoluciones.TabIndex = 91;
             // 
             // lblMotivoDevoluciones
@@ -115,7 +115,7 @@ namespace proyecto1
             this.txtFacturaDevoluciones.Location = new System.Drawing.Point(514, 94);
             this.txtFacturaDevoluciones.Margin = new System.Windows.Forms.Padding(2);
             this.txtFacturaDevoluciones.Name = "txtFacturaDevoluciones";
-            this.txtFacturaDevoluciones.Size = new System.Drawing.Size(134, 27);
+            this.txtFacturaDevoluciones.Size = new System.Drawing.Size(173, 27);
             this.txtFacturaDevoluciones.TabIndex = 93;
             // 
             // lblNFacturaDevoluciones
@@ -171,7 +171,9 @@ namespace proyecto1
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormDevolucionescs";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Farmacia Divino Niño - Devolucionescs";
+            this.Load += new System.EventHandler(this.FormDevolucionescs_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCuentas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

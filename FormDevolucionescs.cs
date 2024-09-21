@@ -22,6 +22,14 @@ namespace proyecto1
             TemaColor.colorBtn(btnCerrarDevoluciones);
             TemaColor.colorBtn(btnRealizarDevoluciones);
             TemaColor.colorFondoVentana(this);
+            //Button
+            TemaColor.colorBtn(btnCerrarDevoluciones);
+            TemaColor.colorBtn(btnRealizarDevoluciones);
+            //Combo
+            TemaColor.colorCombo(cmbMotivoDevoluciones);
+            //Text
+            TemaColor.colorTextBox(txtDescripcionDevoluciones);
+            TemaColor.colorTextBox(txtFacturaDevoluciones);
         }
 
         private void btnCerrarDevoluciones_Click(object sender, EventArgs e)
@@ -37,6 +45,11 @@ namespace proyecto1
             txtDescripcionDevoluciones.Text = "";
             txtFacturaDevoluciones.Text = "";
             cmbMotivoDevoluciones.Text = "";
+        }
+
+        private void FormDevolucionescs_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

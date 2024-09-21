@@ -30,10 +30,10 @@ namespace proyecto1
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProveedores));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBoxCuentas = new System.Windows.Forms.PictureBox();
             this.txtCodigoProveedor = new System.Windows.Forms.TextBox();
             this.lblcodigoProveedor = new System.Windows.Forms.Label();
@@ -81,7 +81,7 @@ namespace proyecto1
             // 
             this.txtCodigoProveedor.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigoProveedor.Location = new System.Drawing.Point(538, 58);
-            this.txtCodigoProveedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCodigoProveedor.Margin = new System.Windows.Forms.Padding(2);
             this.txtCodigoProveedor.Name = "txtCodigoProveedor";
             this.txtCodigoProveedor.Size = new System.Drawing.Size(134, 27);
             this.txtCodigoProveedor.TabIndex = 87;
@@ -113,14 +113,14 @@ namespace proyecto1
             this.dgbProveedores.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(133)))));
             this.dgbProveedores.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgbProveedores.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(91)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.Honeydew;
-            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgbProveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(91)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Honeydew;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgbProveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgbProveedores.ColumnHeadersHeight = 29;
             this.dgbProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgbProveedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -130,14 +130,14 @@ namespace proyecto1
             this.ColumnaProducto,
             this.ColumnaEmail,
             this.ColumnaTelefono});
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(91)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgbProveedores.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(91)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgbProveedores.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgbProveedores.Enabled = false;
             this.dgbProveedores.EnableHeadersVisualStyles = false;
             this.dgbProveedores.GridColor = System.Drawing.Color.Black;
@@ -145,17 +145,17 @@ namespace proyecto1
             this.dgbProveedores.Name = "dgbProveedores";
             this.dgbProveedores.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgbProveedores.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgbProveedores.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgbProveedores.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgbProveedores.RowHeadersWidth = 51;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgbProveedores.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgbProveedores.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgbProveedores.Size = new System.Drawing.Size(1146, 188);
             this.dgbProveedores.TabIndex = 91;
             // 
@@ -205,7 +205,7 @@ namespace proyecto1
             // 
             this.btnAgregarProveedor.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarProveedor.Location = new System.Drawing.Point(554, 258);
-            this.btnAgregarProveedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregarProveedor.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarProveedor.Name = "btnAgregarProveedor";
             this.btnAgregarProveedor.Size = new System.Drawing.Size(102, 37);
             this.btnAgregarProveedor.TabIndex = 92;
@@ -217,7 +217,7 @@ namespace proyecto1
             // 
             this.btnBuscarProveedor.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscarProveedor.Location = new System.Drawing.Point(895, 118);
-            this.btnBuscarProveedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscarProveedor.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscarProveedor.Name = "btnBuscarProveedor";
             this.btnBuscarProveedor.Size = new System.Drawing.Size(102, 37);
             this.btnBuscarProveedor.TabIndex = 94;
@@ -228,7 +228,7 @@ namespace proyecto1
             // 
             this.btnCerrarProveedor.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrarProveedor.Location = new System.Drawing.Point(955, 501);
-            this.btnCerrarProveedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCerrarProveedor.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrarProveedor.Name = "btnCerrarProveedor";
             this.btnCerrarProveedor.Size = new System.Drawing.Size(102, 37);
             this.btnCerrarProveedor.TabIndex = 95;
@@ -240,7 +240,7 @@ namespace proyecto1
             // 
             this.btnGuardarProveedor.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarProveedor.Location = new System.Drawing.Point(265, 501);
-            this.btnGuardarProveedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGuardarProveedor.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardarProveedor.Name = "btnGuardarProveedor";
             this.btnGuardarProveedor.Size = new System.Drawing.Size(102, 37);
             this.btnGuardarProveedor.TabIndex = 96;
@@ -251,7 +251,7 @@ namespace proyecto1
             // 
             this.btnEliminarProveedor.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminarProveedor.Location = new System.Drawing.Point(16, 501);
-            this.btnEliminarProveedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminarProveedor.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarProveedor.Name = "btnEliminarProveedor";
             this.btnEliminarProveedor.Size = new System.Drawing.Size(102, 37);
             this.btnEliminarProveedor.TabIndex = 97;
@@ -263,7 +263,7 @@ namespace proyecto1
             // 
             this.txtBuscarProveedor.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBuscarProveedor.Location = new System.Drawing.Point(881, 89);
-            this.txtBuscarProveedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBuscarProveedor.Margin = new System.Windows.Forms.Padding(2);
             this.txtBuscarProveedor.Name = "txtBuscarProveedor";
             this.txtBuscarProveedor.Size = new System.Drawing.Size(134, 27);
             this.txtBuscarProveedor.TabIndex = 99;
@@ -284,7 +284,7 @@ namespace proyecto1
             // 
             this.txtNombreProveedor.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreProveedor.Location = new System.Drawing.Point(538, 89);
-            this.txtNombreProveedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombreProveedor.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombreProveedor.Name = "txtNombreProveedor";
             this.txtNombreProveedor.Size = new System.Drawing.Size(134, 27);
             this.txtNombreProveedor.TabIndex = 101;
@@ -304,7 +304,7 @@ namespace proyecto1
             // 
             this.txtTelefonoProveedor.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefonoProveedor.Location = new System.Drawing.Point(538, 214);
-            this.txtTelefonoProveedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTelefonoProveedor.Margin = new System.Windows.Forms.Padding(2);
             this.txtTelefonoProveedor.Name = "txtTelefonoProveedor";
             this.txtTelefonoProveedor.Size = new System.Drawing.Size(134, 27);
             this.txtTelefonoProveedor.TabIndex = 103;
@@ -324,7 +324,7 @@ namespace proyecto1
             // 
             this.txtEmailProveedor.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmailProveedor.Location = new System.Drawing.Point(538, 183);
-            this.txtEmailProveedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEmailProveedor.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmailProveedor.Name = "txtEmailProveedor";
             this.txtEmailProveedor.Size = new System.Drawing.Size(134, 27);
             this.txtEmailProveedor.TabIndex = 105;
@@ -344,7 +344,7 @@ namespace proyecto1
             // 
             this.txtProductoProveedor.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProductoProveedor.Location = new System.Drawing.Point(538, 150);
-            this.txtProductoProveedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtProductoProveedor.Margin = new System.Windows.Forms.Padding(2);
             this.txtProductoProveedor.Name = "txtProductoProveedor";
             this.txtProductoProveedor.Size = new System.Drawing.Size(134, 27);
             this.txtProductoProveedor.TabIndex = 107;
@@ -366,7 +366,7 @@ namespace proyecto1
             this.txtDistribuidorProveedor.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDistribuidorProveedor.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtDistribuidorProveedor.Location = new System.Drawing.Point(538, 119);
-            this.txtDistribuidorProveedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDistribuidorProveedor.Margin = new System.Windows.Forms.Padding(2);
             this.txtDistribuidorProveedor.Name = "txtDistribuidorProveedor";
             this.txtDistribuidorProveedor.Size = new System.Drawing.Size(134, 27);
             this.txtDistribuidorProveedor.TabIndex = 109;
@@ -398,7 +398,7 @@ namespace proyecto1
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1117, 548);
+            this.ClientSize = new System.Drawing.Size(1164, 546);
             this.Controls.Add(this.btnEditarProveedores);
             this.Controls.Add(this.txtDistribuidorProveedor);
             this.Controls.Add(this.lblDistribuidorProveedor);
@@ -423,9 +423,10 @@ namespace proyecto1
             this.Controls.Add(this.lblProveedores);
             this.Controls.Add(this.pictureBoxCuentas);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormProveedores";
             this.Text = "Farmacia Divino Niño - Proveedores";
+            this.Load += new System.EventHandler(this.FormProveedores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCuentas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgbProveedores)).EndInit();
             this.ResumeLayout(false);

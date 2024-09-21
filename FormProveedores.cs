@@ -30,6 +30,22 @@ namespace proyecto1
             TemaColor.colorLbl(lblTelefonoProveedor);
             TemaColor.colorFondoVentana(this);
             TemaColor.colorDataGrid(dgbProveedores);
+            //Button
+            TemaColor.colorBtn(btnAgregarProveedor);
+            TemaColor.colorBtn(btnBuscarProveedor);
+            TemaColor.colorBtn(btnCerrarProveedor);
+            TemaColor.colorBtn(btnEditarProveedores);
+            TemaColor.colorBtn(btnEliminarProveedor);
+            TemaColor.colorBtn(btnGuardarProveedor);
+            //textbox
+            TemaColor.colorTextBox(txtBuscarProveedor);
+            TemaColor.colorTextBox(txtCodigoProveedor);
+            TemaColor.colorTextBox(txtDistribuidorProveedor);
+            TemaColor.colorTextBox(txtEmailProveedor);
+            TemaColor.colorTextBox(txtNombreProveedor);
+            TemaColor.colorTextBox(txtProductoProveedor);
+            TemaColor.colorTextBox(txtTelefonoProveedor);
+            
         }
 
         private void btnCerrarProveedor_Click(object sender, EventArgs e)
@@ -88,6 +104,11 @@ namespace proyecto1
                 dgbProveedores.Enabled = false;
                 btnEliminarProveedor.Text = "Editar";
             }
+        }
+
+        private void FormProveedores_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

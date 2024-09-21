@@ -62,9 +62,9 @@ namespace proyecto1
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(133)))));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(625, 107);
+            this.pictureBox1.Location = new System.Drawing.Point(595, 107);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(29, 31);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -138,6 +138,7 @@ namespace proyecto1
             this.dgvCuentas.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvCuentas.Size = new System.Drawing.Size(672, 150);
             this.dgvCuentas.TabIndex = 62;
+            this.dgvCuentas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCuentas_CellContentClick);
             // 
             // ColumnaNombre
             // 
@@ -189,7 +190,7 @@ namespace proyecto1
             this.btnEditarCuenta.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.btnEditarCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEditarCuenta.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnEditarCuenta.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnEditarCuenta.ForeColor = System.Drawing.Color.White;
             this.btnEditarCuenta.Location = new System.Drawing.Point(154, 421);
             this.btnEditarCuenta.Name = "btnEditarCuenta";
             this.btnEditarCuenta.Size = new System.Drawing.Size(110, 43);
@@ -209,6 +210,7 @@ namespace proyecto1
             this.btnEliminarCuenta.TabIndex = 58;
             this.btnEliminarCuenta.Text = "Eliminar";
             this.btnEliminarCuenta.UseVisualStyleBackColor = false;
+            this.btnEliminarCuenta.Click += new System.EventHandler(this.btnEliminarCuenta_Click);
             // 
             // btnBuscarCuenta
             // 
@@ -359,6 +361,7 @@ namespace proyecto1
             this.Controls.Add(this.pictureBoxCuentas);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormCuentas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Farmacia Divino Niño - Cuentas";
             this.Load += new System.EventHandler(this.FormCuentas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

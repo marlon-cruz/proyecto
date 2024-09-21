@@ -17,6 +17,9 @@ namespace proyecto1
         {
             InitializeComponent();
             TemaColor.colorFondoVentana(this);
+
+            TemaColor.colorBtn(btnCerrar);
+            TemaColor.colorBtn(btnIniciarSesion);
         }
 
         private void FormLogin_Load(object sender, EventArgs e)
@@ -52,15 +55,16 @@ namespace proyecto1
             }
             else
             {
-
-                //Por ahora no hay nada
+               // MessageBox.Show("¡Intentalo otra vez!", "Alerta");
+                MessageBox.Show("Contraseña o Usuario incorrecta", "¡Intentelo de nuevo!");
+                textUsuario.Text = "";
+                textContraseña.Text = "";
             }
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
              Close();
-
 
         }
     }

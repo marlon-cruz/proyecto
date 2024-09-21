@@ -15,10 +15,13 @@ namespace proyecto1
         public FormVentas()
         {
             InitializeComponent();
+            //Button
             TemaColor.colorBtn(btnAgregarVentas);
             TemaColor.colorBtn(btnCancelarVentas);
             TemaColor.colorBtn(btnCerrarVentas);
             TemaColor.colorBtn(btnRealizarVentas);
+            TemaColor.colorBtn(btnEditarVentas);
+           
             //LBL
             TemaColor.colorLbl(lblCambioVentas);
             TemaColor.colorLbl(lblCantidadVentas);
@@ -28,11 +31,21 @@ namespace proyecto1
             TemaColor.colorLbl(lblRecibidoVentas);
             TemaColor.colorLbl(lblTipoVentas);
             TemaColor.colorLbl(lblVentas);
+            TemaColor.colorLbl(lblTotal);
             //dgv
             TemaColor.colorDataGrid(dgvVentas);
             //fondo
             TemaColor.colorFondoVentana(this);
-            
+            //Textbox
+            TemaColor.colorTextBox(txtCambioVentas);
+            TemaColor.colorTextBox(txtCantidadVentas);
+            TemaColor.colorTextBox(txtClienteVenta);
+            TemaColor.colorTextBox(txtCodigoVentas);
+            TemaColor.colorTextBox(txtMedicamentoVentas);
+            TemaColor.colorTextBox(txtRecibidoVentas);
+            TemaColor.colorTextBox(txtTotalVentas);
+            //ComboBox
+            TemaColor.colorCombo(cmbTipoVentas);
         }
 
         private void btnAgregarVentas_Click(object sender, EventArgs e)
@@ -123,6 +136,21 @@ namespace proyecto1
         }
 
         private void txtCodigoVentas_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormVentas_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblClienteVentas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtClienteVenta_TextChanged(object sender, EventArgs e)
         {
 
         }
