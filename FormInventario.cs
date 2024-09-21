@@ -33,7 +33,7 @@ namespace proyecto1
             TemaColor.colorBtn(btnGuardarInventario);
             TemaColor.colorBtn(btnGuardarInventario);
             //Tabla
-            TemaColor.colorDataGrid(dgbInventario);
+            TemaColor.colorDataGrid(dgvInventario);
             //fondo
             TemaColor.colorFondoVentana(this);
         }
@@ -52,14 +52,14 @@ namespace proyecto1
 
         private void btnEditarInventario_Click(object sender, EventArgs e)
         {
-            if (dgbInventario.Enabled == false)
+            if (dgvInventario.Enabled == false)
             {
-                dgbInventario.Enabled = true;
+                dgvInventario.Enabled = true;
                 btnEditarInventario.Text = "Dejar";
             }
             else
             {
-                dgbInventario.Enabled = false;
+                dgvInventario.Enabled = false;
                 btnEditarInventario.Text = "Editar";
             }
         }
@@ -82,7 +82,7 @@ namespace proyecto1
             {
                 try
                 {
-                    dgbInventario.Rows.Add(codigo, nombre, cantidad, precio, p_descuento,tipo ,vencimiento);
+                    dgvInventario.Rows.Add(codigo, nombre, cantidad, precio, p_descuento,tipo ,vencimiento);
                     txtNombreInventario.Text = "";
                     txtCodigoInventario.Text = "";
                     txtCantidadInventario.Text = "";

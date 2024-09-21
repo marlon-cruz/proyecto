@@ -29,7 +29,7 @@ namespace proyecto1
             TemaColor.colorLbl(lblTipoVentas);
             TemaColor.colorLbl(lblVentas);
             //dgv
-            TemaColor.colorDataGrid(dgbventas);
+            TemaColor.colorDataGrid(dgvVentas);
             //fondo
             TemaColor.colorFondoVentana(this);
             
@@ -38,18 +38,18 @@ namespace proyecto1
         private void btnAgregarVentas_Click(object sender, EventArgs e)
         {
             string medicamento = txtMedicamentoVentas.Text;
-            string codigo = txtCodigoVentas.Text;
+           // string codigo = txtCodigoVentas.Text;
             string cantidad = txtCantidadVentas.Text;
             string cliente = txtClienteVenta.Text;
             string tipo = cmbTipoVentas.Text;
            
             if(btnAgregarVentas.Text == "Nuevo")
             {
-                dgbventas.Rows.Clear();
+                dgvVentas.Rows.Clear();
             }
             else
             {
-                if (medicamento == "" || tipo == "" || codigo == "" || cliente == "" || cantidad == "")
+                if (medicamento == "" || tipo == "" || cliente == "" || cantidad == "")
                 {
                     MessageBox.Show("¡Ingresa todos los datos!", "Alerta");
                 }
@@ -58,9 +58,9 @@ namespace proyecto1
                     try
                     {
                         double total = int.Parse(cantidad) * 1;
-                        dgbventas.Rows.Add(codigo, medicamento, cantidad, 1, 1, total);
+                        dgvVentas.Rows.Add(medicamento, cantidad, 1, 1, total);
                         txtMedicamentoVentas.Text = "";
-                        txtCodigoVentas.Text = "";
+                       // txtCodigoVentas.Text = "";
                         txtCantidadVentas.Text = "";
                         cmbTipoVentas.Text = "";
 
@@ -96,7 +96,7 @@ namespace proyecto1
                 btnRealizarVentas.Enabled = false;
                 btnAgregarVentas.Text = "Nuevo";
                 txtMedicamentoVentas.Enabled = false;
-                txtCodigoVentas.Enabled = false;
+               //txtCodigoVentas.Enabled = false;
                 txtCantidadVentas.Enabled = false;
                 txtClienteVenta.Enabled = false;
                 cmbTipoVentas.Enabled = false;
@@ -113,13 +113,18 @@ namespace proyecto1
         private void btnCancelarVentas_Click(object sender, EventArgs e)
         {
             txtMedicamentoVentas.Text = "";
-            txtCodigoVentas.Text = "";
+           // txtCodigoVentas.Text = "";
             txtCantidadVentas.Text = "";
             txtClienteVenta.Text = "";
             cmbTipoVentas.Text = "";
             txtTotalVentas.Text = "";
             txtRecibidoVentas.Text = "";
-            dgbventas.Rows.Clear();
+            dgvVentas.Rows.Clear();
+        }
+
+        private void txtCodigoVentas_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

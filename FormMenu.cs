@@ -64,5 +64,13 @@ namespace proyecto1
             formprov.Show();
             this.Close();
         }
+
+        private void btnFacturacionMenu_Click(object sender, EventArgs e)
+        {
+
+            FormFacturacion formfac = new FormFacturacion();
+            formfac.Show();
+            this.Close();
+        }
     }
 }

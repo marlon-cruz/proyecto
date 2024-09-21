@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -40,12 +41,13 @@ namespace proyecto1
 
                 textUsuario.Text = "";
                 textContraseña.Text = "";
-                //this.Hide();
+                this.Hide();
                 //this.Close();
 
                 FormMenu form2 = new FormMenu();
                 // Cierra el formulario de inicio de sesión
                 form2.Show();
+                
 
             }
             else
@@ -57,7 +59,9 @@ namespace proyecto1
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            Close();
+             Close();
+
+
         }
     }
 }
