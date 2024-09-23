@@ -46,22 +46,24 @@ namespace proyecto1
             // pictureBox3
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(268, 297);
+            this.pictureBox3.Location = new System.Drawing.Point(266, 312);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(66, 38);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 23;
             this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(268, 217);
+            this.pictureBox2.Location = new System.Drawing.Point(266, 232);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(66, 38);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 22;
             this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // btnCerrar
             // 
@@ -69,7 +71,7 @@ namespace proyecto1
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCerrar.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnCerrar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCerrar.Location = new System.Drawing.Point(678, 439);
+            this.btnCerrar.Location = new System.Drawing.Point(700, 445);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(137, 43);
             this.btnCerrar.TabIndex = 21;
@@ -83,7 +85,7 @@ namespace proyecto1
             this.btnIniciarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnIniciarSesion.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciarSesion.ForeColor = System.Drawing.Color.White;
-            this.btnIniciarSesion.Location = new System.Drawing.Point(370, 373);
+            this.btnIniciarSesion.Location = new System.Drawing.Point(368, 388);
             this.btnIniciarSesion.Name = "btnIniciarSesion";
             this.btnIniciarSesion.Size = new System.Drawing.Size(150, 43);
             this.btnIniciarSesion.TabIndex = 20;
@@ -96,7 +98,7 @@ namespace proyecto1
             this.textContraseña.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.textContraseña.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textContraseña.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textContraseña.Location = new System.Drawing.Point(340, 304);
+            this.textContraseña.Location = new System.Drawing.Point(338, 319);
             this.textContraseña.Name = "textContraseña";
             this.textContraseña.Size = new System.Drawing.Size(208, 31);
             this.textContraseña.TabIndex = 19;
@@ -108,7 +110,7 @@ namespace proyecto1
             this.textUsuario.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.textUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textUsuario.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textUsuario.Location = new System.Drawing.Point(340, 224);
+            this.textUsuario.Location = new System.Drawing.Point(338, 239);
             this.textUsuario.Name = "textUsuario";
             this.textUsuario.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textUsuario.Size = new System.Drawing.Size(208, 31);
@@ -119,23 +121,24 @@ namespace proyecto1
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(357, 47);
+            this.pictureBox1.Location = new System.Drawing.Point(355, 77);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(175, 156);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // lblBienvenido
             // 
             this.lblBienvenido.AutoSize = true;
             this.lblBienvenido.Font = new System.Drawing.Font("Calibri", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBienvenido.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblBienvenido.Location = new System.Drawing.Point(354, 8);
+            this.lblBienvenido.Location = new System.Drawing.Point(349, 2);
             this.lblBienvenido.Name = "lblBienvenido";
-            this.lblBienvenido.Size = new System.Drawing.Size(178, 36);
+            this.lblBienvenido.Size = new System.Drawing.Size(185, 72);
             this.lblBienvenido.TabIndex = 16;
-            this.lblBienvenido.Text = "Bienvenido/a";
+            this.lblBienvenido.Text = "¡Buenos!\r\nBienvenido/a \r\n";
             // 
             // FormLogin
             // 
