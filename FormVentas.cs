@@ -51,7 +51,7 @@ namespace proyecto1
         private void btnAgregarVentas_Click(object sender, EventArgs e)
         {
             string medicamento = txtMedicamentoVentas.Text;
-           // string codigo = txtCodigoVentas.Text;
+            string codigo = txtCodigoVentas.Text;
             string cantidad = txtCantidadVentas.Text;
             string cliente = txtClienteVenta.Text;
             string tipo = cmbTipoVentas.Text;
@@ -59,10 +59,17 @@ namespace proyecto1
             if(btnAgregarVentas.Text == "Nuevo")
             {
                 dgvVentas.Rows.Clear();
+
+                    btnEditarVentas.Enabled = true;
+                    btnCancelarVentas.Enabled = true;
+                txtCambioVentas.Text = "0.00";
+                txtTotalVentas.Text = "0.00";
+                txtRecibidoVentas.Text = "";
+                txtClienteVenta.Text = "";
             }
             else
             {
-                if (medicamento == "" || tipo == "" || cliente == "" || cantidad == "")
+                if (medicamento == "" || tipo == "" || cliente == "" || cantidad == "" || codigo == "")
                 {
                     MessageBox.Show("¡Ingresa todos los datos!", "Alerta");
                 }
@@ -70,19 +77,28 @@ namespace proyecto1
                 {
                     try
                     {
-                        double total = int.Parse(cantidad) * 1;
-                        dgvVentas.Rows.Add(medicamento, cantidad, 1, 1, total);
+                        double total = int.Parse(cantidad) * 2;
+
+                        dgvVentas.Rows.Add(codigo, medicamento, cantidad, 3, 2, total);
+
                         txtMedicamentoVentas.Text = "";
-                       // txtCodigoVentas.Text = "";
+                        txtCodigoVentas.Text = "";
                         txtCantidadVentas.Text = "";
                         cmbTipoVentas.Text = "";
+                        txtCantidadVentas.Text = "";
 
+
+
+                        double ventaTotal = double.Parse(txtTotalVentas.Text);
+                        ventaTotal += total;
+                        txtTotalVentas.Text = ventaTotal.ToString();
                     }
                     catch (Exception)
                     {
                         MessageBox.Show("¡Intentalo otra vez!", "Alerta");
-                        throw;
+                   
                     }
+                   
 
                 }
             }
@@ -105,14 +121,18 @@ namespace proyecto1
                 double total = double.Parse(txtTotalVentas.Text);
                 double cambio = recibido - total;
 
-                txtCambioVentas.Text = "$ " + cambio;
-                btnRealizarVentas.Enabled = false;
-                btnAgregarVentas.Text = "Nuevo";
-                txtMedicamentoVentas.Enabled = false;
-               //txtCodigoVentas.Enabled = false;
-                txtCantidadVentas.Enabled = false;
-                txtClienteVenta.Enabled = false;
-                cmbTipoVentas.Enabled = false;
+                if(cambio < 0)
+                {
+                    MessageBox.Show("La cantidad ingresada es menor al total a pagar", "Alerta");
+                }
+                else
+                {
+                    txtCambioVentas.Text = "$ " + cambio;
+                    btnAgregarVentas.Text = "Nuevo";
+                    btnEditarVentas.Enabled = false;
+                    btnCancelarVentas.Enabled = false;
+
+                }
             }
             catch (Exception)
             {
@@ -153,6 +173,20 @@ namespace proyecto1
         private void txtClienteVenta_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnEditarVentas_Click(object sender, EventArgs e)
+        {
+            if (dgvVentas.Enabled == false)
+            {
+                dgvVentas.Enabled = true;
+                btnEditarVentas.Text = "Dejar";
+            }
+            else
+            {
+                dgvVentas.Enabled = false;
+                btnEditarVentas.Text = "Editar";
+            }
         }
     }
 }

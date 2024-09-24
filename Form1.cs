@@ -37,11 +37,11 @@ namespace proyecto1
             }
             else if (HoraActual >= Tarde && HoraActual < Noche)
             {
-                lblBienvenido.Text = "¡Buenas tardes! Bienvenido/a";
+                lblBienvenido.Text = "¡Buenas tardes!\n Bienvenido/a";
             }
             else if (HoraActual >= Noche && HoraActual < Tarde)
             {
-                lblBienvenido.Text = "¡Buenas noches! Bienvenido/a";
+                lblBienvenido.Text = "¡Buenas noches!\n Bienvenido/a";
             }
         }
 

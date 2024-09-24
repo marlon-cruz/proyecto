@@ -29,5 +29,40 @@ namespace proyecto1
             formMenu.Show();
             this.Close();
         }
+
+        private void btnCrearCuenta_Click(object sender, EventArgs e)
+        {
+            string codigo = txtCodigoFacturacion.Text;
+            string nombre = txtNombreFacturacion.Text;
+            string cantidad = txtCantidadFacturacion.Text;
+            string precioUndad = txtPrecioFacturacion.Text;
+            string total = txtTotalFactura.Text;
+
+
+            if (codigo == "" || nombre== "" || cantidad == "" || precioUndad ==""|| total == "")
+            {
+                MessageBox.Show("¡Ingresa todos los datos!", "Alerta");
+            }
+            else
+            {
+                try
+                {
+                    dgvFacturacion.Rows.Add(codigo,nombre,cantidad,precioUndad,total);
+                     txtCodigoFacturacion.Text = "";
+                     txtNombreFacturacion.Text = "";
+                     txtCantidadFacturacion.Text = "";
+                     txtPrecioFacturacion.Text = "";
+                     txtTotalFactura.Text = "";
+
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("¡Intentalo otra vez!", "Alerta");
+                    throw;
+                }
+
+            }
+        }
     }
 }

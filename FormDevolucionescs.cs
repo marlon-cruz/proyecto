@@ -21,6 +21,7 @@ namespace proyecto1
             TemaColor.colorLbl(lblNFacturaDevoluciones);
             TemaColor.colorBtn(btnCerrarDevoluciones);
             TemaColor.colorBtn(btnRealizarDevoluciones);
+            TemaColor.colorBtn(btnCancelarDevolucion);
             TemaColor.colorFondoVentana(this);
             //Button
             TemaColor.colorBtn(btnCerrarDevoluciones);
@@ -30,6 +31,9 @@ namespace proyecto1
             //Text
             TemaColor.colorTextBox(txtDescripcionDevoluciones);
             TemaColor.colorTextBox(txtFacturaDevoluciones);
+            //dgv
+           TemaColor.colorDataGrid(dgvDevoluciones);
+          
         }
 
         private void btnCerrarDevoluciones_Click(object sender, EventArgs e)
@@ -42,6 +46,32 @@ namespace proyecto1
 
         private void btnRealizarDevoluciones_Click(object sender, EventArgs e)
         {
+            String numeroFactura = txtFacturaDevoluciones.Text;
+            string descripcion = txtDescripcionDevoluciones.Text;
+            string motivo = cmbMotivoDevoluciones.Text;
+
+            if (numeroFactura == "" || descripcion == ""|| motivo == "")
+            {
+                MessageBox.Show("¡Ingresa todos los datos!", "Alerta");
+            }
+            else
+            {
+                try
+                {
+                    dgvDevoluciones.Rows.Add(numeroFactura,descripcion,motivo);
+                    txtDescripcionDevoluciones.Text = "";
+                    txtFacturaDevoluciones.Text = "";
+                    cmbMotivoDevoluciones.Text = "";
+
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("¡Intentalo otra vez!", "Alerta");
+
+                }
+
+            }
+
             txtDescripcionDevoluciones.Text = "";
             txtFacturaDevoluciones.Text = "";
             cmbMotivoDevoluciones.Text = "";
@@ -50,6 +80,13 @@ namespace proyecto1
         private void FormDevolucionescs_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnCancelarDevolucion_Click(object sender, EventArgs e)
+        {
+            txtDescripcionDevoluciones.Text = "";
+            txtFacturaDevoluciones.Text = "";
+            cmbMotivoDevoluciones.Text = "";
         }
     }
 }

@@ -121,5 +121,72 @@ namespace proyecto1
         {
 
         }
+
+        private void btnBuscarInventario_Click(object sender, EventArgs e)
+        {
+            int indice = dgvInventario.RowCount - 1;
+            string busqueda = txtBuscarInventario.Text;
+            if(indice == 0)
+            {
+                MessageBox.Show("Aun no hay medicamentos en el inventario");
+            }
+            else
+            {
+                if (busqueda == "")
+                {
+                    MessageBox.Show("Por favor, Ingrese un medicamento para realizar la busqueda.");
+                }
+                else
+                {
+                    for (int i = 0; i < indice; i++)
+                    {
+                        string dato = Convert.ToString(dgvInventario.Rows[i].Cells[1].Value);
+                        if (dato == busqueda)
+                        {
+
+                            DataGridViewRow fila = dgvInventario.Rows[i];
+                            string nombre = fila.Cells["ColumnaNombre"].Value.ToString();
+                            string cant = Convert.ToString(fila.Cells["ColumnaCantidad"].Value);
+                            string precio = Convert.ToString(fila.Cells["ColumnaPrecio"].Value);
+                            string precioDes = Convert.ToString(fila.Cells["ColumnaPDescuento"].Value);
+                            string vencimiento = Convert.ToString(fila.Cells["ColumnaVencimiento"].Value);
+                            MessageBox.Show("Medicamento encontrado\nNombre: " + nombre + "\ncantidad: " + cant + "\nPrecio: " + precio + "\nPrecio con descuento: " + precioDes + "Vencimiento: " + vencimiento);
+                            break;
+                        }
+                        if (i == indice - 1)
+                        {
+                            MessageBox.Show("El medicamento " + busqueda + " no se ha encontrado.");
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        private void btnEliminarInventario_Click(object sender, EventArgs e)
+        {
+            if (dgvInventario.RowCount == 1)
+            {
+                MessageBox.Show("Aun no existen medicamentos");
+            }
+            else
+            {
+                if (dgvInventario.SelectedRows.Count > 0)
+                {
+
+                    int rowIndex = dgvInventario.SelectedRows[0].Index;
+
+                    if (MessageBox.Show("¿Estás seguro de eliminar este medicamento?", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+
+                        dgvInventario.Rows.RemoveAt(rowIndex);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, selecciona un medicamento a eliminar.");
+                }
+            }
+        }
     }
 }

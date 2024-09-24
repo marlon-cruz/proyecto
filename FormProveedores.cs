@@ -94,21 +94,88 @@ namespace proyecto1
 
         private void btnEliminarProveedor_Click(object sender, EventArgs e)
         {
+            if(dgbProveedores.RowCount == 1)
+            {
+                MessageBox.Show("Aun no existen proveedores");
+            }
+            else
+            {
+                if (dgbProveedores.SelectedRows.Count > 0)
+                {
+
+                    int rowIndex = dgbProveedores.SelectedRows[0].Index;
+
+                    if (MessageBox.Show("¿Estás seguro de eliminar este proveedor?", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+
+                        dgbProveedores.Rows.RemoveAt(rowIndex);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, selecciona un proveedor a eliminar.");
+                }
+            }
+            
+        }
+
+
+        private void FormProveedores_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void btnEditarProveedores_Click(object sender, EventArgs e)
+        {
             if (dgbProveedores.Enabled == false)
             {
                 dgbProveedores.Enabled = true;
-                btnEliminarProveedor.Text = "Dejar";
+                btnEditarProveedores.Text = "Dejar";
             }
             else
             {
                 dgbProveedores.Enabled = false;
-                btnEliminarProveedor.Text = "Editar";
+                btnEditarProveedores.Text = "Editar";
             }
         }
 
-        private void FormProveedores_Load(object sender, EventArgs e)
+        private void btnBuscarProveedor_Click(object sender, EventArgs e)
         {
+            int indice = dgbProveedores.RowCount-1;
+            string busqueda = txtBuscarProveedor.Text;
+            
+            if(indice == 0)
+            {
+                MessageBox.Show("Aun no hay proveedores registrados");
+            }
+            else
+            {
+                if (busqueda == "")
+                {
+                    MessageBox.Show("Por favor, Ingrese un nombre para realizar la busqueda.");
+                }
+                else
+                {
+                    for (int i = 0; i < indice; i++)
+                    {
+                        string dato = Convert.ToString(dgbProveedores.Rows[i].Cells[1].Value);
+                        if (dato == busqueda)
+                        {
 
+                            DataGridViewRow fila = dgbProveedores.Rows[i];
+                            string nombre = fila.Cells["ColumnaNombre"].Value.ToString();
+                            string tel = Convert.ToString(fila.Cells["ColumnaTelefono"].Value);
+                            MessageBox.Show("Proveedor encontrado\nNombre: " + nombre + "\nTeléfono: " + tel);
+                            break;
+                        }
+                        else if (i == indice-1)
+                        {
+                            MessageBox.Show("El proveedor " + busqueda + " no se ha encontrado.");
+                            break;
+                        }
+                    }
+                }
+            }
         }
     }
+    
 }

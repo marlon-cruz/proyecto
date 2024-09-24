@@ -30,6 +30,11 @@ namespace proyecto1
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDevolucionescs));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBoxCuentas = new System.Windows.Forms.PictureBox();
             this.lblDevoluciones = new System.Windows.Forms.Label();
             this.cmbMotivoDevoluciones = new System.Windows.Forms.ComboBox();
@@ -40,15 +45,22 @@ namespace proyecto1
             this.lblNFacturaDevoluciones = new System.Windows.Forms.Label();
             this.btnRealizarDevoluciones = new System.Windows.Forms.Button();
             this.btnCerrarDevoluciones = new System.Windows.Forms.Button();
+            this.btnCancelarDevolucion = new System.Windows.Forms.Button();
+            this.dgvDevoluciones = new System.Windows.Forms.DataGridView();
+            this.NFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Motivo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCuentas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDevoluciones)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBoxCuentas
             // 
             this.pictureBoxCuentas.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxCuentas.Image")));
-            this.pictureBoxCuentas.Location = new System.Drawing.Point(10, 11);
+            this.pictureBoxCuentas.Location = new System.Drawing.Point(13, 14);
+            this.pictureBoxCuentas.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxCuentas.Name = "pictureBoxCuentas";
-            this.pictureBoxCuentas.Size = new System.Drawing.Size(195, 178);
+            this.pictureBoxCuentas.Size = new System.Drawing.Size(260, 219);
             this.pictureBoxCuentas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxCuentas.TabIndex = 66;
             this.pictureBoxCuentas.TabStop = false;
@@ -57,10 +69,9 @@ namespace proyecto1
             // 
             this.lblDevoluciones.AutoSize = true;
             this.lblDevoluciones.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold);
-            this.lblDevoluciones.Location = new System.Drawing.Point(526, 11);
-            this.lblDevoluciones.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDevoluciones.Location = new System.Drawing.Point(628, 18);
             this.lblDevoluciones.Name = "lblDevoluciones";
-            this.lblDevoluciones.Size = new System.Drawing.Size(194, 39);
+            this.lblDevoluciones.Size = new System.Drawing.Size(245, 49);
             this.lblDevoluciones.TabIndex = 67;
             this.lblDevoluciones.Text = "Devoluciones";
             // 
@@ -71,71 +82,68 @@ namespace proyecto1
             this.cmbMotivoDevoluciones.Items.AddRange(new object[] {
             "Desperfectos",
             "Error de eleccion"});
-            this.cmbMotivoDevoluciones.Location = new System.Drawing.Point(514, 258);
-            this.cmbMotivoDevoluciones.Margin = new System.Windows.Forms.Padding(2);
+            this.cmbMotivoDevoluciones.Location = new System.Drawing.Point(612, 284);
+            this.cmbMotivoDevoluciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbMotivoDevoluciones.Name = "cmbMotivoDevoluciones";
-            this.cmbMotivoDevoluciones.Size = new System.Drawing.Size(173, 27);
+            this.cmbMotivoDevoluciones.Size = new System.Drawing.Size(229, 32);
             this.cmbMotivoDevoluciones.TabIndex = 91;
             // 
             // lblMotivoDevoluciones
             // 
             this.lblMotivoDevoluciones.AutoSize = true;
             this.lblMotivoDevoluciones.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMotivoDevoluciones.Location = new System.Drawing.Point(430, 258);
-            this.lblMotivoDevoluciones.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblMotivoDevoluciones.Location = new System.Drawing.Point(465, 277);
             this.lblMotivoDevoluciones.Name = "lblMotivoDevoluciones";
-            this.lblMotivoDevoluciones.Size = new System.Drawing.Size(69, 29);
+            this.lblMotivoDevoluciones.Size = new System.Drawing.Size(115, 37);
             this.lblMotivoDevoluciones.TabIndex = 90;
-            this.lblMotivoDevoluciones.Text = "Tipo: ";
+            this.lblMotivoDevoluciones.Text = "Motivo:";
             // 
             // txtDescripcionDevoluciones
             // 
             this.txtDescripcionDevoluciones.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripcionDevoluciones.Location = new System.Drawing.Point(514, 130);
-            this.txtDescripcionDevoluciones.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDescripcionDevoluciones.Location = new System.Drawing.Point(612, 164);
+            this.txtDescripcionDevoluciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDescripcionDevoluciones.Multiline = true;
             this.txtDescripcionDevoluciones.Name = "txtDescripcionDevoluciones";
-            this.txtDescripcionDevoluciones.Size = new System.Drawing.Size(173, 114);
+            this.txtDescripcionDevoluciones.Size = new System.Drawing.Size(405, 102);
             this.txtDescripcionDevoluciones.TabIndex = 89;
             // 
             // lblDescripcionDevoluciones
             // 
             this.lblDescripcionDevoluciones.AutoSize = true;
             this.lblDescripcionDevoluciones.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDescripcionDevoluciones.Location = new System.Drawing.Point(357, 125);
-            this.lblDescripcionDevoluciones.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDescripcionDevoluciones.Location = new System.Drawing.Point(403, 158);
             this.lblDescripcionDevoluciones.Name = "lblDescripcionDevoluciones";
-            this.lblDescripcionDevoluciones.Size = new System.Drawing.Size(142, 29);
+            this.lblDescripcionDevoluciones.Size = new System.Drawing.Size(177, 37);
             this.lblDescripcionDevoluciones.TabIndex = 88;
             this.lblDescripcionDevoluciones.Text = "Descripción: ";
             // 
             // txtFacturaDevoluciones
             // 
             this.txtFacturaDevoluciones.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtFacturaDevoluciones.Location = new System.Drawing.Point(514, 94);
-            this.txtFacturaDevoluciones.Margin = new System.Windows.Forms.Padding(2);
+            this.txtFacturaDevoluciones.Location = new System.Drawing.Point(612, 120);
+            this.txtFacturaDevoluciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFacturaDevoluciones.Name = "txtFacturaDevoluciones";
-            this.txtFacturaDevoluciones.Size = new System.Drawing.Size(173, 27);
+            this.txtFacturaDevoluciones.Size = new System.Drawing.Size(229, 32);
             this.txtFacturaDevoluciones.TabIndex = 93;
             // 
             // lblNFacturaDevoluciones
             // 
             this.lblNFacturaDevoluciones.AutoSize = true;
             this.lblNFacturaDevoluciones.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold);
-            this.lblNFacturaDevoluciones.Location = new System.Drawing.Point(372, 89);
-            this.lblNFacturaDevoluciones.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNFacturaDevoluciones.Location = new System.Drawing.Point(423, 114);
             this.lblNFacturaDevoluciones.Name = "lblNFacturaDevoluciones";
-            this.lblNFacturaDevoluciones.Size = new System.Drawing.Size(127, 29);
+            this.lblNFacturaDevoluciones.Size = new System.Drawing.Size(161, 37);
             this.lblNFacturaDevoluciones.TabIndex = 92;
             this.lblNFacturaDevoluciones.Text = "N° Factura: ";
             // 
             // btnRealizarDevoluciones
             // 
             this.btnRealizarDevoluciones.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold);
-            this.btnRealizarDevoluciones.Location = new System.Drawing.Point(435, 428);
-            this.btnRealizarDevoluciones.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRealizarDevoluciones.Location = new System.Drawing.Point(674, 553);
+            this.btnRealizarDevoluciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnRealizarDevoluciones.Name = "btnRealizarDevoluciones";
-            this.btnRealizarDevoluciones.Size = new System.Drawing.Size(272, 83);
+            this.btnRealizarDevoluciones.Size = new System.Drawing.Size(199, 55);
             this.btnRealizarDevoluciones.TabIndex = 94;
             this.btnRealizarDevoluciones.Text = "Realizar\r\ndevolucion";
             this.btnRealizarDevoluciones.UseVisualStyleBackColor = true;
@@ -144,20 +152,112 @@ namespace proyecto1
             // btnCerrarDevoluciones
             // 
             this.btnCerrarDevoluciones.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarDevoluciones.Location = new System.Drawing.Point(831, 481);
-            this.btnCerrarDevoluciones.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCerrarDevoluciones.Location = new System.Drawing.Point(1108, 592);
+            this.btnCerrarDevoluciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCerrarDevoluciones.Name = "btnCerrarDevoluciones";
-            this.btnCerrarDevoluciones.Size = new System.Drawing.Size(117, 45);
+            this.btnCerrarDevoluciones.Size = new System.Drawing.Size(156, 55);
             this.btnCerrarDevoluciones.TabIndex = 95;
             this.btnCerrarDevoluciones.Text = "Cerrar";
             this.btnCerrarDevoluciones.UseVisualStyleBackColor = true;
             this.btnCerrarDevoluciones.Click += new System.EventHandler(this.btnCerrarDevoluciones_Click);
             // 
+            // btnCancelarDevolucion
+            // 
+            this.btnCancelarDevolucion.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelarDevolucion.Location = new System.Drawing.Point(242, 583);
+            this.btnCancelarDevolucion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnCancelarDevolucion.Name = "btnCancelarDevolucion";
+            this.btnCancelarDevolucion.Size = new System.Drawing.Size(156, 55);
+            this.btnCancelarDevolucion.TabIndex = 97;
+            this.btnCancelarDevolucion.Text = "Cancelar";
+            this.btnCancelarDevolucion.UseVisualStyleBackColor = true;
+            this.btnCancelarDevolucion.Click += new System.EventHandler(this.btnCancelarDevolucion_Click);
+            // 
+            // dgvDevoluciones
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDevoluciones.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvDevoluciones.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
+            this.dgvDevoluciones.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(133)))));
+            this.dgvDevoluciones.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvDevoluciones.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(91)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Honeydew;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDevoluciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvDevoluciones.ColumnHeadersHeight = 29;
+            this.dgvDevoluciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NFactura,
+            this.Descripcion,
+            this.Motivo});
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(91)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDevoluciones.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvDevoluciones.EnableHeadersVisualStyles = false;
+            this.dgvDevoluciones.GridColor = System.Drawing.Color.Black;
+            this.dgvDevoluciones.Location = new System.Drawing.Point(242, 337);
+            this.dgvDevoluciones.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvDevoluciones.Name = "dgvDevoluciones";
+            this.dgvDevoluciones.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.dgvDevoluciones.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDevoluciones.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvDevoluciones.RowHeadersWidth = 51;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvDevoluciones.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvDevoluciones.Size = new System.Drawing.Size(1008, 210);
+            this.dgvDevoluciones.TabIndex = 98;
+            // 
+            // NFactura
+            // 
+            this.NFactura.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.NFactura.HeaderText = "N° Factura";
+            this.NFactura.MinimumWidth = 6;
+            this.NFactura.Name = "NFactura";
+            this.NFactura.ReadOnly = true;
+            this.NFactura.Width = 135;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.MinimumWidth = 6;
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            this.Descripcion.Width = 146;
+            // 
+            // Motivo
+            // 
+            this.Motivo.HeaderText = "Motivo";
+            this.Motivo.MinimumWidth = 6;
+            this.Motivo.Name = "Motivo";
+            this.Motivo.ReadOnly = true;
+            this.Motivo.Width = 150;
+            // 
             // FormDevolucionescs
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 548);
+            this.ClientSize = new System.Drawing.Size(1371, 674);
+            this.Controls.Add(this.dgvDevoluciones);
+            this.Controls.Add(this.btnCancelarDevolucion);
             this.Controls.Add(this.btnCerrarDevoluciones);
             this.Controls.Add(this.btnRealizarDevoluciones);
             this.Controls.Add(this.txtFacturaDevoluciones);
@@ -169,12 +269,13 @@ namespace proyecto1
             this.Controls.Add(this.lblDevoluciones);
             this.Controls.Add(this.pictureBoxCuentas);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormDevolucionescs";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Farmacia Divino Niño - Devolucionescs";
             this.Load += new System.EventHandler(this.FormDevolucionescs_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCuentas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDevoluciones)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,5 +293,10 @@ namespace proyecto1
         private System.Windows.Forms.Label lblNFacturaDevoluciones;
         private System.Windows.Forms.Button btnRealizarDevoluciones;
         private System.Windows.Forms.Button btnCerrarDevoluciones;
+        private System.Windows.Forms.Button btnCancelarDevolucion;
+        private System.Windows.Forms.DataGridView dgvDevoluciones;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NFactura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Motivo;
     }
 }
