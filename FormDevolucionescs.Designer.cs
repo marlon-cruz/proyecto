@@ -205,7 +205,7 @@ namespace proyecto1
             this.dgvDevoluciones.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDevoluciones.EnableHeadersVisualStyles = false;
             this.dgvDevoluciones.GridColor = System.Drawing.Color.Black;
-            this.dgvDevoluciones.Location = new System.Drawing.Point(242, 337);
+            this.dgvDevoluciones.Location = new System.Drawing.Point(430, 337);
             this.dgvDevoluciones.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDevoluciones.Name = "dgvDevoluciones";
             this.dgvDevoluciones.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -218,11 +218,11 @@ namespace proyecto1
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDevoluciones.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvDevoluciones.RowHeadersWidth = 51;
+            this.dgvDevoluciones.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvDevoluciones.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvDevoluciones.Size = new System.Drawing.Size(1008, 210);
+            this.dgvDevoluciones.Size = new System.Drawing.Size(785, 210);
             this.dgvDevoluciones.TabIndex = 98;
             // 
             // NFactura

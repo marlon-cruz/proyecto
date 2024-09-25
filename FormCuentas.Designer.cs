@@ -38,6 +38,11 @@ namespace proyecto1
             this.lblBuscarCuenta = new System.Windows.Forms.Label();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.dgvCuentas = new System.Windows.Forms.DataGridView();
+            this.ColumnaNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnaContraseña = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.btnCerrarCuentas = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnEditarCuenta = new System.Windows.Forms.Button();
@@ -54,11 +59,6 @@ namespace proyecto1
             this.pictureBoxCuentas = new System.Windows.Forms.PictureBox();
             this.lblRolCuenta = new System.Windows.Forms.Label();
             this.cmbRolCuenta = new System.Windows.Forms.ComboBox();
-            this.ColumnaNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaContraseña = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCuentas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCuentas)).BeginInit();
@@ -69,7 +69,7 @@ namespace proyecto1
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(133)))));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(791, 127);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(47, 43);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -95,7 +95,7 @@ namespace proyecto1
             this.txtBuscar.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold);
             this.txtBuscar.ForeColor = System.Drawing.Color.White;
             this.txtBuscar.Location = new System.Drawing.Point(833, 132);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.txtBuscar.Size = new System.Drawing.Size(251, 36);
@@ -136,7 +136,7 @@ namespace proyecto1
             this.dgvCuentas.EnableHeadersVisualStyles = false;
             this.dgvCuentas.GridColor = System.Drawing.Color.Black;
             this.dgvCuentas.Location = new System.Drawing.Point(11, 327);
-            this.dgvCuentas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvCuentas.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCuentas.Name = "dgvCuentas";
             this.dgvCuentas.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgvCuentas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -155,6 +155,43 @@ namespace proyecto1
             this.dgvCuentas.TabIndex = 62;
             this.dgvCuentas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCuentas_CellContentClick);
             // 
+            // ColumnaNombre
+            // 
+            this.ColumnaNombre.HeaderText = "Nombre";
+            this.ColumnaNombre.MinimumWidth = 6;
+            this.ColumnaNombre.Name = "ColumnaNombre";
+            this.ColumnaNombre.Width = 135;
+            // 
+            // ColumnaUsuario
+            // 
+            this.ColumnaUsuario.HeaderText = "Usuario";
+            this.ColumnaUsuario.MinimumWidth = 6;
+            this.ColumnaUsuario.Name = "ColumnaUsuario";
+            this.ColumnaUsuario.Width = 210;
+            // 
+            // ColumnaContraseña
+            // 
+            this.ColumnaContraseña.HeaderText = "Contraseña";
+            this.ColumnaContraseña.MinimumWidth = 6;
+            this.ColumnaContraseña.Name = "ColumnaContraseña";
+            this.ColumnaContraseña.Width = 210;
+            // 
+            // rol
+            // 
+            this.rol.HeaderText = "Rol";
+            this.rol.MinimumWidth = 6;
+            this.rol.Name = "rol";
+            this.rol.ReadOnly = true;
+            this.rol.Width = 125;
+            // 
+            // estado
+            // 
+            this.estado.HeaderText = "Activo";
+            this.estado.MinimumWidth = 6;
+            this.estado.Name = "estado";
+            this.estado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.estado.Width = 125;
+            // 
             // btnCerrarCuentas
             // 
             this.btnCerrarCuentas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
@@ -162,7 +199,7 @@ namespace proyecto1
             this.btnCerrarCuentas.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnCerrarCuentas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnCerrarCuentas.Location = new System.Drawing.Point(903, 518);
-            this.btnCerrarCuentas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCerrarCuentas.Margin = new System.Windows.Forms.Padding(4);
             this.btnCerrarCuentas.Name = "btnCerrarCuentas";
             this.btnCerrarCuentas.Size = new System.Drawing.Size(183, 53);
             this.btnCerrarCuentas.TabIndex = 61;
@@ -177,7 +214,7 @@ namespace proyecto1
             this.btnGuardar.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnGuardar.Location = new System.Drawing.Point(360, 518);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(147, 53);
             this.btnGuardar.TabIndex = 60;
@@ -191,7 +228,7 @@ namespace proyecto1
             this.btnEditarCuenta.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnEditarCuenta.ForeColor = System.Drawing.Color.White;
             this.btnEditarCuenta.Location = new System.Drawing.Point(205, 518);
-            this.btnEditarCuenta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditarCuenta.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditarCuenta.Name = "btnEditarCuenta";
             this.btnEditarCuenta.Size = new System.Drawing.Size(147, 53);
             this.btnEditarCuenta.TabIndex = 59;
@@ -206,7 +243,7 @@ namespace proyecto1
             this.btnEliminarCuenta.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnEliminarCuenta.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnEliminarCuenta.Location = new System.Drawing.Point(51, 518);
-            this.btnEliminarCuenta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEliminarCuenta.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminarCuenta.Name = "btnEliminarCuenta";
             this.btnEliminarCuenta.Size = new System.Drawing.Size(147, 53);
             this.btnEliminarCuenta.TabIndex = 58;
@@ -221,7 +258,7 @@ namespace proyecto1
             this.btnBuscarCuenta.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnBuscarCuenta.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnBuscarCuenta.Location = new System.Drawing.Point(885, 190);
-            this.btnBuscarCuenta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBuscarCuenta.Margin = new System.Windows.Forms.Padding(4);
             this.btnBuscarCuenta.Name = "btnBuscarCuenta";
             this.btnBuscarCuenta.Size = new System.Drawing.Size(167, 53);
             this.btnBuscarCuenta.TabIndex = 57;
@@ -236,7 +273,7 @@ namespace proyecto1
             this.btnCrearCuenta.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCrearCuenta.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnCrearCuenta.Location = new System.Drawing.Point(523, 266);
-            this.btnCrearCuenta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCrearCuenta.Margin = new System.Windows.Forms.Padding(4);
             this.btnCrearCuenta.Name = "btnCrearCuenta";
             this.btnCrearCuenta.Size = new System.Drawing.Size(200, 53);
             this.btnCrearCuenta.TabIndex = 56;
@@ -251,7 +288,7 @@ namespace proyecto1
             this.txtUsuarioCuentas.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold);
             this.txtUsuarioCuentas.ForeColor = System.Drawing.Color.White;
             this.txtUsuarioCuentas.Location = new System.Drawing.Point(496, 127);
-            this.txtUsuarioCuentas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUsuarioCuentas.Margin = new System.Windows.Forms.Padding(4);
             this.txtUsuarioCuentas.Name = "txtUsuarioCuentas";
             this.txtUsuarioCuentas.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtUsuarioCuentas.Size = new System.Drawing.Size(251, 36);
@@ -266,7 +303,7 @@ namespace proyecto1
             this.txtContraseñaCuentas.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold);
             this.txtContraseñaCuentas.ForeColor = System.Drawing.Color.White;
             this.txtContraseñaCuentas.Location = new System.Drawing.Point(496, 172);
-            this.txtContraseñaCuentas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtContraseñaCuentas.Margin = new System.Windows.Forms.Padding(4);
             this.txtContraseñaCuentas.Name = "txtContraseñaCuentas";
             this.txtContraseñaCuentas.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtContraseñaCuentas.Size = new System.Drawing.Size(251, 36);
@@ -281,7 +318,7 @@ namespace proyecto1
             this.txtNombreCuentas.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreCuentas.ForeColor = System.Drawing.Color.White;
             this.txtNombreCuentas.Location = new System.Drawing.Point(496, 82);
-            this.txtNombreCuentas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombreCuentas.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombreCuentas.Name = "txtNombreCuentas";
             this.txtNombreCuentas.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.txtNombreCuentas.Size = new System.Drawing.Size(251, 36);
@@ -344,7 +381,7 @@ namespace proyecto1
             // 
             this.pictureBoxCuentas.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxCuentas.Image")));
             this.pictureBoxCuentas.Location = new System.Drawing.Point(51, 47);
-            this.pictureBoxCuentas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxCuentas.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxCuentas.Name = "pictureBoxCuentas";
             this.pictureBoxCuentas.Size = new System.Drawing.Size(233, 192);
             this.pictureBoxCuentas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -365,51 +402,15 @@ namespace proyecto1
             // 
             // cmbRolCuenta
             // 
+            this.cmbRolCuenta.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbRolCuenta.FormattingEnabled = true;
             this.cmbRolCuenta.Items.AddRange(new object[] {
             "Empleado",
             "Administrador"});
-            this.cmbRolCuenta.Location = new System.Drawing.Point(496, 225);
+            this.cmbRolCuenta.Location = new System.Drawing.Point(496, 216);
             this.cmbRolCuenta.Name = "cmbRolCuenta";
-            this.cmbRolCuenta.Size = new System.Drawing.Size(250, 24);
+            this.cmbRolCuenta.Size = new System.Drawing.Size(250, 36);
             this.cmbRolCuenta.TabIndex = 67;
-            // 
-            // ColumnaNombre
-            // 
-            this.ColumnaNombre.HeaderText = "Nombre";
-            this.ColumnaNombre.MinimumWidth = 6;
-            this.ColumnaNombre.Name = "ColumnaNombre";
-            this.ColumnaNombre.Width = 135;
-            // 
-            // ColumnaUsuario
-            // 
-            this.ColumnaUsuario.HeaderText = "Usuario";
-            this.ColumnaUsuario.MinimumWidth = 6;
-            this.ColumnaUsuario.Name = "ColumnaUsuario";
-            this.ColumnaUsuario.Width = 210;
-            // 
-            // ColumnaContraseña
-            // 
-            this.ColumnaContraseña.HeaderText = "Contraseña";
-            this.ColumnaContraseña.MinimumWidth = 6;
-            this.ColumnaContraseña.Name = "ColumnaContraseña";
-            this.ColumnaContraseña.Width = 210;
-            // 
-            // rol
-            // 
-            this.rol.HeaderText = "Rol";
-            this.rol.MinimumWidth = 6;
-            this.rol.Name = "rol";
-            this.rol.ReadOnly = true;
-            this.rol.Width = 125;
-            // 
-            // estado
-            // 
-            this.estado.HeaderText = "Activo";
-            this.estado.MinimumWidth = 6;
-            this.estado.Name = "estado";
-            this.estado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.estado.Width = 125;
             // 
             // FormCuentas
             // 
@@ -438,7 +439,7 @@ namespace proyecto1
             this.Controls.Add(this.lblCuentas);
             this.Controls.Add(this.pictureBoxCuentas);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormCuentas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Farmacia Divino Niño - Cuentas";
