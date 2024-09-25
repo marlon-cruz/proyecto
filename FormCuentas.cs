@@ -24,6 +24,8 @@ namespace proyecto1
             TemaColor.colorBtn(btnEditarCuenta);
             TemaColor.colorBtn(btnEliminarCuenta);
             TemaColor.colorBtn(btnGuardar);
+            TemaColor.colorLbl(lblRolCuenta);
+            TemaColor.colorCombo(cmbRolCuenta);
         }
 
         private void FormCuentas_Load(object sender, EventArgs e)
@@ -66,9 +68,9 @@ namespace proyecto1
             string nombre = txtNombreCuentas.Text;
             string usuario= txtUsuarioCuentas.Text;
             string contra = txtContraseñaCuentas.Text;
-           
+            string rol = cmbRolCuenta.Text;
 
-            if (nombre == "" || usuario =="" || contra =="")
+            if (nombre == "" || usuario =="" || contra =="" || rol == "")
             {
                 MessageBox.Show("¡Ingresa todos los datos!", "Alerta");
             }
@@ -76,11 +78,11 @@ namespace proyecto1
             {
                 try
                 {
-                    dgvCuentas.Rows.Add(nombre, usuario,contra);
+                    dgvCuentas.Rows.Add(nombre, usuario,contra,rol);
                      txtNombreCuentas.Text = "";
                      txtUsuarioCuentas.Text = "";
                      txtContraseñaCuentas.Text ="";
-                     
+                    cmbRolCuenta.Text = "";
 
 
                 }
