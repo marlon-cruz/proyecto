@@ -30,12 +30,6 @@ namespace proyecto1
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnSalirMenu = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnDevolucionesMenu = new System.Windows.Forms.Button();
@@ -45,92 +39,8 @@ namespace proyecto1
             this.btnCuentasMenu = new System.Windows.Forms.Button();
             this.btnProveedoresMenu = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
-            this.pictureBox7.ErrorImage = null;
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.InitialImage = null;
-            this.pictureBox7.Location = new System.Drawing.Point(470, 333);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(55, 58);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox7.TabIndex = 50;
-            this.pictureBox7.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
-            this.pictureBox6.ErrorImage = null;
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.InitialImage = null;
-            this.pictureBox6.Location = new System.Drawing.Point(281, 333);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(55, 58);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox6.TabIndex = 49;
-            this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
-            this.pictureBox5.ErrorImage = null;
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.InitialImage = null;
-            this.pictureBox5.Location = new System.Drawing.Point(470, 64);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(55, 58);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 48;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
-            this.pictureBox4.ErrorImage = null;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.InitialImage = null;
-            this.pictureBox4.Location = new System.Drawing.Point(281, 198);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(55, 58);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 47;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
-            this.pictureBox3.ErrorImage = null;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.InitialImage = null;
-            this.pictureBox3.Location = new System.Drawing.Point(470, 198);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(55, 58);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 46;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
-            this.pictureBox2.ErrorImage = null;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.InitialImage = null;
-            this.pictureBox2.Location = new System.Drawing.Point(281, 64);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(55, 58);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 45;
-            this.pictureBox2.TabStop = false;
             // 
             // btnSalirMenu
             // 
@@ -151,7 +61,7 @@ namespace proyecto1
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label1.Location = new System.Drawing.Point(387, -3);
+            this.label1.Location = new System.Drawing.Point(387, 6);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(111, 45);
             this.label1.TabIndex = 43;
@@ -163,6 +73,8 @@ namespace proyecto1
             this.btnDevolucionesMenu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnDevolucionesMenu.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold);
             this.btnDevolucionesMenu.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnDevolucionesMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnDevolucionesMenu.Image")));
+            this.btnDevolucionesMenu.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnDevolucionesMenu.Location = new System.Drawing.Point(457, 317);
             this.btnDevolucionesMenu.Name = "btnDevolucionesMenu";
             this.btnDevolucionesMenu.Size = new System.Drawing.Size(156, 115);
@@ -178,6 +90,8 @@ namespace proyecto1
             this.btnVentasMenu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnVentasMenu.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold);
             this.btnVentasMenu.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnVentasMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnVentasMenu.Image")));
+            this.btnVentasMenu.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnVentasMenu.Location = new System.Drawing.Point(269, 317);
             this.btnVentasMenu.Name = "btnVentasMenu";
             this.btnVentasMenu.Size = new System.Drawing.Size(156, 115);
@@ -193,6 +107,8 @@ namespace proyecto1
             this.btnFacturacionMenu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnFacturacionMenu.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold);
             this.btnFacturacionMenu.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnFacturacionMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnFacturacionMenu.Image")));
+            this.btnFacturacionMenu.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnFacturacionMenu.Location = new System.Drawing.Point(457, 184);
             this.btnFacturacionMenu.Name = "btnFacturacionMenu";
             this.btnFacturacionMenu.Size = new System.Drawing.Size(156, 115);
@@ -208,6 +124,8 @@ namespace proyecto1
             this.btnInventarioMenu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnInventarioMenu.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold);
             this.btnInventarioMenu.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnInventarioMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnInventarioMenu.Image")));
+            this.btnInventarioMenu.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnInventarioMenu.Location = new System.Drawing.Point(269, 184);
             this.btnInventarioMenu.Name = "btnInventarioMenu";
             this.btnInventarioMenu.Size = new System.Drawing.Size(156, 115);
@@ -223,6 +141,8 @@ namespace proyecto1
             this.btnCuentasMenu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCuentasMenu.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold);
             this.btnCuentasMenu.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnCuentasMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnCuentasMenu.Image")));
+            this.btnCuentasMenu.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnCuentasMenu.Location = new System.Drawing.Point(457, 54);
             this.btnCuentasMenu.Name = "btnCuentasMenu";
             this.btnCuentasMenu.Size = new System.Drawing.Size(156, 115);
@@ -238,6 +158,8 @@ namespace proyecto1
             this.btnProveedoresMenu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnProveedoresMenu.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnProveedoresMenu.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnProveedoresMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnProveedoresMenu.Image")));
+            this.btnProveedoresMenu.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.btnProveedoresMenu.Location = new System.Drawing.Point(269, 54);
             this.btnProveedoresMenu.Name = "btnProveedoresMenu";
             this.btnProveedoresMenu.Size = new System.Drawing.Size(156, 115);
@@ -263,12 +185,6 @@ namespace proyecto1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(133)))));
             this.ClientSize = new System.Drawing.Size(837, 503);
-            this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.pictureBox4);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnSalirMenu);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDevolucionesMenu);
@@ -283,12 +199,6 @@ namespace proyecto1
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Farmacia Divino Niño - Menú";
             this.Load += new System.EventHandler(this.FormMenu_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -296,13 +206,6 @@ namespace proyecto1
         }
 
         #endregion
-
-        private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnSalirMenu;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnDevolucionesMenu;
