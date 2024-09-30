@@ -16,6 +16,11 @@ namespace proyecto1
         {
             InitializeComponent();
             TemaColor.colorFondoVentana(this);
+            TemaColor.colorBtn(btnAnterior);
+            TemaColor.colorBtn(btnCerrarFacturacion);
+            TemaColor.colorBtn(btnCrearFactura);
+            TemaColor.colorBtn(btnFacturacion);
+            TemaColor.colorBtn(btnSiguiente);
         }
 
         private void FormFacturacion_Load(object sender, EventArgs e)

@@ -25,7 +25,8 @@ namespace proyecto1
             TemaColor.colorBtn(btnEliminarCuenta);
             TemaColor.colorBtn(btnGuardar);
             TemaColor.colorLbl(lblRolCuenta);
-            TemaColor.colorCombo(cmbRolCuenta);
+            //  TemaColor.colorCombo(cmbRolCuenta);
+            
         }
 
         private void FormCuentas_Load(object sender, EventArgs e)
@@ -66,11 +67,11 @@ namespace proyecto1
         private void btnCrearCuenta_Click(object sender, EventArgs e)
         {
             string nombre = txtNombreCuentas.Text;
-            string usuario= txtUsuarioCuentas.Text;
+            string usuario = txtUsuarioCuentas.Text;
             string contra = txtContraseñaCuentas.Text;
-            string rol = cmbRolCuenta.Text;
+            //  string rol = cmbRolCuenta.Text;
 
-            if (nombre == "" || usuario =="" || contra =="" || rol == "")
+            if (nombre == "" || usuario == "" || contra == "" )
             {
                 MessageBox.Show("¡Ingresa todos los datos!", "Alerta");
             }
@@ -78,11 +79,11 @@ namespace proyecto1
             {
                 try
                 {
-                    dgvCuentas.Rows.Add(nombre, usuario,contra,rol);
+                    dgvCuentas.Rows.Add(nombre, usuario,contra);
                      txtNombreCuentas.Text = "";
                      txtUsuarioCuentas.Text = "";
                      txtContraseñaCuentas.Text ="";
-                    cmbRolCuenta.Text = "";
+                  //  cmbRolCuenta.Text = "";
 
 
                 }
@@ -104,7 +105,7 @@ namespace proyecto1
 
         private void btnEliminarCuenta_Click(object sender, EventArgs e)
         {
-            if (dgvCuentas.RowCount == 1)
+            if (dgvCuentas.RowCount == 0)
             {
                 MessageBox.Show("Aun no existen cuentas");
             }
@@ -137,7 +138,7 @@ namespace proyecto1
         {
             int indice = dgvCuentas.RowCount - 1;
             string busqueda = txtBuscar.Text;
-            if (indice == 0)
+            if (indice == dgvCuentas.RowCount)
             {
                 MessageBox.Show("Aun no hay ninguna cuenta registrada");
             }
@@ -149,7 +150,7 @@ namespace proyecto1
                 }
                 else
                 {
-                    for (int i = 0; i < indice; i++)
+                    for (int i = 0; i <= indice; i++)
                     {
                         string dato = Convert.ToString(dgvCuentas.Rows[i].Cells[1].Value);
                         if (dato == busqueda)
@@ -161,7 +162,7 @@ namespace proyecto1
                             MessageBox.Show("Usuario encontrado\nNombre: " + nombre + "\nUsuario: " + user);
                             break;
                         }
-                        else if (i == indice -1)
+                        else if (i == indice)
                         {
                             MessageBox.Show("El usuario " + busqueda + " no se ha encontrado.");
                             break;

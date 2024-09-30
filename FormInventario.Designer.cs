@@ -109,7 +109,7 @@ namespace proyecto1
             this.dgvInventario.EnableHeadersVisualStyles = false;
             this.dgvInventario.GridColor = System.Drawing.Color.Black;
             this.dgvInventario.Location = new System.Drawing.Point(107, 399);
-            this.dgvInventario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvInventario.Margin = new System.Windows.Forms.Padding(4);
             this.dgvInventario.Name = "dgvInventario";
             this.dgvInventario.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgvInventario.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -187,7 +187,7 @@ namespace proyecto1
             // 
             this.pictureBoxCuentas.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxCuentas.Image")));
             this.pictureBoxCuentas.Location = new System.Drawing.Point(13, 14);
-            this.pictureBoxCuentas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxCuentas.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxCuentas.Name = "pictureBoxCuentas";
             this.pictureBoxCuentas.Size = new System.Drawing.Size(260, 219);
             this.pictureBoxCuentas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -208,7 +208,7 @@ namespace proyecto1
             // 
             this.lblNombreInventario.AutoSize = true;
             this.lblNombreInventario.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreInventario.Location = new System.Drawing.Point(440, 81);
+            this.lblNombreInventario.Location = new System.Drawing.Point(439, 128);
             this.lblNombreInventario.Name = "lblNombreInventario";
             this.lblNombreInventario.Size = new System.Drawing.Size(134, 37);
             this.lblNombreInventario.TabIndex = 66;
@@ -258,7 +258,7 @@ namespace proyecto1
             // 
             this.lblCodigoInventario.AutoSize = true;
             this.lblCodigoInventario.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigoInventario.Location = new System.Drawing.Point(459, 123);
+            this.lblCodigoInventario.Location = new System.Drawing.Point(456, 85);
             this.lblCodigoInventario.Name = "lblCodigoInventario";
             this.lblCodigoInventario.Size = new System.Drawing.Size(117, 37);
             this.lblCodigoInventario.TabIndex = 71;
@@ -267,7 +267,7 @@ namespace proyecto1
             // txtNombreInventario
             // 
             this.txtNombreInventario.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreInventario.Location = new System.Drawing.Point(589, 84);
+            this.txtNombreInventario.Location = new System.Drawing.Point(589, 128);
             this.txtNombreInventario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNombreInventario.Name = "txtNombreInventario";
             this.txtNombreInventario.Size = new System.Drawing.Size(177, 32);
@@ -303,7 +303,7 @@ namespace proyecto1
             // txtCodigoInventario
             // 
             this.txtCodigoInventario.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigoInventario.Location = new System.Drawing.Point(589, 126);
+            this.txtCodigoInventario.Location = new System.Drawing.Point(589, 85);
             this.txtCodigoInventario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCodigoInventario.Name = "txtCodigoInventario";
             this.txtCodigoInventario.Size = new System.Drawing.Size(177, 32);
@@ -451,7 +451,7 @@ namespace proyecto1
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(133)))));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(1229, 108);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(39, 37);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -490,7 +490,8 @@ namespace proyecto1
             this.Controls.Add(this.lblInventario);
             this.Controls.Add(this.pictureBoxCuentas);
             this.Controls.Add(this.dgvInventario);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(1566, 719);
             this.Name = "FormInventario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

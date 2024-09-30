@@ -16,6 +16,7 @@ namespace proyecto1
         {
             InitializeComponent();
             TemaColor.colorFondoVentana(this);
+            TemaColor.colorBtn(btnCerrarMenu);
         }
 
         private void FormMenu_Load(object sender, EventArgs e)

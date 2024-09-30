@@ -37,13 +37,14 @@ namespace proyecto1
             //fondo
             TemaColor.colorFondoVentana(this);
             //Textbox
-            TemaColor.colorTextBox(txtCambioVentas);
+            //TemaColor.colorTextBox(txtCambioVentas);
             TemaColor.colorTextBox(txtCantidadVentas);
             TemaColor.colorTextBox(txtClienteVenta);
             TemaColor.colorTextBox(txtCodigoVentas);
             TemaColor.colorTextBox(txtMedicamentoVentas);
             TemaColor.colorTextBox(txtRecibidoVentas);
-            TemaColor.colorTextBox(txtTotalVentas);
+           // TemaColor.colorTextBox(txtTotalVentas);
+           
             //ComboBox
             TemaColor.colorCombo(cmbTipoVentas);
         }
@@ -60,12 +61,13 @@ namespace proyecto1
             {
                 dgvVentas.Rows.Clear();
 
-                    btnEditarVentas.Enabled = true;
-                    btnCancelarVentas.Enabled = true;
+                btnEditarVentas.Enabled = true;
+                btnCancelarVentas.Enabled = true;
                 txtCambioVentas.Text = "0.00";
                 txtTotalVentas.Text = "0.00";
                 txtRecibidoVentas.Text = "";
                 txtClienteVenta.Text = "";
+                btnAgregarVentas.Text = "Agregar";
             }
             else
             {

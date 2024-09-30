@@ -41,8 +41,6 @@ namespace proyecto1
             this.ColumnaNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaContraseña = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.estado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.btnCerrarCuentas = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnEditarCuenta = new System.Windows.Forms.Button();
@@ -58,7 +56,6 @@ namespace proyecto1
             this.lblCuentas = new System.Windows.Forms.Label();
             this.pictureBoxCuentas = new System.Windows.Forms.PictureBox();
             this.lblRolCuenta = new System.Windows.Forms.Label();
-            this.cmbRolCuenta = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCuentas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCuentas)).BeginInit();
@@ -121,9 +118,7 @@ namespace proyecto1
             this.dgvCuentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnaNombre,
             this.ColumnaUsuario,
-            this.ColumnaContraseña,
-            this.rol,
-            this.estado});
+            this.ColumnaContraseña});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -135,7 +130,7 @@ namespace proyecto1
             this.dgvCuentas.Enabled = false;
             this.dgvCuentas.EnableHeadersVisualStyles = false;
             this.dgvCuentas.GridColor = System.Drawing.Color.Black;
-            this.dgvCuentas.Location = new System.Drawing.Point(11, 327);
+            this.dgvCuentas.Location = new System.Drawing.Point(221, 325);
             this.dgvCuentas.Margin = new System.Windows.Forms.Padding(4);
             this.dgvCuentas.Name = "dgvCuentas";
             this.dgvCuentas.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -151,7 +146,7 @@ namespace proyecto1
             this.dgvCuentas.RowHeadersWidth = 51;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvCuentas.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvCuentas.Size = new System.Drawing.Size(1142, 185);
+            this.dgvCuentas.Size = new System.Drawing.Size(845, 185);
             this.dgvCuentas.TabIndex = 62;
             this.dgvCuentas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCuentas_CellContentClick);
             // 
@@ -175,22 +170,6 @@ namespace proyecto1
             this.ColumnaContraseña.MinimumWidth = 6;
             this.ColumnaContraseña.Name = "ColumnaContraseña";
             this.ColumnaContraseña.Width = 210;
-            // 
-            // rol
-            // 
-            this.rol.HeaderText = "Rol";
-            this.rol.MinimumWidth = 6;
-            this.rol.Name = "rol";
-            this.rol.ReadOnly = true;
-            this.rol.Width = 125;
-            // 
-            // estado
-            // 
-            this.estado.HeaderText = "Activo";
-            this.estado.MinimumWidth = 6;
-            this.estado.Name = "estado";
-            this.estado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.estado.Width = 125;
             // 
             // btnCerrarCuentas
             // 
@@ -396,21 +375,8 @@ namespace proyecto1
             this.lblRolCuenta.Location = new System.Drawing.Point(403, 216);
             this.lblRolCuenta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRolCuenta.Name = "lblRolCuenta";
-            this.lblRolCuenta.Size = new System.Drawing.Size(59, 33);
+            this.lblRolCuenta.Size = new System.Drawing.Size(0, 33);
             this.lblRolCuenta.TabIndex = 66;
-            this.lblRolCuenta.Text = "Rol:";
-            // 
-            // cmbRolCuenta
-            // 
-            this.cmbRolCuenta.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbRolCuenta.FormattingEnabled = true;
-            this.cmbRolCuenta.Items.AddRange(new object[] {
-            "Empleado",
-            "Administrador"});
-            this.cmbRolCuenta.Location = new System.Drawing.Point(496, 216);
-            this.cmbRolCuenta.Name = "cmbRolCuenta";
-            this.cmbRolCuenta.Size = new System.Drawing.Size(250, 36);
-            this.cmbRolCuenta.TabIndex = 67;
             // 
             // FormCuentas
             // 
@@ -418,7 +384,6 @@ namespace proyecto1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(133)))));
             this.ClientSize = new System.Drawing.Size(1155, 617);
-            this.Controls.Add(this.cmbRolCuenta);
             this.Controls.Add(this.lblRolCuenta);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblBuscarCuenta);
@@ -473,11 +438,8 @@ namespace proyecto1
         private System.Windows.Forms.Label lblCuentas;
         private System.Windows.Forms.PictureBox pictureBoxCuentas;
         private System.Windows.Forms.Label lblRolCuenta;
-        private System.Windows.Forms.ComboBox cmbRolCuenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaNombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaUsuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaContraseña;
-        private System.Windows.Forms.DataGridViewTextBoxColumn rol;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn estado;
     }
 }

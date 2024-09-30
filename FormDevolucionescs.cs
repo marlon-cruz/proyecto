@@ -27,7 +27,7 @@ namespace proyecto1
             TemaColor.colorBtn(btnCerrarDevoluciones);
             TemaColor.colorBtn(btnRealizarDevoluciones);
             //Combo
-            TemaColor.colorCombo(cmbMotivoDevoluciones);
+          //  TemaColor.colorCombo(cmbMotivoDevoluciones);
             //Text
             TemaColor.colorTextBox(txtDescripcionDevoluciones);
             TemaColor.colorTextBox(txtFacturaDevoluciones);
@@ -46,11 +46,12 @@ namespace proyecto1
 
         private void btnRealizarDevoluciones_Click(object sender, EventArgs e)
         {
-            String numeroFactura = txtFacturaDevoluciones.Text;
+            string numeroFactura = txtFacturaDevoluciones.Text;
             string descripcion = txtDescripcionDevoluciones.Text;
-            string motivo = cmbMotivoDevoluciones.Text;
 
-            if (numeroFactura == "" || descripcion == ""|| motivo == "")
+            string motivo = rbtnDesperfecto.Checked ? "Desperfecto" : rbtnErrorEleccion.Checked ? "Error de eleccion" : "";
+
+            if (numeroFactura == "" || descripcion == "" || motivo == "")
             {
                 MessageBox.Show("¡Ingresa todos los datos!", "Alerta");
             }
@@ -61,7 +62,10 @@ namespace proyecto1
                     dgvDevoluciones.Rows.Add(numeroFactura,descripcion,motivo);
                     txtDescripcionDevoluciones.Text = "";
                     txtFacturaDevoluciones.Text = "";
-                    cmbMotivoDevoluciones.Text = "";
+                    rbtnErrorEleccion.Checked = false;
+                    rbtnDesperfecto.Checked = false;
+
+                  
 
                 }
                 catch (Exception)
@@ -74,7 +78,7 @@ namespace proyecto1
 
             txtDescripcionDevoluciones.Text = "";
             txtFacturaDevoluciones.Text = "";
-            cmbMotivoDevoluciones.Text = "";
+           
         }
 
         private void FormDevolucionescs_Load(object sender, EventArgs e)
@@ -86,7 +90,9 @@ namespace proyecto1
         {
             txtDescripcionDevoluciones.Text = "";
             txtFacturaDevoluciones.Text = "";
-            cmbMotivoDevoluciones.Text = "";
+            
         }
+
+       
     }
 }
