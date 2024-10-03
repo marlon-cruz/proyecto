@@ -63,8 +63,9 @@ namespace proyecto1
             string producto = txtProductoProveedor.Text;
             string email = txtEmailProveedor.Text;
             string telefono = txtTelefonoProveedor.Text;
+            string direccion = txtDireccionProveedor.Text;
 
-            if (codigo == "" || nombre =="" || producto == "" || email == "" || telefono == "" || distribuidor == "")
+            if (codigo == "" || nombre =="" || producto == "" || email == "" || telefono == "" || distribuidor == "" || direccion == "")
             {
                 MessageBox.Show("¡Ingresa todos los datos!", "Alerta");
             }
@@ -79,7 +80,7 @@ namespace proyecto1
                     txtProductoProveedor.Text = "";
                     txtEmailProveedor.Text = "";
                     txtTelefonoProveedor.Text = "";
-
+                    txtDireccionProveedor.Text = "";
 
                 }
                 catch (Exception)
@@ -175,6 +176,16 @@ namespace proyecto1
                     }
                 }
             }
+        }
+
+        private void lblDireccion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgbProveedores_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
     
