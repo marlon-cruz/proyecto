@@ -26,6 +26,7 @@ namespace proyecto1
             TemaColor.colorLbl(lblEmailProveedor);
             TemaColor.colorLbl(lblNombreProveedor);
             TemaColor.colorLbl(lblProductoProveedor);
+            TemaColor.colorLbl(lblDireccionProveedor);
             TemaColor.colorLbl(lblProveedores);
             TemaColor.colorLbl(lblTelefonoProveedor);
             TemaColor.colorFondoVentana(this);
@@ -45,6 +46,7 @@ namespace proyecto1
             TemaColor.colorTextBox(txtNombreProveedor);
             TemaColor.colorTextBox(txtProductoProveedor);
             TemaColor.colorTextBox(txtTelefonoProveedor);
+            TemaColor.colorTextBox(txtDireccionProveedor);
             
         }
 
@@ -73,7 +75,7 @@ namespace proyecto1
             {
                 try
                 {
-                    dgbProveedores.Rows.Add(codigo,nombre,distribuidor,producto,email,telefono);
+                    dgbProveedores.Rows.Add(codigo,nombre,distribuidor,producto,email,telefono,direccion);
                     txtCodigoProveedor.Text ="";
                     txtNombreProveedor.Text = "";
                     txtDistribuidorProveedor.Text = "";
