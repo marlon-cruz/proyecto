@@ -48,7 +48,7 @@ namespace proyecto1
             // 
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
             this.pictureBox3.Location = new System.Drawing.Point(355, 384);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(88, 47);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -60,7 +60,7 @@ namespace proyecto1
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(355, 286);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(88, 47);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -75,7 +75,7 @@ namespace proyecto1
             this.btnCerrar.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnCerrar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnCerrar.Location = new System.Drawing.Point(933, 548);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(183, 53);
             this.btnCerrar.TabIndex = 21;
@@ -90,7 +90,7 @@ namespace proyecto1
             this.btnIniciarSesion.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIniciarSesion.ForeColor = System.Drawing.Color.White;
             this.btnIniciarSesion.Location = new System.Drawing.Point(491, 478);
-            this.btnIniciarSesion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnIniciarSesion.Margin = new System.Windows.Forms.Padding(4);
             this.btnIniciarSesion.Name = "btnIniciarSesion";
             this.btnIniciarSesion.Size = new System.Drawing.Size(200, 53);
             this.btnIniciarSesion.TabIndex = 20;
@@ -105,7 +105,7 @@ namespace proyecto1
             this.textContraseña.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textContraseña.ForeColor = System.Drawing.Color.White;
             this.textContraseña.Location = new System.Drawing.Point(451, 393);
-            this.textContraseña.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textContraseña.Margin = new System.Windows.Forms.Padding(4);
             this.textContraseña.Name = "textContraseña";
             this.textContraseña.PasswordChar = '*';
             this.textContraseña.Size = new System.Drawing.Size(277, 36);
@@ -120,7 +120,7 @@ namespace proyecto1
             this.textUsuario.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textUsuario.ForeColor = System.Drawing.Color.White;
             this.textUsuario.Location = new System.Drawing.Point(451, 294);
-            this.textUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textUsuario.Margin = new System.Windows.Forms.Padding(4);
             this.textUsuario.Name = "textUsuario";
             this.textUsuario.ScrollBars = System.Windows.Forms.ScrollBars.Both;
             this.textUsuario.Size = new System.Drawing.Size(277, 36);
@@ -132,7 +132,7 @@ namespace proyecto1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(473, 95);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(233, 192);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -170,6 +170,7 @@ namespace proyecto1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(133)))));
             this.ClientSize = new System.Drawing.Size(1132, 615);
             this.Controls.Add(this.lblSaludo);
@@ -182,7 +183,7 @@ namespace proyecto1
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblBienvenido);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Farmcia Divino Niño";
