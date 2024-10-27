@@ -29,11 +29,11 @@ namespace proyecto1
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInventario));
             this.dgvInventario = new System.Windows.Forms.DataGridView();
             this.ColumnaCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,7 +43,6 @@ namespace proyecto1
             this.ColumnaPDescuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaVencimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pictureBoxCuentas = new System.Windows.Forms.PictureBox();
             this.lblInventario = new System.Windows.Forms.Label();
             this.lblNombreInventario = new System.Windows.Forms.Label();
             this.lblTipoInventario = new System.Windows.Forms.Label();
@@ -67,27 +66,33 @@ namespace proyecto1
             this.btnBuscarInventario = new System.Windows.Forms.Button();
             this.btnGuardarInventario = new System.Windows.Forms.Button();
             this.btnAgregarInventario = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripSplitButton1 = new System.Windows.Forms.ToolStripSplitButton();
+            this.alertasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stockCasiVasioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxCuentas = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCuentas)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCuentas)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvInventario
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            this.dgvInventario.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            this.dgvInventario.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvInventario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(133)))));
             this.dgvInventario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvInventario.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(91)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Honeydew;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInventario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(91)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Honeydew;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInventario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dgvInventario.ColumnHeadersHeight = 29;
             this.dgvInventario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnaCodigo,
@@ -97,14 +102,14 @@ namespace proyecto1
             this.ColumnaPDescuento,
             this.ColumnaTipo,
             this.ColumnaVencimiento});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(91)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvInventario.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(91)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvInventario.DefaultCellStyle = dataGridViewCellStyle13;
             this.dgvInventario.Enabled = false;
             this.dgvInventario.EnableHeadersVisualStyles = false;
             this.dgvInventario.GridColor = System.Drawing.Color.Black;
@@ -113,18 +118,18 @@ namespace proyecto1
             this.dgvInventario.Name = "dgvInventario";
             this.dgvInventario.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgvInventario.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvInventario.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvInventario.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvInventario.RowHeadersWidth = 51;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvInventario.RowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvInventario.RowsDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvInventario.Size = new System.Drawing.Size(1292, 187);
             this.dgvInventario.TabIndex = 63;
             this.dgvInventario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgbInventario_CellContentClick);
@@ -183,24 +188,13 @@ namespace proyecto1
             this.ColumnaVencimiento.Name = "ColumnaVencimiento";
             this.ColumnaVencimiento.Width = 155;
             // 
-            // pictureBoxCuentas
-            // 
-            this.pictureBoxCuentas.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxCuentas.Image")));
-            this.pictureBoxCuentas.Location = new System.Drawing.Point(13, 14);
-            this.pictureBoxCuentas.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBoxCuentas.Name = "pictureBoxCuentas";
-            this.pictureBoxCuentas.Size = new System.Drawing.Size(260, 219);
-            this.pictureBoxCuentas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxCuentas.TabIndex = 64;
-            this.pictureBoxCuentas.TabStop = false;
-            // 
             // lblInventario
             // 
             this.lblInventario.AutoSize = true;
             this.lblInventario.Font = new System.Drawing.Font("Calibri", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInventario.Location = new System.Drawing.Point(641, 9);
             this.lblInventario.Name = "lblInventario";
-            this.lblInventario.Size = new System.Drawing.Size(232, 59);
+            this.lblInventario.Size = new System.Drawing.Size(226, 58);
             this.lblInventario.TabIndex = 65;
             this.lblInventario.Text = "Inventario";
             // 
@@ -446,6 +440,46 @@ namespace proyecto1
             this.btnAgregarInventario.UseVisualStyleBackColor = true;
             this.btnAgregarInventario.Click += new System.EventHandler(this.btnAgregarInventario_Click);
             // 
+            // statusStrip1
+            // 
+            this.statusStrip1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripSplitButton1});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 671);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.statusStrip1.Size = new System.Drawing.Size(1548, 26);
+            this.statusStrip1.TabIndex = 90;
+            this.statusStrip1.Text = "Alertas";
+            // 
+            // toolStripSplitButton1
+            // 
+            this.toolStripSplitButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripSplitButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.alertasToolStripMenuItem,
+            this.stockCasiVasioToolStripMenuItem});
+            this.toolStripSplitButton1.Image = global::proyecto1.Properties.Resources.icono_de_vencimiento;
+            this.toolStripSplitButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripSplitButton1.Name = "toolStripSplitButton1";
+            this.toolStripSplitButton1.Size = new System.Drawing.Size(94, 24);
+            this.toolStripSplitButton1.Text = "Alertas";
+            this.toolStripSplitButton1.ButtonClick += new System.EventHandler(this.toolStripSplitButton1_ButtonClick);
+            // 
+            // alertasToolStripMenuItem
+            // 
+            this.alertasToolStripMenuItem.Name = "alertasToolStripMenuItem";
+            this.alertasToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.alertasToolStripMenuItem.Text = "Vencimientos";
+            this.alertasToolStripMenuItem.Click += new System.EventHandler(this.alertasToolStripMenuItem_Click);
+            // 
+            // stockCasiVasioToolStripMenuItem
+            // 
+            this.stockCasiVasioToolStripMenuItem.Name = "stockCasiVasioToolStripMenuItem";
+            this.stockCasiVasioToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.stockCasiVasioToolStripMenuItem.Text = "Bajos en stock";
+            this.stockCasiVasioToolStripMenuItem.Click += new System.EventHandler(this.stockCasiVasioToolStripMenuItem_Click);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(133)))));
@@ -458,13 +492,25 @@ namespace proyecto1
             this.pictureBox1.TabIndex = 89;
             this.pictureBox1.TabStop = false;
             // 
+            // pictureBoxCuentas
+            // 
+            this.pictureBoxCuentas.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxCuentas.Image")));
+            this.pictureBoxCuentas.Location = new System.Drawing.Point(13, 14);
+            this.pictureBoxCuentas.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBoxCuentas.Name = "pictureBoxCuentas";
+            this.pictureBoxCuentas.Size = new System.Drawing.Size(260, 219);
+            this.pictureBoxCuentas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxCuentas.TabIndex = 64;
+            this.pictureBoxCuentas.TabStop = false;
+            // 
             // FormInventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1548, 672);
+            this.ClientSize = new System.Drawing.Size(1548, 697);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnAgregarInventario);
             this.Controls.Add(this.btnGuardarInventario);
@@ -499,8 +545,10 @@ namespace proyecto1
             this.Text = "Farmacia Divino Niño - Inventario";
             this.Load += new System.EventHandler(this.FormInventario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCuentas)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCuentas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -541,5 +589,9 @@ namespace proyecto1
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaTipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaVencimiento;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton1;
+        private System.Windows.Forms.ToolStripMenuItem alertasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stockCasiVasioToolStripMenuItem;
     }
 }

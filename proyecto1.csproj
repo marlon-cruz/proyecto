@@ -61,8 +61,11 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -72,8 +75,23 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="alerta_cantidad_medicamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="alerta_cantidad_medicamentos.Designer.cs">
+      <DependentUpon>alerta_cantidad_medicamentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alerta_vencimiento_medicamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alerta_vencimiento_medicamentos.Designer.cs">
+      <DependentUpon>Alerta_vencimiento_medicamentos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +143,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TemaColor.cs" />
+    <EmbeddedResource Include="alerta_cantidad_medicamentos.resx">
+      <DependentUpon>alerta_cantidad_medicamentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alerta_vencimiento_medicamentos.resx">
+      <DependentUpon>Alerta_vencimiento_medicamentos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -214,6 +238,12 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icono de vencimiento.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\poca cantidad en stock.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

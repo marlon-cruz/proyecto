@@ -188,5 +188,24 @@ namespace proyecto1
                 }
             }
         }
+
+        private void toolStripSplitButton1_ButtonClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void alertasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            Alerta_vencimiento_medicamentos formlong = new Alerta_vencimiento_medicamentos();
+            formlong.Show();
+            
+        }
+
+        private void stockCasiVasioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            alerta_cantidad_medicamentos formlong = new alerta_cantidad_medicamentos();
+            formlong.Show();
+        }
     }
 }
