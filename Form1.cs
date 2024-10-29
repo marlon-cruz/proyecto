@@ -117,5 +117,11 @@ namespace proyecto1
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Clases.Conexion objconexion = new Clases.Conexion();
+            objconexion.establecerConexion();
+        }
     }
 }
