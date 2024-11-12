@@ -139,22 +139,22 @@ namespace proyecto1
             this.lblBienvenido.AutoSize = true;
             this.lblBienvenido.Font = new System.Drawing.Font("Calibri", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBienvenido.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblBienvenido.Location = new System.Drawing.Point(349, 38);
+            this.lblBienvenido.Location = new System.Drawing.Point(349, 2);
             this.lblBienvenido.Name = "lblBienvenido";
-            this.lblBienvenido.Size = new System.Drawing.Size(185, 36);
+            this.lblBienvenido.Size = new System.Drawing.Size(185, 72);
             this.lblBienvenido.TabIndex = 16;
-            this.lblBienvenido.Text = "Bienvenido/a \r\n";
+            this.lblBienvenido.Text = "\r\nBienvenido/a \r\n";
+            this.lblBienvenido.Click += new System.EventHandler(this.lblBienvenido_Click);
             // 
             // lblSaludo
             // 
             this.lblSaludo.AutoSize = true;
             this.lblSaludo.Font = new System.Drawing.Font("Calibri", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSaludo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblSaludo.Location = new System.Drawing.Point(349, 7);
+            this.lblSaludo.Location = new System.Drawing.Point(227, 9);
             this.lblSaludo.Name = "lblSaludo";
-            this.lblSaludo.Size = new System.Drawing.Size(39, 36);
+            this.lblSaludo.Size = new System.Drawing.Size(0, 36);
             this.lblSaludo.TabIndex = 24;
-            this.lblSaludo.Text = "...";
             this.lblSaludo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblSaludo.Click += new System.EventHandler(this.lblSaludo_Click);
             // 

@@ -39,6 +39,7 @@ namespace proyecto1
             this.btnCuentasMenu = new System.Windows.Forms.Button();
             this.btnProveedoresMenu = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnAcerca = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,7 +76,7 @@ namespace proyecto1
             this.btnDevolucionesMenu.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnDevolucionesMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnDevolucionesMenu.Image")));
             this.btnDevolucionesMenu.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnDevolucionesMenu.Location = new System.Drawing.Point(457, 317);
+            this.btnDevolucionesMenu.Location = new System.Drawing.Point(457, 184);
             this.btnDevolucionesMenu.Name = "btnDevolucionesMenu";
             this.btnDevolucionesMenu.Size = new System.Drawing.Size(156, 115);
             this.btnDevolucionesMenu.TabIndex = 42;
@@ -109,11 +110,11 @@ namespace proyecto1
             this.btnFacturacionMenu.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnFacturacionMenu.Image = ((System.Drawing.Image)(resources.GetObject("btnFacturacionMenu.Image")));
             this.btnFacturacionMenu.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.btnFacturacionMenu.Location = new System.Drawing.Point(457, 184);
+            this.btnFacturacionMenu.Location = new System.Drawing.Point(457, 317);
             this.btnFacturacionMenu.Name = "btnFacturacionMenu";
             this.btnFacturacionMenu.Size = new System.Drawing.Size(156, 115);
             this.btnFacturacionMenu.TabIndex = 40;
-            this.btnFacturacionMenu.Text = "Facturacion";
+            this.btnFacturacionMenu.Text = "Ayuda";
             this.btnFacturacionMenu.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btnFacturacionMenu.UseVisualStyleBackColor = false;
             this.btnFacturacionMenu.Click += new System.EventHandler(this.btnFacturacionMenu_Click);
@@ -179,6 +180,18 @@ namespace proyecto1
             this.pictureBox1.TabIndex = 36;
             this.pictureBox1.TabStop = false;
             // 
+            // btnAcerca
+            // 
+            this.btnAcerca.BackColor = System.Drawing.Color.Cyan;
+            this.btnAcerca.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAcerca.Location = new System.Drawing.Point(746, 12);
+            this.btnAcerca.Name = "btnAcerca";
+            this.btnAcerca.Size = new System.Drawing.Size(79, 43);
+            this.btnAcerca.TabIndex = 45;
+            this.btnAcerca.Text = "?";
+            this.btnAcerca.UseVisualStyleBackColor = false;
+            this.btnAcerca.Click += new System.EventHandler(this.btnAcerca_Click);
+            // 
             // FormMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -186,6 +199,7 @@ namespace proyecto1
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(133)))));
             this.ClientSize = new System.Drawing.Size(837, 503);
+            this.Controls.Add(this.btnAcerca);
             this.Controls.Add(this.btnCerrarMenu);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDevolucionesMenu);
@@ -216,5 +230,6 @@ namespace proyecto1
         private System.Windows.Forms.Button btnCuentasMenu;
         private System.Windows.Forms.Button btnProveedoresMenu;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btnAcerca;
     }
 }

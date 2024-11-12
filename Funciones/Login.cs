@@ -36,15 +36,15 @@ namespace proyecto1
             DateTime Noche = new DateTime(HoraActual.Year, HoraActual.Month, HoraActual.Day, 18, 00, 00);
             if (HoraActual >= Manana && HoraActual <= Tarde)
             {
-                lblSaludo.Text = "¡Buenos días!";
+                lblBienvenido.Text = "¡Buenos días! \r\n Bienvenido/a";
             }
             else if (HoraActual >= Tarde && HoraActual <= Noche)
             {
-                lblSaludo.Text = "¡Buenas tardes!";
+                lblBienvenido.Text = "¡Buenas tardes!  \r\n Bienvenido/a";
             }
             else if (HoraActual >= Noche)
             {
-                lblSaludo.Text = "¡Buenas noches!";
+                lblBienvenido.Text = "¡Buenas noches! \r\n Bienvenido/a";
             }
             /*
             else if (HoraActual >= Noche || HoraActual <= Manana)
@@ -63,10 +63,47 @@ namespace proyecto1
         {
 
         }
+        private int i = 0;
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
-            if (textUsuario.Text == "Admin" && textContraseña.Text == "123")
+            if (textUsuario.Text == "")
+            {
+                MessageBox.Show("No ha ingresado su usuario" + " ¡Ingrese un usuario!", "Error",  MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if(textContraseña.Text == "")
+            {
+                MessageBox.Show("No ha ingresado su contraseña" + " ¡Ingrese una contraseña!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else {
+                if (textUsuario.Text != "Admin")
+                {
+                    i = i + 1;
+                    MessageBox.Show("Este es su intento numero " + i + "\n" + "El usuario ingresado no existe", "¡Intentelo de nuevo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else if (textContraseña.Text != "123")
+                {
+                    i = i + 1;
+                    MessageBox.Show("Este es su intento numero " + i + "\n" + "La contraseña ingresado es incorrecta", "¡Intentelo de nuevo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    textUsuario.Text = "";
+                    textContraseña.Text = "";
+                    this.Hide();
+                    //this.Close();
+
+                    FormMenu form2 = new FormMenu();
+                    // Cierra el formulario de inicio de sesión
+                    form2.Show();
+                }
+                if (i >= 5)
+                {
+                    this.Close();
+                }
+            }
+            
+            /*if (textUsuario.Text == "Admin" && textContraseña.Text == "123")
             {
 
                 textUsuario.Text = "";
@@ -77,19 +114,21 @@ namespace proyecto1
                 FormMenu form2 = new FormMenu();
                 // Cierra el formulario de inicio de sesión
                 form2.Show();
-                
-
             }
             else
             {
-                   // MessageBox.Show("Este es su intento numero "+ i +"\n" + "Contraseña o Usuario incorrecta", "¡Intentelo de nuevo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                // MessageBox.Show("¡Intentalo otra vez!", "Alerta");
-                //MessageBoxButtons.OK, MessageBoxIcon.Error agregan un icono al mensaje
-                MessageBox.Show("Contraseña o Usuario incorrecta", "¡Intentelo de nuevo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                i = i+1;
+                MessageBox.Show("Este es su intento numero " + i + "\n" + "Contraseña o Usuario incorrecta", "¡Intentelo de nuevo!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 textUsuario.Text = "";
                 textContraseña.Text = "";
-            }
+                
+            if (i >= 5)
+                {
+                    this.Close();
+                } 
+            
+            }*/
+
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -122,6 +161,10 @@ namespace proyecto1
         {
             Clases.Conexion objconexion = new Clases.Conexion();
             objconexion.establecerConexion();
+        }
+
+        private void lblBienvenido_Click(object sender, EventArgs e)
+        {
         }
     }
 }

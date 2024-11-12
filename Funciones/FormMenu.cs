@@ -1,4 +1,5 @@
-﻿using System;
+﻿using proyecto1.Funciones;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,7 @@ namespace proyecto1
             InitializeComponent();
             TemaColor.colorFondoVentana(this);
             TemaColor.colorBtn(btnCerrarMenu);
+            TemaColor.colorAcerca(btnAcerca);
         }
 
         private void FormMenu_Load(object sender, EventArgs e)
@@ -69,9 +71,16 @@ namespace proyecto1
         private void btnFacturacionMenu_Click(object sender, EventArgs e)
         {
 
-            FormFacturacion formfac = new FormFacturacion();
-            formfac.Show();
+            FormAyuda formAyu = new FormAyuda();
+            formAyu.Show();
             this.Close();
+        }
+
+        private void btnAcerca_Click(object sender, EventArgs e)
+        {
+            FormAcerca fomracer = new FormAcerca();
+            fomracer.Show();
+            this.Hide();//cambiar
         }
     }
 }

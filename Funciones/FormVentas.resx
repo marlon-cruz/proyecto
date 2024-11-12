@@ -4493,6 +4493,19 @@
   <metadata name="ColumnaTotal.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <data name="btnFacturacion.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wQAADsEBuJFr7QAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGOSURBVEhL5Za7
+        SgNhEIUTsYoPYW+8NZZqZ2UgjyJW+gZ2IlaWFsFOglhZWGjpMyheUBQbL+AFwd/vzD+rkewm+6ex8MBH
+        ds7MzmE3SzaVTCGEKTiGd0hRC4Z8Tb4YGIErTaNrOC1BNi9tQ3EIzXkbC2HXrb5idjqeEl78sziERtNG
+        Qlh3q6+YzQIO4CIeFoRgDhIwEU8JezAKZ1aFsAPDPhaFMUhADd7gEZZgFe5B2oefEIrkAIn5Zfi0M7u1
+        6GPlA+jrkWx5aaKegRVYc05AavpIUsCD8DJX2qFF6L8E4C3AmB9/B8hTT8edwisfQF2HV7gFLbQAP5an
+        Xt3HTdRJAVXYsE4Id/AMT3AjA21B1cdN1Mm3SCGb1o3PfPbcy/u1XMJL/5LxO0Ok3OUSfnqARC+7XV23
+        pVPaAVJagERfIYXLJe3QIlTqS26Afsh60fBxE3VSQDvaPdX2cRP131zBbPTKvzKLxI7squfcMlMvj3Oz
+        y7/089C50iXUfH0UxjgcQurflk59wBFMxq2VyheabGL1EKzTiQAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAkAEBAAAAEAIABoBAAAlgAAABgYAAABACAAiAkAAP4EAAAgIAAAAQAgAKgQAACGDgAAMDAAAAEA

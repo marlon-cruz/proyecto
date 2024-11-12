@@ -21,6 +21,7 @@ namespace proyecto1
             TemaColor.colorBtn(btnCerrarVentas);
             TemaColor.colorBtn(btnRealizarVentas);
             TemaColor.colorBtn(btnEditarVentas);
+            TemaColor.colorBtn(btnFacturacion);
            
             //LBL
             TemaColor.colorLbl(lblCambioVentas);
@@ -189,6 +190,11 @@ namespace proyecto1
                 dgvVentas.Enabled = false;
                 btnEditarVentas.Text = "Editar";
             }
+        }
+
+        private void btnFacturacion_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

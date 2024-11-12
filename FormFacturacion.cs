@@ -69,5 +69,10 @@ namespace proyecto1
 
             }
         }
+
+        private void lblFacturacion_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

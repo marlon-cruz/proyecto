@@ -29,10 +29,10 @@ namespace proyecto1
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormFacturacion));
             this.dgvFacturacion = new System.Windows.Forms.DataGridView();
             this.ColumnaCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,14 +66,14 @@ namespace proyecto1
             this.dgvFacturacion.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(133)))));
             this.dgvFacturacion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvFacturacion.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(91)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Honeydew;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFacturacion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(91)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Honeydew;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFacturacion.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvFacturacion.ColumnHeadersHeight = 29;
             this.dgvFacturacion.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvFacturacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -82,33 +82,32 @@ namespace proyecto1
             this.ColumnaCantidad,
             this.ColumnaPrecioUnidad,
             this.ColumnaTotal});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(91)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvFacturacion.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(91)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvFacturacion.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvFacturacion.EnableHeadersVisualStyles = false;
             this.dgvFacturacion.GridColor = System.Drawing.Color.Black;
-            this.dgvFacturacion.Location = new System.Drawing.Point(127, 394);
-            this.dgvFacturacion.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvFacturacion.Location = new System.Drawing.Point(95, 320);
             this.dgvFacturacion.Name = "dgvFacturacion";
             this.dgvFacturacion.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgvFacturacion.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvFacturacion.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvFacturacion.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvFacturacion.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvFacturacion.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvFacturacion.Size = new System.Drawing.Size(929, 185);
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvFacturacion.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvFacturacion.Size = new System.Drawing.Size(697, 150);
             this.dgvFacturacion.TabIndex = 80;
             // 
             // ColumnaCodigo
@@ -117,7 +116,7 @@ namespace proyecto1
             this.ColumnaCodigo.HeaderText = "N° factura";
             this.ColumnaCodigo.MinimumWidth = 6;
             this.ColumnaCodigo.Name = "ColumnaCodigo";
-            this.ColumnaCodigo.Width = 133;
+            this.ColumnaCodigo.Width = 104;
             // 
             // ColumnaNombre
             // 
@@ -132,7 +131,7 @@ namespace proyecto1
             this.ColumnaCantidad.HeaderText = "Cantidad";
             this.ColumnaCantidad.MinimumWidth = 6;
             this.ColumnaCantidad.Name = "ColumnaCantidad";
-            this.ColumnaCantidad.Width = 123;
+            this.ColumnaCantidad.Width = 96;
             // 
             // ColumnaPrecioUnidad
             // 
@@ -140,7 +139,7 @@ namespace proyecto1
             this.ColumnaPrecioUnidad.HeaderText = "Precio-Unidad ";
             this.ColumnaPrecioUnidad.MinimumWidth = 6;
             this.ColumnaPrecioUnidad.Name = "ColumnaPrecioUnidad";
-            this.ColumnaPrecioUnidad.Width = 175;
+            this.ColumnaPrecioUnidad.Width = 137;
             // 
             // ColumnaTotal
             // 
@@ -148,7 +147,7 @@ namespace proyecto1
             this.ColumnaTotal.HeaderText = "Total";
             this.ColumnaTotal.MinimumWidth = 6;
             this.ColumnaTotal.Name = "ColumnaTotal";
-            this.ColumnaTotal.Width = 85;
+            this.ColumnaTotal.Width = 68;
             // 
             // btnCerrarFacturacion
             // 
@@ -156,10 +155,9 @@ namespace proyecto1
             this.btnCerrarFacturacion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCerrarFacturacion.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnCerrarFacturacion.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCerrarFacturacion.Location = new System.Drawing.Point(903, 586);
-            this.btnCerrarFacturacion.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCerrarFacturacion.Location = new System.Drawing.Point(677, 476);
             this.btnCerrarFacturacion.Name = "btnCerrarFacturacion";
-            this.btnCerrarFacturacion.Size = new System.Drawing.Size(183, 53);
+            this.btnCerrarFacturacion.Size = new System.Drawing.Size(137, 43);
             this.btnCerrarFacturacion.TabIndex = 79;
             this.btnCerrarFacturacion.Text = "Cerrar";
             this.btnCerrarFacturacion.UseVisualStyleBackColor = false;
@@ -171,10 +169,9 @@ namespace proyecto1
             this.btnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSiguiente.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnSiguiente.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSiguiente.Location = new System.Drawing.Point(667, 586);
-            this.btnSiguiente.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSiguiente.Location = new System.Drawing.Point(500, 476);
             this.btnSiguiente.Name = "btnSiguiente";
-            this.btnSiguiente.Size = new System.Drawing.Size(147, 53);
+            this.btnSiguiente.Size = new System.Drawing.Size(110, 43);
             this.btnSiguiente.TabIndex = 78;
             this.btnSiguiente.Text = ">";
             this.btnSiguiente.UseVisualStyleBackColor = false;
@@ -185,10 +182,9 @@ namespace proyecto1
             this.btnAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAnterior.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnAnterior.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnAnterior.Location = new System.Drawing.Point(341, 586);
-            this.btnAnterior.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAnterior.Location = new System.Drawing.Point(256, 476);
             this.btnAnterior.Name = "btnAnterior";
-            this.btnAnterior.Size = new System.Drawing.Size(147, 53);
+            this.btnAnterior.Size = new System.Drawing.Size(110, 43);
             this.btnAnterior.TabIndex = 77;
             this.btnAnterior.Text = "<";
             this.btnAnterior.UseVisualStyleBackColor = false;
@@ -200,10 +196,9 @@ namespace proyecto1
             this.btnFacturacion.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnFacturacion.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnFacturacion.Image = ((System.Drawing.Image)(resources.GetObject("btnFacturacion.Image")));
-            this.btnFacturacion.Location = new System.Drawing.Point(51, 586);
-            this.btnFacturacion.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFacturacion.Location = new System.Drawing.Point(38, 476);
             this.btnFacturacion.Name = "btnFacturacion";
-            this.btnFacturacion.Size = new System.Drawing.Size(111, 53);
+            this.btnFacturacion.Size = new System.Drawing.Size(83, 43);
             this.btnFacturacion.TabIndex = 76;
             this.btnFacturacion.UseVisualStyleBackColor = false;
             // 
@@ -213,10 +208,9 @@ namespace proyecto1
             this.btnCrearFactura.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCrearFactura.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCrearFactura.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCrearFactura.Location = new System.Drawing.Point(521, 334);
-            this.btnCrearFactura.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCrearFactura.Location = new System.Drawing.Point(391, 271);
             this.btnCrearFactura.Name = "btnCrearFactura";
-            this.btnCrearFactura.Size = new System.Drawing.Size(200, 53);
+            this.btnCrearFactura.Size = new System.Drawing.Size(150, 43);
             this.btnCrearFactura.TabIndex = 74;
             this.btnCrearFactura.Text = "Crear";
             this.btnCrearFactura.UseVisualStyleBackColor = false;
@@ -227,11 +221,10 @@ namespace proyecto1
             this.txtNombreFacturacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.txtNombreFacturacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNombreFacturacion.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreFacturacion.Location = new System.Drawing.Point(496, 143);
-            this.txtNombreFacturacion.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNombreFacturacion.Location = new System.Drawing.Point(372, 116);
             this.txtNombreFacturacion.Name = "txtNombreFacturacion";
             this.txtNombreFacturacion.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtNombreFacturacion.Size = new System.Drawing.Size(251, 32);
+            this.txtNombreFacturacion.Size = new System.Drawing.Size(189, 27);
             this.txtNombreFacturacion.TabIndex = 73;
             this.txtNombreFacturacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -240,11 +233,10 @@ namespace proyecto1
             this.txtCantidadFacturacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.txtCantidadFacturacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCantidadFacturacion.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCantidadFacturacion.Location = new System.Drawing.Point(496, 188);
-            this.txtCantidadFacturacion.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCantidadFacturacion.Location = new System.Drawing.Point(372, 153);
             this.txtCantidadFacturacion.Name = "txtCantidadFacturacion";
             this.txtCantidadFacturacion.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtCantidadFacturacion.Size = new System.Drawing.Size(251, 32);
+            this.txtCantidadFacturacion.Size = new System.Drawing.Size(189, 27);
             this.txtCantidadFacturacion.TabIndex = 72;
             this.txtCantidadFacturacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -253,11 +245,10 @@ namespace proyecto1
             this.txtCodigoFacturacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.txtCodigoFacturacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCodigoFacturacion.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigoFacturacion.Location = new System.Drawing.Point(496, 98);
-            this.txtCodigoFacturacion.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCodigoFacturacion.Location = new System.Drawing.Point(372, 80);
             this.txtCodigoFacturacion.Name = "txtCodigoFacturacion";
             this.txtCodigoFacturacion.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtCodigoFacturacion.Size = new System.Drawing.Size(251, 32);
+            this.txtCodigoFacturacion.Size = new System.Drawing.Size(189, 27);
             this.txtCodigoFacturacion.TabIndex = 71;
             this.txtCodigoFacturacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -266,10 +257,9 @@ namespace proyecto1
             this.lblCantidad.AutoSize = true;
             this.lblCantidad.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold);
             this.lblCantidad.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblCantidad.Location = new System.Drawing.Point(363, 188);
-            this.lblCantidad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCantidad.Location = new System.Drawing.Point(272, 153);
             this.lblCantidad.Name = "lblCantidad";
-            this.lblCantidad.Size = new System.Drawing.Size(120, 33);
+            this.lblCantidad.Size = new System.Drawing.Size(94, 26);
             this.lblCantidad.TabIndex = 70;
             this.lblCantidad.Text = "Cantidad:";
             // 
@@ -278,10 +268,9 @@ namespace proyecto1
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold);
             this.lblCodigo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblCodigo.Location = new System.Drawing.Point(367, 98);
-            this.lblCodigo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCodigo.Location = new System.Drawing.Point(275, 80);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(121, 33);
+            this.lblCodigo.Size = new System.Drawing.Size(94, 26);
             this.lblCodigo.TabIndex = 69;
             this.lblCodigo.Text = "Numero: ";
             // 
@@ -290,10 +279,9 @@ namespace proyecto1
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblNombre.Location = new System.Drawing.Point(303, 139);
-            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombre.Location = new System.Drawing.Point(227, 113);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(185, 33);
+            this.lblNombre.Size = new System.Drawing.Size(144, 26);
             this.lblNombre.TabIndex = 68;
             this.lblNombre.Text = "Medicamento: ";
             // 
@@ -302,20 +290,19 @@ namespace proyecto1
             this.lblFacturacion.AutoSize = true;
             this.lblFacturacion.Font = new System.Drawing.Font("Calibri", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFacturacion.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblFacturacion.Location = new System.Drawing.Point(487, 26);
-            this.lblFacturacion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFacturacion.Location = new System.Drawing.Point(365, 21);
             this.lblFacturacion.Name = "lblFacturacion";
-            this.lblFacturacion.Size = new System.Drawing.Size(251, 58);
+            this.lblFacturacion.Size = new System.Drawing.Size(196, 45);
             this.lblFacturacion.TabIndex = 67;
             this.lblFacturacion.Text = "Facturación";
+            this.lblFacturacion.Click += new System.EventHandler(this.lblFacturacion_Click);
             // 
             // PicLogo
             // 
             this.PicLogo.Image = ((System.Drawing.Image)(resources.GetObject("PicLogo.Image")));
-            this.PicLogo.Location = new System.Drawing.Point(51, 63);
-            this.PicLogo.Margin = new System.Windows.Forms.Padding(4);
+            this.PicLogo.Location = new System.Drawing.Point(38, 51);
             this.PicLogo.Name = "PicLogo";
-            this.PicLogo.Size = new System.Drawing.Size(233, 192);
+            this.PicLogo.Size = new System.Drawing.Size(175, 156);
             this.PicLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PicLogo.TabIndex = 66;
             this.PicLogo.TabStop = false;
@@ -325,11 +312,10 @@ namespace proyecto1
             this.txtPrecioFacturacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.txtPrecioFacturacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPrecioFacturacion.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecioFacturacion.Location = new System.Drawing.Point(496, 229);
-            this.txtPrecioFacturacion.Margin = new System.Windows.Forms.Padding(4);
+            this.txtPrecioFacturacion.Location = new System.Drawing.Point(372, 186);
             this.txtPrecioFacturacion.Name = "txtPrecioFacturacion";
             this.txtPrecioFacturacion.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtPrecioFacturacion.Size = new System.Drawing.Size(251, 32);
+            this.txtPrecioFacturacion.Size = new System.Drawing.Size(189, 27);
             this.txtPrecioFacturacion.TabIndex = 82;
             this.txtPrecioFacturacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -338,11 +324,10 @@ namespace proyecto1
             this.txtTotalFactura.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
             this.txtTotalFactura.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTotalFactura.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTotalFactura.Location = new System.Drawing.Point(497, 270);
-            this.txtTotalFactura.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTotalFactura.Location = new System.Drawing.Point(373, 219);
             this.txtTotalFactura.Name = "txtTotalFactura";
             this.txtTotalFactura.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtTotalFactura.Size = new System.Drawing.Size(251, 32);
+            this.txtTotalFactura.Size = new System.Drawing.Size(189, 27);
             this.txtTotalFactura.TabIndex = 83;
             this.txtTotalFactura.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -351,10 +336,9 @@ namespace proyecto1
             this.lblPrecioUnidad.AutoSize = true;
             this.lblPrecioUnidad.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold);
             this.lblPrecioUnidad.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblPrecioUnidad.Location = new System.Drawing.Point(303, 229);
-            this.lblPrecioUnidad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblPrecioUnidad.Location = new System.Drawing.Point(227, 186);
             this.lblPrecioUnidad.Name = "lblPrecioUnidad";
-            this.lblPrecioUnidad.Size = new System.Drawing.Size(179, 33);
+            this.lblPrecioUnidad.Size = new System.Drawing.Size(139, 26);
             this.lblPrecioUnidad.TabIndex = 84;
             this.lblPrecioUnidad.Text = "Precio Unidad:";
             // 
@@ -363,20 +347,19 @@ namespace proyecto1
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold);
             this.lblTotal.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblTotal.Location = new System.Drawing.Point(409, 271);
-            this.lblTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTotal.Location = new System.Drawing.Point(307, 220);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(77, 33);
+            this.lblTotal.Size = new System.Drawing.Size(59, 26);
             this.lblTotal.TabIndex = 85;
             this.lblTotal.Text = "Total:";
             // 
             // FormFacturacion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1133, 654);
+            this.ClientSize = new System.Drawing.Size(850, 531);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.lblPrecioUnidad);
             this.Controls.Add(this.txtTotalFactura);
@@ -396,7 +379,6 @@ namespace proyecto1
             this.Controls.Add(this.lblFacturacion);
             this.Controls.Add(this.PicLogo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormFacturacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Farmacia Divino Niño - Facturacion";

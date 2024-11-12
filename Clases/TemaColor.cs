@@ -49,6 +49,23 @@ namespace proyecto1
             control.Region = new Region(path);
            // */
         }
+        public static void colorAcerca(Button control)
+        {
+            Color fondo = Color.FromArgb(0, 160, 255);
+            Color text = Color.White;
+            control.ForeColor = text;
+            control.BackColor = fondo;
+            control.FlatStyle = FlatStyle.Popup;
+
+            int BorderRadius = 40;
+            GraphicsPath path = new GraphicsPath();
+            path.AddArc(new Rectangle(0, 0, BorderRadius, BorderRadius), 180, 90);
+            path.AddArc(new Rectangle(control.Width - BorderRadius, 0, BorderRadius, BorderRadius), 270, 90);
+            path.AddArc(new Rectangle(control.Width - BorderRadius, control.Height - BorderRadius, BorderRadius, BorderRadius), 0, 90);
+            path.AddArc(new Rectangle(0, control.Height - BorderRadius, BorderRadius, BorderRadius), 90, 90);
+            path.CloseAllFigures();
+            control.Region = new Region(path);
+        }
         public static void colorLbl(Label control)
         {
             Color text = Color.White;
