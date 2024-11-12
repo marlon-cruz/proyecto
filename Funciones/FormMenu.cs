@@ -35,7 +35,7 @@ namespace proyecto1
         {
             FormCuentas formCuent = new FormCuentas();
             formCuent.Show();
-            this.Close();
+            this.Hide();//cambiar a clouse
         }
 
         private void btnInventarioMenu_Click(object sender, EventArgs e)
