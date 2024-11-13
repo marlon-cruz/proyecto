@@ -22,15 +22,5 @@ namespace proyecto1.Properties {
                 return defaultInstance;
             }
         }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("id=marlon;password=12345;persistsecurityinfo=False;database=divino_niño\";")]
-        public string cadena_conexion {
-            get {
-                return ((string)(this["cadena_conexion"]));
-            }
-        }
     }
 }
