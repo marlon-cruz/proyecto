@@ -17,7 +17,7 @@ namespace proyecto1
     {
         //conexion de la base de datos
 
-        public string cadena_conexion = "server=localhost;user id=root;password=12345;persistsecurityinfo=False;database=divino_niño";
+        public string cadena_conexion = "server=localhost;user id=unkcode;password=12345;persistsecurityinfo=False;database=divino_niño";
         //conexiones de funcion de botones
         public string registro_eliminar;
 
@@ -147,7 +147,7 @@ namespace proyecto1
                         myCommand.Connection.Close();
 
                         MessageBox.Show("Cuenta agregado con éxito", "Farmacia Divino Niño - CONFIRMACION", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+                        
                         string consulta = "select * from nombre_cuentas";
 
                         MySqlConnection conexion = new MySqlConnection(cadena_conexion);
@@ -167,7 +167,7 @@ namespace proyecto1
                         txtNombreCuentas.Text = "";
                         txtUsuarioCuentas.Text = "";
                         txtContraseñaCuentas.Text = "";
-                        btnCrearCuenta.Text = "Crear";
+                        btnCrearCuenta.Text = "Nuevo";
                     }
                 }
 
@@ -255,14 +255,14 @@ namespace proyecto1
     }
 
         // Método auxiliar para mostrar datos de la cuenta en controles específicos
-        private void mostrarDatosCuentas(DataRow cuentaData)
+      /*  private void mostrarDatosCuentas(DataRow cuentaData)
         {
             // Suponiendo que tienes controles como TextBoxes donde deseas mostrar los datos de la cuenta
             txtNombreCuentas.Text = cuentaData["Nombre"].ToString();
             txtUsuarioCuentas.Text = cuentaData["Usuario"].ToString();
             txtContraseñaCuentas.Text = cuentaData["Contraseña"].ToString();
             // Añade los controles que necesites para mostrar los datos
-        }
+        }*/
         private void seleccionarCuentasPorNombre()
         {
            
