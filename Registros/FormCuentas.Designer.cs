@@ -178,7 +178,7 @@ namespace proyecto1
             this.btnCrearCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCrearCuenta.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCrearCuenta.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCrearCuenta.Location = new System.Drawing.Point(515, 262);
+            this.btnCrearCuenta.Location = new System.Drawing.Point(514, 262);
             this.btnCrearCuenta.Margin = new System.Windows.Forms.Padding(4);
             this.btnCrearCuenta.Name = "btnCrearCuenta";
             this.btnCrearCuenta.Size = new System.Drawing.Size(200, 53);

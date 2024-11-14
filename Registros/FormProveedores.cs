@@ -1,7 +1,9 @@
-﻿using System;
+﻿using MySqlConnector;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +14,12 @@ namespace proyecto1
 {
     public partial class FormProveedores : Form
     {
+
+        public string cadena_conexion = "server=localhost;user id=unkcode;password=12345;persistsecurityinfo=False;database=divino_niño";
+        //conexiones de funcion de botones
+        
+
+
         public FormProveedores()
         {
             InitializeComponent();
@@ -47,7 +55,7 @@ namespace proyecto1
             TemaColor.colorTextBox(txtProductoProveedor);
             TemaColor.colorTextBox(txtTelefonoProveedor);
             TemaColor.colorTextBox(txtDireccionProveedor);
-            
+
         }
 
         private void btnCerrarProveedor_Click(object sender, EventArgs e)
@@ -57,127 +65,141 @@ namespace proyecto1
             this.Close();
         }
 
+
+        //NUEVA FUNCION GUARDAR
         private void btnAgregarProveedor_Click(object sender, EventArgs e)
         {
-            string codigo = txtCodigoProveedor.Text;
-            string nombre = txtNombreProveedor.Text;
-            string distribuidor = txtDistribuidorProveedor.Text;
-            string producto = txtProductoProveedor.Text;
-            string email = txtEmailProveedor.Text;
-            string telefono = txtTelefonoProveedor.Text;
-            string direccion = txtDireccionProveedor.Text;
-
-            if (codigo == "" || nombre =="" || producto == "" || email == "" || telefono == "" || distribuidor == "" || direccion == "")
+            try
             {
-                MessageBox.Show("¡Ingresa todos los datos!", "Alerta");
+                if (btnAgregarProveedor.Text == "Nuevo")
+                {
+                    txtCodigoProveedor.Enabled = true;
+                    txtNombreProveedor.Enabled = true;
+                    txtDistribuidorProveedor.Enabled = true;
+                    txtEmailProveedor.Enabled = true;
+                    txtTelefonoProveedor.Enabled = true;
+                    txtDireccionProveedor.Enabled = true;
+                    btnAgregarProveedor.Text = "Guardar";
+                }
+                else
+                {
+                    string codigo = txtCodigoProveedor.Text;
+                    string nombre = txtNombreProveedor.Text;
+                    string distribuidor = txtDistribuidorProveedor.Text;
+                    string email = txtEmailProveedor.Text;
+                    string telefono = txtTelefonoProveedor.Text;
+                    string direccion = txtDireccionProveedor.Text;
+                    //  string rol = cmbRolCuenta.Text;
+
+                    if (codigo == "" || nombre == "" || distribuidor == "" || email == "" || telefono == "" || direccion == "")
+                    {
+                        MessageBox.Show("¡Ingresa todos los datos!", "Alerta");
+                    }
+                    else
+                    {
+                        MySqlConnection myConnection = new MySqlConnection(cadena_conexion);
+
+                        string myInsertQuery = "INSERT INTO proveedores(Codigo,Nombre,Distribuidor,E-Mail,Telefono,Dirección) Values(?Codigo,?Nombre,?Distribuidor,?E-Mail,?Telefono,?Dirección)";
+                        MySqlCommand myCommand = new MySqlCommand(myInsertQuery);
+
+                        myCommand.Parameters.Add("?Codigo", MySqlDbType.VarChar, 50).Value = txtCodigoProveedor.Text;
+                        myCommand.Parameters.Add("?Nombre", MySqlDbType.VarChar, 100).Value = txtNombreProveedor.Text;
+                        myCommand.Parameters.Add("?Distribuidor", MySqlDbType.VarChar, 100).Value = txtDistribuidorProveedor.Text;
+                        myCommand.Parameters.Add("?E-Mail", MySqlDbType.VarChar, 100).Value = txtEmailProveedor.Text;
+                        myCommand.Parameters.Add("?Telefono", MySqlDbType.VarChar, 100).Value = txtTelefonoProveedor.Text;
+                        myCommand.Parameters.Add("?Dirección", MySqlDbType.VarChar, 100).Value = txtDireccionProveedor.Text;
+
+
+                        myCommand.Connection = myConnection;
+                        myConnection.Open();
+                        myCommand.ExecuteNonQuery();
+                        myCommand.Connection.Close();
+
+                        MessageBox.Show("Cuenta agregado con éxito", "Farmacia Divino Niño - CONFIRMACION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        string consulta = "select * from proveedores";
+
+                        MySqlConnection conexion = new MySqlConnection(cadena_conexion);
+                        MySqlDataAdapter da = new MySqlDataAdapter(consulta, conexion);
+                        System.Data.DataSet ds = new System.Data.DataSet();
+                        da.Fill(ds, "divino_niño");
+                        dgbProveedores.DataSource = ds;
+                        dgbProveedores.DataMember = "divino_niño";
+
+                        codigo = "";
+                        nombre = "";
+                        distribuidor = "";
+                        email = "";
+                        telefono = "";
+                        direccion = "";
+                        txtCodigoProveedor.Enabled = false;
+                        txtNombreProveedor.Enabled = false;
+                        txtDistribuidorProveedor.Enabled = false;
+                        txtEmailProveedor.Enabled = false;
+                        txtTelefonoProveedor.Enabled = false;
+                        txtDireccionProveedor.Enabled = false;
+                        txtCodigoProveedor.Text = "";
+                        txtNombreProveedor.Text = "";
+                        txtDistribuidorProveedor.Text = "";
+                        txtEmailProveedor.Text = "";
+                        txtTelefonoProveedor.Text = "";
+                        txtDireccionProveedor.Text = "";
+                        btnAgregarProveedor.Text = "Nuevo";
+                    }
+                }
             }
-            else
+            catch (MySqlException)
             {
-                try
-                {
-                    dgbProveedores.Rows.Add(codigo,nombre,distribuidor,producto,email,telefono,direccion);
-                    txtCodigoProveedor.Text ="";
-                    txtNombreProveedor.Text = "";
-                    txtDistribuidorProveedor.Text = "";
-                    txtProductoProveedor.Text = "";
-                    txtEmailProveedor.Text = "";
-                    txtTelefonoProveedor.Text = "";
-                    txtDireccionProveedor.Text = "";
-
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("¡Intentalo otra vez!", "Alerta");
-                    throw;
-                }
-
+                MessageBox.Show("Ya existe el registro de usuario", "Farmacia Divino Niño - Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
         private void btnEliminarProveedor_Click(object sender, EventArgs e)
         {
-            if(dgbProveedores.RowCount == 1)
-            {
-                MessageBox.Show("Aun no existen proveedores");
-            }
-            else
-            {
-                if (dgbProveedores.SelectedRows.Count > 0)
-                {
-
-                    int rowIndex = dgbProveedores.SelectedRows[0].Index;
-
-                    if (MessageBox.Show("¿Estás seguro de eliminar este proveedor?", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    {
-
-                        dgbProveedores.Rows.RemoveAt(rowIndex);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Por favor, selecciona un proveedor a eliminar.");
-                }
-            }
-            
+           
         }
 
-
+        //NUEVA FUNCION CARGAR DATOS 
         private void FormProveedores_Load(object sender, EventArgs e)
         {
+            {
+                txtCodigoProveedor.Enabled = false;
+                txtNombreProveedor.Enabled = false;
+                txtDistribuidorProveedor.Enabled = false;
+                txtEmailProveedor.Enabled = false;
+                txtTelefonoProveedor.Enabled = false;
+                txtDireccionProveedor.Enabled = false;
+
+                try
+                {
+                    string consulta = "select * from proveedores";
+
+                    MySqlConnection conexion = new MySqlConnection(cadena_conexion);
+                    MySqlDataAdapter comando = new MySqlDataAdapter(consulta, conexion);
+
+                    System.Data.DataSet ds = new System.Data.DataSet();
+                    comando.Fill(ds, "divino_niño");
+                    dgbProveedores.DataSource = ds;
+                    dgbProveedores.DataMember = "divino_niño";
+
+
+                }
+                catch (MySqlException)
+                {
+                    MessageBox.Show("Error de conexion", "Farmacia Divino Niño - Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+            }
         }
 
         private void btnEditarProveedores_Click(object sender, EventArgs e)
         {
-            if (dgbProveedores.Enabled == false)
-            {
-                dgbProveedores.Enabled = true;
-                btnEditarProveedores.Text = "Dejar";
-            }
-            else
-            {
-                dgbProveedores.Enabled = false;
-                btnEditarProveedores.Text = "Editar";
-            }
+           
         }
 
         private void btnBuscarProveedor_Click(object sender, EventArgs e)
         {
-            int indice = dgbProveedores.RowCount-1;
-            string busqueda = txtBuscarProveedor.Text;
             
-            if(indice == 0)
-            {
-                MessageBox.Show("Aun no hay proveedores registrados");
-            }
-            else
-            {
-                if (busqueda == "")
-                {
-                    MessageBox.Show("Por favor, Ingrese un nombre para realizar la busqueda.");
-                }
-                else
-                {
-                    for (int i = 0; i < indice; i++)
-                    {
-                        string dato = Convert.ToString(dgbProveedores.Rows[i].Cells[1].Value);
-                        if (dato == busqueda)
-                        {
-
-                            DataGridViewRow fila = dgbProveedores.Rows[i];
-                            string nombre = fila.Cells["ColumnaNombre"].Value.ToString();
-                            string tel = Convert.ToString(fila.Cells["ColumnaTelefono"].Value);
-                            MessageBox.Show("Proveedor encontrado\nNombre: " + nombre + "\nTeléfono: " + tel);
-                            break;
-                        }
-                        else if (i == indice-1)
-                        {
-                            MessageBox.Show("El proveedor " + busqueda + " no se ha encontrado.");
-                            break;
-                        }
-                    }
-                }
-            }
         }
 
         private void lblDireccion_Click(object sender, EventArgs e)

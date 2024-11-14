@@ -30,22 +30,15 @@ namespace proyecto1
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProveedores));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBoxCuentas = new System.Windows.Forms.PictureBox();
             this.txtCodigoProveedor = new System.Windows.Forms.TextBox();
             this.lblcodigoProveedor = new System.Windows.Forms.Label();
             this.lblProveedores = new System.Windows.Forms.Label();
             this.dgbProveedores = new System.Windows.Forms.DataGridView();
-            this.ColumnaCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaDistribuidor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaEmail = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumaDireccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAgregarProveedor = new System.Windows.Forms.Button();
             this.btnBuscarProveedor = new System.Windows.Forms.Button();
             this.btnCerrarProveedor = new System.Windows.Forms.Button();
@@ -88,8 +81,9 @@ namespace proyecto1
             this.txtCodigoProveedor.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigoProveedor.Location = new System.Drawing.Point(717, 71);
             this.txtCodigoProveedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtCodigoProveedor.Multiline = true;
             this.txtCodigoProveedor.Name = "txtCodigoProveedor";
-            this.txtCodigoProveedor.Size = new System.Drawing.Size(177, 32);
+            this.txtCodigoProveedor.Size = new System.Drawing.Size(177, 35);
             this.txtCodigoProveedor.TabIndex = 87;
             // 
             // lblcodigoProveedor
@@ -106,7 +100,7 @@ namespace proyecto1
             // 
             this.lblProveedores.AutoSize = true;
             this.lblProveedores.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProveedores.Location = new System.Drawing.Point(663, -7);
+            this.lblProveedores.Location = new System.Drawing.Point(674, 9);
             this.lblProveedores.Name = "lblProveedores";
             this.lblProveedores.Size = new System.Drawing.Size(231, 49);
             this.lblProveedores.TabIndex = 84;
@@ -117,104 +111,46 @@ namespace proyecto1
             this.dgbProveedores.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(133)))));
             this.dgbProveedores.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgbProveedores.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(91)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.Honeydew;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgbProveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(91)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Honeydew;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgbProveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgbProveedores.ColumnHeadersHeight = 29;
             this.dgbProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dgbProveedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnaCodigo,
-            this.ColumnaNombre,
-            this.ColumnaDistribuidor,
-            this.ColumnaProducto,
-            this.ColumnaEmail,
-            this.ColumnaTelefono,
-            this.ColumaDireccion});
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(91)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgbProveedores.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(91)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgbProveedores.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgbProveedores.Enabled = false;
             this.dgbProveedores.EnableHeadersVisualStyles = false;
             this.dgbProveedores.GridColor = System.Drawing.Color.Black;
-            this.dgbProveedores.Location = new System.Drawing.Point(16, 417);
+            this.dgbProveedores.Location = new System.Drawing.Point(176, 412);
             this.dgbProveedores.Margin = new System.Windows.Forms.Padding(4);
             this.dgbProveedores.Name = "dgbProveedores";
             this.dgbProveedores.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgbProveedores.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgbProveedores.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgbProveedores.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgbProveedores.RowHeadersWidth = 51;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgbProveedores.RowsDefaultCellStyle = dataGridViewCellStyle20;
-            this.dgbProveedores.Size = new System.Drawing.Size(1571, 231);
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgbProveedores.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgbProveedores.Size = new System.Drawing.Size(1227, 231);
             this.dgbProveedores.TabIndex = 91;
             this.dgbProveedores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgbProveedores_CellContentClick);
-            // 
-            // ColumnaCodigo
-            // 
-            this.ColumnaCodigo.HeaderText = "Código";
-            this.ColumnaCodigo.MinimumWidth = 6;
-            this.ColumnaCodigo.Name = "ColumnaCodigo";
-            this.ColumnaCodigo.Width = 210;
-            // 
-            // ColumnaNombre
-            // 
-            this.ColumnaNombre.HeaderText = "Nombre";
-            this.ColumnaNombre.MinimumWidth = 6;
-            this.ColumnaNombre.Name = "ColumnaNombre";
-            this.ColumnaNombre.Width = 210;
-            // 
-            // ColumnaDistribuidor
-            // 
-            this.ColumnaDistribuidor.HeaderText = "Distribuidor";
-            this.ColumnaDistribuidor.MinimumWidth = 6;
-            this.ColumnaDistribuidor.Name = "ColumnaDistribuidor";
-            this.ColumnaDistribuidor.Width = 210;
-            // 
-            // ColumnaProducto
-            // 
-            this.ColumnaProducto.HeaderText = "Producto";
-            this.ColumnaProducto.MinimumWidth = 6;
-            this.ColumnaProducto.Name = "ColumnaProducto";
-            this.ColumnaProducto.Width = 125;
-            // 
-            // ColumnaEmail
-            // 
-            this.ColumnaEmail.HeaderText = "E-mail";
-            this.ColumnaEmail.MinimumWidth = 6;
-            this.ColumnaEmail.Name = "ColumnaEmail";
-            this.ColumnaEmail.Width = 125;
-            // 
-            // ColumnaTelefono
-            // 
-            this.ColumnaTelefono.HeaderText = "Télefono";
-            this.ColumnaTelefono.MinimumWidth = 6;
-            this.ColumnaTelefono.Name = "ColumnaTelefono";
-            this.ColumnaTelefono.Width = 125;
-            // 
-            // ColumaDireccion
-            // 
-            this.ColumaDireccion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.ColumaDireccion.HeaderText = "Direccion";
-            this.ColumaDireccion.MinimumWidth = 6;
-            this.ColumaDireccion.Name = "ColumaDireccion";
-            this.ColumaDireccion.Width = 125;
             // 
             // btnAgregarProveedor
             // 
@@ -510,13 +446,6 @@ namespace proyecto1
         private System.Windows.Forms.Label lblDistribuidorProveedor;
         private System.Windows.Forms.Button btnEditarProveedores;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaCodigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaNombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaDistribuidor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaEmail;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaTelefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumaDireccion;
         private System.Windows.Forms.Label lblDireccionProveedor;
         private System.Windows.Forms.TextBox txtDireccionProveedor;
     }
