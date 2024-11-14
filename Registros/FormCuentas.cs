@@ -42,6 +42,7 @@ namespace proyecto1
             //  TemaColor.colorCombo(cmbRolCuenta);
             TemaColor.colorDataGrid(dgvCuentas);
             
+
         }
 
         private void FormCuentas_Load(object sender, EventArgs e)
