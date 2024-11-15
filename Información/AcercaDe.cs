@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace proyecto1.Información
 {
-    partial class AcercaDe : Form
+    partial class Conocenos : Form
     {
-        public AcercaDe()
+        public Conocenos()
         {
             InitializeComponent();
             this.Text = String.Format("Acerca de {0}", AssemblyTitle);
@@ -110,6 +110,18 @@ namespace proyecto1.Información
         private void labelCopyright_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Conocenos_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void okButton_Click(object sender, EventArgs e)
+        {
+            FormMenu formMenu = new FormMenu();
+            formMenu.Show();
+            this.Close();
         }
     }
 }

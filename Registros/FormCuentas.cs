@@ -21,9 +21,6 @@ namespace proyecto1
         //conexiones de funcion de botones
         public string registro_eliminar;
 
-
-
-
         public FormCuentas()
         {
             InitializeComponent();
@@ -37,10 +34,21 @@ namespace proyecto1
             TemaColor.colorBtn(btnEliminarCuenta);
             TemaColor.colorBtn(btnGuardar);
             TemaColor.colorLbl(lblRolCuenta);
-            //  TemaColor.colorCombo(cmbRolCuenta);
+            //TemaColor.colorCombo(cmbRolCuenta);
             TemaColor.colorDataGrid(dgvCuentas);
-            
 
+        }
+        private void mostrarCuentas()
+        {
+           //MySqlConnection myConnection = new MySqlConnection(cadena_conexion);
+            string consulta = "select * from nombre_cuentas";
+
+            MySqlConnection conexion = new MySqlConnection(cadena_conexion);
+            MySqlDataAdapter da = new MySqlDataAdapter(consulta, conexion);
+            System.Data.DataSet ds = new System.Data.DataSet();
+            da.Fill(ds, "divino_niño");
+            dgvCuentas.DataSource = ds;
+            dgvCuentas.DataMember = "divino_niño";
         }
 
         private void FormCuentas_Load(object sender, EventArgs e)
@@ -51,59 +59,19 @@ namespace proyecto1
                 txtUsuarioCuentas.Enabled = false;
                 txtContraseñaCuentas.Enabled = false;
 
-
                 try
                 {
-                    string consulta = "select * from nombre_cuentas";
-
-                    MySqlConnection conexion = new MySqlConnection(cadena_conexion);
-                    MySqlDataAdapter comando = new MySqlDataAdapter(consulta, conexion);
-
-                    System.Data.DataSet ds = new System.Data.DataSet();
-                    comando.Fill(ds, "divino_niño");
-                    dgvCuentas.DataSource = ds;
-                    dgvCuentas.DataMember = "divino_niño";
-
+                    mostrarCuentas();
 
                 }
                 catch (MySqlException)
                 {
                     MessageBox.Show("Error de conexion", "Farmacia Divino Niño - Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
                 }
             }
 
         }
 
-        private void lblNombre_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblUsuario_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblContraseña_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtUsuarioCuentas_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textNombreCuentas_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textContraseñaCuentas_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnCrearCuenta_Click(object sender, EventArgs e)
         {
@@ -114,10 +82,15 @@ namespace proyecto1
                     txtNombreCuentas.Enabled = true;
                     txtUsuarioCuentas.Enabled = true;
                     txtContraseñaCuentas.Enabled = true;
+                    txtNombreCuentas.Text = "";
+                    txtUsuarioCuentas.Text = "";
+                    txtContraseñaCuentas.Text = "";
                     btnCrearCuenta.Text = "Guardar";
+                    btnGuardar.Text = "Cancelar";
                 }
                 else
                 {
+                    btnGuardar.Text = "Guardar";
                     string nombre = txtNombreCuentas.Text;
                     string usuario = txtUsuarioCuentas.Text;
                     string contra = txtContraseñaCuentas.Text;
@@ -138,8 +111,6 @@ namespace proyecto1
                         myCommand.Parameters.Add("?Usuario", MySqlDbType.VarChar, 100).Value = txtUsuarioCuentas.Text;
                         myCommand.Parameters.Add("?Contraseña", MySqlDbType.VarChar, 50).Value = txtContraseñaCuentas.Text;
 
-
-
                         myCommand.Connection = myConnection;
                         myConnection.Open();
                         myCommand.ExecuteNonQuery();
@@ -147,15 +118,6 @@ namespace proyecto1
 
                         MessageBox.Show("Cuenta agregado con éxito", "Farmacia Divino Niño - CONFIRMACION", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         mostrarCuentas();
-                        /*string consulta = "select * from nombre_cuentas";
-
-                        MySqlConnection conexion = new MySqlConnection(cadena_conexion);
-                        MySqlDataAdapter da = new MySqlDataAdapter(consulta, conexion);
-                        System.Data.DataSet ds = new System.Data.DataSet();
-                        da.Fill(ds, "divino_niño");
-                        dgvCuentas.DataSource = ds;
-                        dgvCuentas.DataMember = "divino_niño";*/
-
 
                         nombre = "";
                         usuario = "";
@@ -169,19 +131,11 @@ namespace proyecto1
                         btnCrearCuenta.Text = "Nuevo";
                     }
                 }
-
-        }
+            }
             catch (MySqlException)
             {
                 MessageBox.Show("Ya existe el registro de usuario", "Farmacia Divino Niño - Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-}
-
-        private void btnCerrarCuentas_Click(object sender, EventArgs e)
-        {
-            FormMenu formMn = new FormMenu();
-            formMn.Show();
-            this.Close();
         }
 
         private void btnEliminarCuenta_Click(object sender, EventArgs e)
@@ -210,7 +164,7 @@ namespace proyecto1
             {
                 if (btnEditarCuenta.Text == "Editar")
                 {
-                    btnEditarCuenta.Text = "Guardar";
+                    btnEditarCuenta.Text = "Cancelar";
                     txtNombreCuentas.Enabled = true;
                     txtUsuarioCuentas.Enabled = true;
                     txtContraseñaCuentas.Enabled = true;
@@ -254,7 +208,6 @@ namespace proyecto1
                             MessageBox.Show("No se encontró el registro para actualizar.");
                         }
                     }
-
                     mostrarCuentas(); // Asumiendo que esto recarga los datos en el DataGridView
                 }
             }
@@ -268,30 +221,36 @@ namespace proyecto1
             }
         }
 
-        private void mostrarCuentas()
-        {
-            MySqlConnection myConnection = new MySqlConnection(cadena_conexion);
-            string consulta = "select * from nombre_cuentas";
-
-            MySqlConnection conexion = new MySqlConnection(cadena_conexion);
-            MySqlDataAdapter da = new MySqlDataAdapter(consulta, conexion);
-            System.Data.DataSet ds = new System.Data.DataSet();
-            da.Fill(ds, "divino_niño");
-            dgvCuentas.DataSource = ds;
-            dgvCuentas.DataMember = "divino_niño";
-        }
         //BOTON DE GUARDAR CUENTAS
-            private void btnGuardar_Click(object sender, EventArgs e)
+        private void btnGuardar_Click(object sender, EventArgs e)
         {
-            
-               
+            if (btnCrearCuenta.Text == "Guardar")
+            {
+                btnGuardar.Text = "Cancelar";
+                txtNombreCuentas.Enabled = false;
+                txtUsuarioCuentas.Enabled = false;
+                txtContraseñaCuentas.Enabled = false;
+                txtNombreCuentas.Text = "";
+                txtUsuarioCuentas.Text = "";
+                txtContraseñaCuentas.Text = "";
+                btnGuardar.Text = "Guardar";
+                mostrarCuentas();
+
+            }
+            else
+            {
+                MessageBox.Show("Estoy en nuevo");
+                
+            }
+
+
         }
 
         private void btnBuscarCuenta_Click(object sender, EventArgs e)
         {
            
         
-    }
+        }
 
         // Método auxiliar para mostrar datos de la cuenta en controles específicos
       /*  private void mostrarDatosCuentas(DataRow cuentaData)
@@ -306,9 +265,6 @@ namespace proyecto1
         {
            
         }
-
-       
-
 
         private void dgvCuentas_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
@@ -328,9 +284,15 @@ namespace proyecto1
                 txtNombreCuentas.Text = row.Cells["Nombre"].Value.ToString();
                 txtUsuarioCuentas.Text = row.Cells["Usuario"].Value.ToString();
                 txtContraseñaCuentas.Text = row.Cells["Contraseña"].Value.ToString();
-                //IdCuenta = row.Cells["IdCuenta"].Value = Convert.ToInt32();
-                
+                //IdCuenta = row.Cells["IdCuenta"].Value = Convert.ToInt32();    
             }
+        }
+
+        private void btnCerrarCuentas_Click(object sender, EventArgs e)
+        {
+            FormMenu formMn = new FormMenu();
+            formMn.Show();
+            this.Close();
         }
     }
 }

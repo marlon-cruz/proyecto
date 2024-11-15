@@ -1,4 +1,5 @@
 ﻿using proyecto1.Funciones;
+using proyecto1.Información;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,7 +31,7 @@ namespace proyecto1
         {
             FormLogin formlong = new FormLogin();
             formlong.Show();
-            this.Close();
+            this.Hide();//Cambiar
         }
 
         private void btnCuentasMenu_Click(object sender, EventArgs e)
@@ -44,28 +45,28 @@ namespace proyecto1
         {
             FormInventario formInvent = new FormInventario();
             formInvent.Show();
-            this.Close();
+            this.Hide();//Cambiar
         }
 
         private void btnVentasMenu_Click(object sender, EventArgs e)
         {
             FormVentas formvent = new FormVentas();
             formvent.Show();
-            this.Close();
+            this.Hide();//Cambiar
         }
 
         private void btnDevolucionesMenu_Click(object sender, EventArgs e)
         {
             FormDevolucionescs formDev = new FormDevolucionescs();
             formDev.Show();
-            this.Close();
+            this.Hide();//Cambiar
         }
 
         private void btnProveedoresMenu_Click(object sender, EventArgs e)
         {
             FormProveedores formprov = new FormProveedores();
             formprov.Show();
-            this.Close();
+            this.Hide();//Cambiar
         }
 
         private void btnFacturacionMenu_Click(object sender, EventArgs e)
@@ -73,13 +74,13 @@ namespace proyecto1
 
             FormAyuda formAyu = new FormAyuda();
             formAyu.Show();
-            this.Close();
+            this.Hide();//Cambiar
         }
 
         private void btnAcerca_Click(object sender, EventArgs e)
         {
-            FormAcerca fomracer = new FormAcerca();
-            fomracer.Show();
+            Conocenos acerca = new Conocenos();
+            acerca.Show();
             this.Hide();//cambiar
         }
     }

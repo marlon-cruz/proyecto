@@ -76,6 +76,7 @@ namespace proyecto1
                     txtCodigoProveedor.Enabled = true;
                     txtNombreProveedor.Enabled = true;
                     txtDistribuidorProveedor.Enabled = true;
+                    txtProductoProveedor.Enabled = true;
                     txtEmailProveedor.Enabled = true;
                     txtTelefonoProveedor.Enabled = true;
                     txtDireccionProveedor.Enabled = true;
@@ -86,12 +87,13 @@ namespace proyecto1
                     string codigo = txtCodigoProveedor.Text;
                     string nombre = txtNombreProveedor.Text;
                     string distribuidor = txtDistribuidorProveedor.Text;
+                    string producto = txtProductoProveedor.Text;
                     string email = txtEmailProveedor.Text;
                     string telefono = txtTelefonoProveedor.Text;
                     string direccion = txtDireccionProveedor.Text;
-                    //  string rol = cmbRolCuenta.Text;
+                   //string rol = cmbRolCuenta.Text;
 
-                    if (codigo == "" || nombre == "" || distribuidor == "" || email == "" || telefono == "" || direccion == "")
+                    if (codigo == "" || nombre == "" || distribuidor == "" || producto == "" || email == "" || telefono == "" || direccion == "")
                     {
                         MessageBox.Show("¡Ingresa todos los datos!", "Alerta");
                     }
@@ -99,13 +101,14 @@ namespace proyecto1
                     {
                         MySqlConnection myConnection = new MySqlConnection(cadena_conexion);
 
-                        string myInsertQuery = "INSERT INTO proveedores(Codigo,Nombre,Distribuidor,E-Mail,Telefono,Dirección) Values(?Codigo,?Nombre,?Distribuidor,?E-Mail,?Telefono,?Dirección)";
+                        string myInsertQuery = "INSERT INTO proveedores(Codigo,Nombre,Distribuidor,Producto,Email,Telefono,Dirección) Values(?Codigo,?Nombre,?Distribuidor,?Producto,?Email,?Telefono,?Dirección)";
                         MySqlCommand myCommand = new MySqlCommand(myInsertQuery);
 
                         myCommand.Parameters.Add("?Codigo", MySqlDbType.VarChar, 50).Value = txtCodigoProveedor.Text;
                         myCommand.Parameters.Add("?Nombre", MySqlDbType.VarChar, 100).Value = txtNombreProveedor.Text;
                         myCommand.Parameters.Add("?Distribuidor", MySqlDbType.VarChar, 100).Value = txtDistribuidorProveedor.Text;
-                        myCommand.Parameters.Add("?E-Mail", MySqlDbType.VarChar, 100).Value = txtEmailProveedor.Text;
+                        myCommand.Parameters.Add("?Producto", MySqlDbType.VarChar, 100).Value = txtProductoProveedor.Text;
+                        myCommand.Parameters.Add("?Email", MySqlDbType.VarChar, 100).Value = txtEmailProveedor.Text;
                         myCommand.Parameters.Add("?Telefono", MySqlDbType.VarChar, 100).Value = txtTelefonoProveedor.Text;
                         myCommand.Parameters.Add("?Dirección", MySqlDbType.VarChar, 100).Value = txtDireccionProveedor.Text;
 
@@ -115,43 +118,60 @@ namespace proyecto1
                         myCommand.ExecuteNonQuery();
                         myCommand.Connection.Close();
 
-                        MessageBox.Show("Cuenta agregado con éxito", "Farmacia Divino Niño - CONFIRMACION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Proveedor agregada con éxito", "Farmacia Divino Niño - CONFIRMACION", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                        string consulta = "select * from proveedores";
+                        mostrarProveedores();
+                        /*string consulta = "select * from proveedores";
 
                         MySqlConnection conexion = new MySqlConnection(cadena_conexion);
                         MySqlDataAdapter da = new MySqlDataAdapter(consulta, conexion);
                         System.Data.DataSet ds = new System.Data.DataSet();
                         da.Fill(ds, "divino_niño");
                         dgbProveedores.DataSource = ds;
-                        dgbProveedores.DataMember = "divino_niño";
+                        dgbProveedores.DataMember = "divino_niño";*/
 
                         codigo = "";
                         nombre = "";
                         distribuidor = "";
+                        producto = "";
                         email = "";
                         telefono = "";
                         direccion = "";
                         txtCodigoProveedor.Enabled = false;
                         txtNombreProveedor.Enabled = false;
                         txtDistribuidorProveedor.Enabled = false;
+                        txtProductoProveedor.Enabled = false;
                         txtEmailProveedor.Enabled = false;
                         txtTelefonoProveedor.Enabled = false;
                         txtDireccionProveedor.Enabled = false;
                         txtCodigoProveedor.Text = "";
                         txtNombreProveedor.Text = "";
                         txtDistribuidorProveedor.Text = "";
+                        txtProductoProveedor.Text = "";
                         txtEmailProveedor.Text = "";
                         txtTelefonoProveedor.Text = "";
                         txtDireccionProveedor.Text = "";
                         btnAgregarProveedor.Text = "Nuevo";
                     }
                 }
-            }
+             }
             catch (MySqlException)
             {
-                MessageBox.Show("Ya existe el registro de usuario", "Farmacia Divino Niño - Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ya existe el registro de proveedores ", " Farmacia Divino Niño - Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void mostrarProveedores()
+        {
+
+            string consulta = "select * from proveedores";
+
+            MySqlConnection conexion = new MySqlConnection(cadena_conexion);
+            MySqlDataAdapter da = new MySqlDataAdapter(consulta, conexion);
+            System.Data.DataSet ds = new System.Data.DataSet();
+            da.Fill(ds, "divino_niño");
+            dgbProveedores.DataSource = ds;
+            dgbProveedores.DataMember = "divino_niño";
         }
 
         private void btnEliminarProveedor_Click(object sender, EventArgs e)
@@ -166,6 +186,7 @@ namespace proyecto1
                 txtCodigoProveedor.Enabled = false;
                 txtNombreProveedor.Enabled = false;
                 txtDistribuidorProveedor.Enabled = false;
+                txtProductoProveedor.Enabled = false;
                 txtEmailProveedor.Enabled = false;
                 txtTelefonoProveedor.Enabled = false;
                 txtDireccionProveedor.Enabled = false;
@@ -210,6 +231,18 @@ namespace proyecto1
         private void dgbProveedores_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void txtCodigoProveedor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            {
+                if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+                {
+                    MessageBox.Show("INGRESAR SOLO NUMEROS", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    e.Handled = true;
+                    return;
+                }
+            }
         }
     }
     
