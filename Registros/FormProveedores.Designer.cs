@@ -68,9 +68,10 @@ namespace proyecto1
             // pictureBoxCuentas
             // 
             this.pictureBoxCuentas.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxCuentas.Image")));
-            this.pictureBoxCuentas.Location = new System.Drawing.Point(16, 11);
+            this.pictureBoxCuentas.Location = new System.Drawing.Point(21, 14);
+            this.pictureBoxCuentas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBoxCuentas.Name = "pictureBoxCuentas";
-            this.pictureBoxCuentas.Size = new System.Drawing.Size(195, 178);
+            this.pictureBoxCuentas.Size = new System.Drawing.Size(260, 219);
             this.pictureBoxCuentas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBoxCuentas.TabIndex = 66;
             this.pictureBoxCuentas.TabStop = false;
@@ -78,11 +79,11 @@ namespace proyecto1
             // txtCodigoProveedor
             // 
             this.txtCodigoProveedor.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigoProveedor.Location = new System.Drawing.Point(538, 58);
-            this.txtCodigoProveedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCodigoProveedor.Location = new System.Drawing.Point(717, 71);
+            this.txtCodigoProveedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtCodigoProveedor.Multiline = true;
             this.txtCodigoProveedor.Name = "txtCodigoProveedor";
-            this.txtCodigoProveedor.Size = new System.Drawing.Size(134, 29);
+            this.txtCodigoProveedor.Size = new System.Drawing.Size(177, 35);
             this.txtCodigoProveedor.TabIndex = 87;
             this.txtCodigoProveedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigoProveedor_KeyPress);
             // 
@@ -90,10 +91,9 @@ namespace proyecto1
             // 
             this.lblcodigoProveedor.AutoSize = true;
             this.lblcodigoProveedor.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblcodigoProveedor.Location = new System.Drawing.Point(435, 58);
-            this.lblcodigoProveedor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblcodigoProveedor.Location = new System.Drawing.Point(580, 71);
             this.lblcodigoProveedor.Name = "lblcodigoProveedor";
-            this.lblcodigoProveedor.Size = new System.Drawing.Size(94, 29);
+            this.lblcodigoProveedor.Size = new System.Drawing.Size(117, 37);
             this.lblcodigoProveedor.TabIndex = 86;
             this.lblcodigoProveedor.Text = "Codigo: ";
             // 
@@ -101,10 +101,9 @@ namespace proyecto1
             // 
             this.lblProveedores.AutoSize = true;
             this.lblProveedores.Font = new System.Drawing.Font("Calibri", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProveedores.Location = new System.Drawing.Point(506, 7);
-            this.lblProveedores.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblProveedores.Location = new System.Drawing.Point(675, 9);
             this.lblProveedores.Name = "lblProveedores";
-            this.lblProveedores.Size = new System.Drawing.Size(183, 39);
+            this.lblProveedores.Size = new System.Drawing.Size(231, 49);
             this.lblProveedores.TabIndex = 84;
             this.lblProveedores.Text = "Proveedores";
             // 
@@ -134,7 +133,8 @@ namespace proyecto1
             this.dgbProveedores.Enabled = false;
             this.dgbProveedores.EnableHeadersVisualStyles = false;
             this.dgbProveedores.GridColor = System.Drawing.Color.Black;
-            this.dgbProveedores.Location = new System.Drawing.Point(132, 335);
+            this.dgbProveedores.Location = new System.Drawing.Point(176, 412);
+            this.dgbProveedores.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgbProveedores.Name = "dgbProveedores";
             this.dgbProveedores.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgbProveedores.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -149,17 +149,17 @@ namespace proyecto1
             this.dgbProveedores.RowHeadersWidth = 51;
             dataGridViewCellStyle12.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgbProveedores.RowsDefaultCellStyle = dataGridViewCellStyle12;
-            this.dgbProveedores.Size = new System.Drawing.Size(920, 188);
+            this.dgbProveedores.Size = new System.Drawing.Size(1227, 231);
             this.dgbProveedores.TabIndex = 91;
             this.dgbProveedores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgbProveedores_CellContentClick);
             // 
             // btnAgregarProveedor
             // 
             this.btnAgregarProveedor.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregarProveedor.Location = new System.Drawing.Point(558, 288);
-            this.btnAgregarProveedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregarProveedor.Location = new System.Drawing.Point(744, 354);
+            this.btnAgregarProveedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAgregarProveedor.Name = "btnAgregarProveedor";
-            this.btnAgregarProveedor.Size = new System.Drawing.Size(102, 37);
+            this.btnAgregarProveedor.Size = new System.Drawing.Size(136, 46);
             this.btnAgregarProveedor.TabIndex = 92;
             this.btnAgregarProveedor.Text = "Nuevo";
             this.btnAgregarProveedor.UseVisualStyleBackColor = true;
@@ -168,10 +168,10 @@ namespace proyecto1
             // btnBuscarProveedor
             // 
             this.btnBuscarProveedor.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarProveedor.Location = new System.Drawing.Point(895, 118);
-            this.btnBuscarProveedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscarProveedor.Location = new System.Drawing.Point(1067, 196);
+            this.btnBuscarProveedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBuscarProveedor.Name = "btnBuscarProveedor";
-            this.btnBuscarProveedor.Size = new System.Drawing.Size(102, 37);
+            this.btnBuscarProveedor.Size = new System.Drawing.Size(136, 46);
             this.btnBuscarProveedor.TabIndex = 94;
             this.btnBuscarProveedor.Text = "Buscar";
             this.btnBuscarProveedor.UseVisualStyleBackColor = true;
@@ -180,10 +180,10 @@ namespace proyecto1
             // btnCerrarProveedor
             // 
             this.btnCerrarProveedor.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarProveedor.Location = new System.Drawing.Point(1108, 548);
-            this.btnCerrarProveedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCerrarProveedor.Location = new System.Drawing.Point(1477, 674);
+            this.btnCerrarProveedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCerrarProveedor.Name = "btnCerrarProveedor";
-            this.btnCerrarProveedor.Size = new System.Drawing.Size(102, 37);
+            this.btnCerrarProveedor.Size = new System.Drawing.Size(136, 46);
             this.btnCerrarProveedor.TabIndex = 95;
             this.btnCerrarProveedor.Text = "Cerrar";
             this.btnCerrarProveedor.UseVisualStyleBackColor = true;
@@ -192,10 +192,10 @@ namespace proyecto1
             // btnGuardarProveedor
             // 
             this.btnGuardarProveedor.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarProveedor.Location = new System.Drawing.Point(265, 532);
-            this.btnGuardarProveedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGuardarProveedor.Location = new System.Drawing.Point(353, 655);
+            this.btnGuardarProveedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuardarProveedor.Name = "btnGuardarProveedor";
-            this.btnGuardarProveedor.Size = new System.Drawing.Size(102, 37);
+            this.btnGuardarProveedor.Size = new System.Drawing.Size(136, 46);
             this.btnGuardarProveedor.TabIndex = 96;
             this.btnGuardarProveedor.Text = "Guardar";
             this.btnGuardarProveedor.UseVisualStyleBackColor = true;
@@ -203,10 +203,10 @@ namespace proyecto1
             // btnEliminarProveedor
             // 
             this.btnEliminarProveedor.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarProveedor.Location = new System.Drawing.Point(16, 532);
-            this.btnEliminarProveedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminarProveedor.Location = new System.Drawing.Point(21, 655);
+            this.btnEliminarProveedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEliminarProveedor.Name = "btnEliminarProveedor";
-            this.btnEliminarProveedor.Size = new System.Drawing.Size(102, 37);
+            this.btnEliminarProveedor.Size = new System.Drawing.Size(136, 46);
             this.btnEliminarProveedor.TabIndex = 97;
             this.btnEliminarProveedor.Text = "Eliminar";
             this.btnEliminarProveedor.UseVisualStyleBackColor = true;
@@ -215,20 +215,19 @@ namespace proyecto1
             // txtBuscarProveedor
             // 
             this.txtBuscarProveedor.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscarProveedor.Location = new System.Drawing.Point(881, 89);
-            this.txtBuscarProveedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBuscarProveedor.Location = new System.Drawing.Point(1053, 133);
+            this.txtBuscarProveedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBuscarProveedor.Name = "txtBuscarProveedor";
-            this.txtBuscarProveedor.Size = new System.Drawing.Size(134, 27);
+            this.txtBuscarProveedor.Size = new System.Drawing.Size(177, 32);
             this.txtBuscarProveedor.TabIndex = 99;
             // 
             // lblBuscarProveedor
             // 
             this.lblBuscarProveedor.AutoSize = true;
             this.lblBuscarProveedor.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBuscarProveedor.Location = new System.Drawing.Point(904, 39);
-            this.lblBuscarProveedor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblBuscarProveedor.Location = new System.Drawing.Point(1083, 71);
             this.lblBuscarProveedor.Name = "lblBuscarProveedor";
-            this.lblBuscarProveedor.Size = new System.Drawing.Size(93, 46);
+            this.lblBuscarProveedor.Size = new System.Drawing.Size(118, 58);
             this.lblBuscarProveedor.TabIndex = 98;
             this.lblBuscarProveedor.Text = "Buscar\r\nproveedor";
             this.lblBuscarProveedor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -236,80 +235,77 @@ namespace proyecto1
             // txtNombreProveedor
             // 
             this.txtNombreProveedor.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreProveedor.Location = new System.Drawing.Point(538, 89);
-            this.txtNombreProveedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombreProveedor.Location = new System.Drawing.Point(717, 110);
+            this.txtNombreProveedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtNombreProveedor.Name = "txtNombreProveedor";
-            this.txtNombreProveedor.Size = new System.Drawing.Size(134, 27);
+            this.txtNombreProveedor.Size = new System.Drawing.Size(177, 32);
             this.txtNombreProveedor.TabIndex = 101;
             // 
             // lblNombreProveedor
             // 
             this.lblNombreProveedor.AutoSize = true;
             this.lblNombreProveedor.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreProveedor.Location = new System.Drawing.Point(423, 87);
-            this.lblNombreProveedor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNombreProveedor.Location = new System.Drawing.Point(564, 107);
             this.lblNombreProveedor.Name = "lblNombreProveedor";
-            this.lblNombreProveedor.Size = new System.Drawing.Size(108, 29);
+            this.lblNombreProveedor.Size = new System.Drawing.Size(134, 37);
             this.lblNombreProveedor.TabIndex = 100;
             this.lblNombreProveedor.Text = "Nombre: ";
             // 
             // txtTelefonoProveedor
             // 
             this.txtTelefonoProveedor.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefonoProveedor.Location = new System.Drawing.Point(538, 212);
-            this.txtTelefonoProveedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTelefonoProveedor.Location = new System.Drawing.Point(717, 261);
+            this.txtTelefonoProveedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTelefonoProveedor.Name = "txtTelefonoProveedor";
-            this.txtTelefonoProveedor.Size = new System.Drawing.Size(134, 27);
+            this.txtTelefonoProveedor.Size = new System.Drawing.Size(177, 32);
             this.txtTelefonoProveedor.TabIndex = 103;
+            this.txtTelefonoProveedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefonoProveedor_KeyPress);
             // 
             // lblTelefonoProveedor
             // 
             this.lblTelefonoProveedor.AutoSize = true;
             this.lblTelefonoProveedor.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelefonoProveedor.Location = new System.Drawing.Point(419, 214);
-            this.lblTelefonoProveedor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTelefonoProveedor.Location = new System.Drawing.Point(559, 263);
             this.lblTelefonoProveedor.Name = "lblTelefonoProveedor";
-            this.lblTelefonoProveedor.Size = new System.Drawing.Size(112, 29);
+            this.lblTelefonoProveedor.Size = new System.Drawing.Size(139, 37);
             this.lblTelefonoProveedor.TabIndex = 102;
             this.lblTelefonoProveedor.Text = "Télefono: ";
             // 
             // txtEmailProveedor
             // 
             this.txtEmailProveedor.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmailProveedor.Location = new System.Drawing.Point(538, 181);
-            this.txtEmailProveedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEmailProveedor.Location = new System.Drawing.Point(717, 223);
+            this.txtEmailProveedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEmailProveedor.Name = "txtEmailProveedor";
-            this.txtEmailProveedor.Size = new System.Drawing.Size(134, 27);
+            this.txtEmailProveedor.Size = new System.Drawing.Size(177, 32);
             this.txtEmailProveedor.TabIndex = 105;
             // 
             // lblEmailProveedor
             // 
             this.lblEmailProveedor.AutoSize = true;
             this.lblEmailProveedor.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmailProveedor.Location = new System.Drawing.Point(450, 181);
-            this.lblEmailProveedor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEmailProveedor.Location = new System.Drawing.Point(600, 223);
             this.lblEmailProveedor.Name = "lblEmailProveedor";
-            this.lblEmailProveedor.Size = new System.Drawing.Size(81, 29);
+            this.lblEmailProveedor.Size = new System.Drawing.Size(100, 37);
             this.lblEmailProveedor.TabIndex = 104;
             this.lblEmailProveedor.Text = "Email: ";
             // 
             // txtProductoProveedor
             // 
             this.txtProductoProveedor.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProductoProveedor.Location = new System.Drawing.Point(538, 150);
-            this.txtProductoProveedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtProductoProveedor.Location = new System.Drawing.Point(717, 185);
+            this.txtProductoProveedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtProductoProveedor.Name = "txtProductoProveedor";
-            this.txtProductoProveedor.Size = new System.Drawing.Size(134, 27);
+            this.txtProductoProveedor.Size = new System.Drawing.Size(177, 32);
             this.txtProductoProveedor.TabIndex = 107;
             // 
             // lblProductoProveedor
             // 
             this.lblProductoProveedor.AutoSize = true;
             this.lblProductoProveedor.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductoProveedor.Location = new System.Drawing.Point(414, 150);
-            this.lblProductoProveedor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblProductoProveedor.Location = new System.Drawing.Point(552, 185);
             this.lblProductoProveedor.Name = "lblProductoProveedor";
-            this.lblProductoProveedor.Size = new System.Drawing.Size(117, 29);
+            this.lblProductoProveedor.Size = new System.Drawing.Size(146, 37);
             this.lblProductoProveedor.TabIndex = 106;
             this.lblProductoProveedor.Text = "Producto: ";
             // 
@@ -318,30 +314,29 @@ namespace proyecto1
             this.txtDistribuidorProveedor.BackColor = System.Drawing.SystemColors.Window;
             this.txtDistribuidorProveedor.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDistribuidorProveedor.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtDistribuidorProveedor.Location = new System.Drawing.Point(538, 119);
-            this.txtDistribuidorProveedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDistribuidorProveedor.Location = new System.Drawing.Point(717, 146);
+            this.txtDistribuidorProveedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDistribuidorProveedor.Name = "txtDistribuidorProveedor";
-            this.txtDistribuidorProveedor.Size = new System.Drawing.Size(134, 27);
+            this.txtDistribuidorProveedor.Size = new System.Drawing.Size(177, 32);
             this.txtDistribuidorProveedor.TabIndex = 109;
             // 
             // lblDistribuidorProveedor
             // 
             this.lblDistribuidorProveedor.AutoSize = true;
             this.lblDistribuidorProveedor.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDistribuidorProveedor.Location = new System.Drawing.Point(386, 117);
-            this.lblDistribuidorProveedor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDistribuidorProveedor.Location = new System.Drawing.Point(515, 144);
             this.lblDistribuidorProveedor.Name = "lblDistribuidorProveedor";
-            this.lblDistribuidorProveedor.Size = new System.Drawing.Size(146, 29);
+            this.lblDistribuidorProveedor.Size = new System.Drawing.Size(180, 37);
             this.lblDistribuidorProveedor.TabIndex = 108;
             this.lblDistribuidorProveedor.Text = "Distribuidor: ";
             // 
             // btnEditarProveedores
             // 
             this.btnEditarProveedores.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarProveedores.Location = new System.Drawing.Point(143, 532);
-            this.btnEditarProveedores.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditarProveedores.Location = new System.Drawing.Point(191, 655);
+            this.btnEditarProveedores.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEditarProveedores.Name = "btnEditarProveedores";
-            this.btnEditarProveedores.Size = new System.Drawing.Size(94, 36);
+            this.btnEditarProveedores.Size = new System.Drawing.Size(125, 44);
             this.btnEditarProveedores.TabIndex = 110;
             this.btnEditarProveedores.Text = "Editar";
             this.btnEditarProveedores.UseVisualStyleBackColor = true;
@@ -351,9 +346,10 @@ namespace proyecto1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(133)))));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(841, 81);
+            this.pictureBox1.Location = new System.Drawing.Point(999, 123);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox1.Size = new System.Drawing.Size(47, 43);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 111;
             this.pictureBox1.TabStop = false;
@@ -362,10 +358,9 @@ namespace proyecto1
             // 
             this.lblDireccionProveedor.AutoSize = true;
             this.lblDireccionProveedor.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDireccionProveedor.Location = new System.Drawing.Point(412, 241);
-            this.lblDireccionProveedor.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDireccionProveedor.Location = new System.Drawing.Point(549, 297);
             this.lblDireccionProveedor.Name = "lblDireccionProveedor";
-            this.lblDireccionProveedor.Size = new System.Drawing.Size(119, 29);
+            this.lblDireccionProveedor.Size = new System.Drawing.Size(149, 37);
             this.lblDireccionProveedor.TabIndex = 112;
             this.lblDireccionProveedor.Text = "Dirección: ";
             this.lblDireccionProveedor.Click += new System.EventHandler(this.lblDireccion_Click);
@@ -373,19 +368,19 @@ namespace proyecto1
             // txtDireccionProveedor
             // 
             this.txtDireccionProveedor.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDireccionProveedor.Location = new System.Drawing.Point(538, 243);
-            this.txtDireccionProveedor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDireccionProveedor.Location = new System.Drawing.Point(717, 299);
+            this.txtDireccionProveedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDireccionProveedor.Name = "txtDireccionProveedor";
-            this.txtDireccionProveedor.Size = new System.Drawing.Size(134, 27);
+            this.txtDireccionProveedor.Size = new System.Drawing.Size(177, 32);
             this.txtDireccionProveedor.TabIndex = 113;
             // 
             // FormProveedores
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1028, 595);
+            this.ClientSize = new System.Drawing.Size(1371, 732);
             this.Controls.Add(this.txtDireccionProveedor);
             this.Controls.Add(this.lblDireccionProveedor);
             this.Controls.Add(this.pictureBox1);
@@ -413,8 +408,8 @@ namespace proyecto1
             this.Controls.Add(this.lblProveedores);
             this.Controls.Add(this.pictureBoxCuentas);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.MinimumSize = new System.Drawing.Size(1026, 590);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MinimumSize = new System.Drawing.Size(1362, 715);
             this.Name = "FormProveedores";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Farmacia Divino Niño - Proveedores";

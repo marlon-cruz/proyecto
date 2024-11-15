@@ -244,6 +244,20 @@ namespace proyecto1
                 }
             }
         }
+
+        private void txtTelefonoProveedor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) &&
+                !((e.KeyChar >= 33 && e.KeyChar <= 47) ||
+                  (e.KeyChar >= 58 && e.KeyChar <= 64) ||
+                  (e.KeyChar >= 91 && e.KeyChar <= 96) ||
+                  (e.KeyChar >= 123 && e.KeyChar <= 126)) &&
+                e.KeyChar != (char)Keys.Back)
+            {
+                MessageBox.Show("Solo se permiten números", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                e.Handled = true; // Bloquear el carácter
+            }
+        }
     }
     
 }
