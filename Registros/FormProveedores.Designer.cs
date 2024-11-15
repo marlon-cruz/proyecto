@@ -30,10 +30,10 @@ namespace proyecto1
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProveedores));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBoxCuentas = new System.Windows.Forms.PictureBox();
             this.txtCodigoProveedor = new System.Windows.Forms.TextBox();
             this.lblcodigoProveedor = new System.Windows.Forms.Label();
@@ -60,6 +60,14 @@ namespace proyecto1
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblDireccionProveedor = new System.Windows.Forms.Label();
             this.txtDireccionProveedor = new System.Windows.Forms.TextBox();
+            this.IdProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Distribuidor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dirección = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCuentas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgbProveedores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -69,7 +77,7 @@ namespace proyecto1
             // 
             this.pictureBoxCuentas.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxCuentas.Image")));
             this.pictureBoxCuentas.Location = new System.Drawing.Point(21, 14);
-            this.pictureBoxCuentas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBoxCuentas.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxCuentas.Name = "pictureBoxCuentas";
             this.pictureBoxCuentas.Size = new System.Drawing.Size(260, 219);
             this.pictureBoxCuentas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -109,48 +117,60 @@ namespace proyecto1
             // 
             // dgbProveedores
             // 
+            this.dgbProveedores.AllowUserToAddRows = false;
+            this.dgbProveedores.AllowUserToDeleteRows = false;
             this.dgbProveedores.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(133)))));
             this.dgbProveedores.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgbProveedores.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(91)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Honeydew;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgbProveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(91)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Honeydew;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgbProveedores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgbProveedores.ColumnHeadersHeight = 29;
             this.dgbProveedores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(91)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgbProveedores.DefaultCellStyle = dataGridViewCellStyle10;
-            this.dgbProveedores.Enabled = false;
+            this.dgbProveedores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdProveedor,
+            this.Codigo,
+            this.Nombre,
+            this.Distribuidor,
+            this.Producto,
+            this.Email,
+            this.Telefono,
+            this.Dirección});
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(91)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgbProveedores.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgbProveedores.EnableHeadersVisualStyles = false;
             this.dgbProveedores.GridColor = System.Drawing.Color.Black;
             this.dgbProveedores.Location = new System.Drawing.Point(176, 412);
-            this.dgbProveedores.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgbProveedores.Margin = new System.Windows.Forms.Padding(4);
             this.dgbProveedores.Name = "dgbProveedores";
+            this.dgbProveedores.ReadOnly = true;
             this.dgbProveedores.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgbProveedores.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgbProveedores.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgbProveedores.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgbProveedores.RowHeadersWidth = 51;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgbProveedores.RowsDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgbProveedores.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.dgbProveedores.Size = new System.Drawing.Size(1227, 231);
             this.dgbProveedores.TabIndex = 91;
+            this.dgbProveedores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgbProveedores_CellClick);
             this.dgbProveedores.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgbProveedores_CellContentClick);
             // 
             // btnAgregarProveedor
@@ -168,7 +188,7 @@ namespace proyecto1
             // btnBuscarProveedor
             // 
             this.btnBuscarProveedor.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarProveedor.Location = new System.Drawing.Point(1067, 196);
+            this.btnBuscarProveedor.Location = new System.Drawing.Point(1088, 176);
             this.btnBuscarProveedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnBuscarProveedor.Name = "btnBuscarProveedor";
             this.btnBuscarProveedor.Size = new System.Drawing.Size(136, 46);
@@ -195,10 +215,11 @@ namespace proyecto1
             this.btnGuardarProveedor.Location = new System.Drawing.Point(353, 655);
             this.btnGuardarProveedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGuardarProveedor.Name = "btnGuardarProveedor";
-            this.btnGuardarProveedor.Size = new System.Drawing.Size(136, 46);
+            this.btnGuardarProveedor.Size = new System.Drawing.Size(177, 46);
             this.btnGuardarProveedor.TabIndex = 96;
-            this.btnGuardarProveedor.Text = "Guardar";
+            this.btnGuardarProveedor.Text = "Actualizar";
             this.btnGuardarProveedor.UseVisualStyleBackColor = true;
+            this.btnGuardarProveedor.Click += new System.EventHandler(this.btnGuardarProveedor_Click);
             // 
             // btnEliminarProveedor
             // 
@@ -218,18 +239,19 @@ namespace proyecto1
             this.txtBuscarProveedor.Location = new System.Drawing.Point(1053, 133);
             this.txtBuscarProveedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBuscarProveedor.Name = "txtBuscarProveedor";
-            this.txtBuscarProveedor.Size = new System.Drawing.Size(177, 32);
+            this.txtBuscarProveedor.Size = new System.Drawing.Size(232, 32);
             this.txtBuscarProveedor.TabIndex = 99;
+            this.txtBuscarProveedor.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscarProveedor_KeyUp);
             // 
             // lblBuscarProveedor
             // 
             this.lblBuscarProveedor.AutoSize = true;
             this.lblBuscarProveedor.Font = new System.Drawing.Font("Calibri", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBuscarProveedor.Location = new System.Drawing.Point(1083, 71);
+            this.lblBuscarProveedor.Location = new System.Drawing.Point(1066, 102);
             this.lblBuscarProveedor.Name = "lblBuscarProveedor";
-            this.lblBuscarProveedor.Size = new System.Drawing.Size(118, 58);
+            this.lblBuscarProveedor.Size = new System.Drawing.Size(190, 29);
             this.lblBuscarProveedor.TabIndex = 98;
-            this.lblBuscarProveedor.Text = "Buscar\r\nproveedor";
+            this.lblBuscarProveedor.Text = "Buscar proveedor";
             this.lblBuscarProveedor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txtNombreProveedor
@@ -347,7 +369,7 @@ namespace proyecto1
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(133)))));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(999, 123);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(47, 43);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -374,13 +396,86 @@ namespace proyecto1
             this.txtDireccionProveedor.Size = new System.Drawing.Size(177, 32);
             this.txtDireccionProveedor.TabIndex = 113;
             // 
+            // IdProveedor
+            // 
+            this.IdProveedor.DataPropertyName = "IdProveedor";
+            this.IdProveedor.HeaderText = "IdProveedor";
+            this.IdProveedor.MinimumWidth = 6;
+            this.IdProveedor.Name = "IdProveedor";
+            this.IdProveedor.ReadOnly = true;
+            this.IdProveedor.Visible = false;
+            this.IdProveedor.Width = 125;
+            // 
+            // Codigo
+            // 
+            this.Codigo.DataPropertyName = "Codigo";
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.MinimumWidth = 6;
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            this.Codigo.Width = 125;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 125;
+            // 
+            // Distribuidor
+            // 
+            this.Distribuidor.DataPropertyName = "Distribuidor";
+            this.Distribuidor.HeaderText = "Distribuidor";
+            this.Distribuidor.MinimumWidth = 6;
+            this.Distribuidor.Name = "Distribuidor";
+            this.Distribuidor.ReadOnly = true;
+            this.Distribuidor.Width = 125;
+            // 
+            // Producto
+            // 
+            this.Producto.DataPropertyName = "Producto";
+            this.Producto.HeaderText = "Producto";
+            this.Producto.MinimumWidth = 6;
+            this.Producto.Name = "Producto";
+            this.Producto.ReadOnly = true;
+            this.Producto.Width = 125;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.MinimumWidth = 6;
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            this.Email.Width = 125;
+            // 
+            // Telefono
+            // 
+            this.Telefono.DataPropertyName = "Telefono";
+            this.Telefono.HeaderText = "Telefono";
+            this.Telefono.MinimumWidth = 6;
+            this.Telefono.Name = "Telefono";
+            this.Telefono.ReadOnly = true;
+            this.Telefono.Width = 125;
+            // 
+            // Dirección
+            // 
+            this.Dirección.DataPropertyName = "Dirección";
+            this.Dirección.HeaderText = "Dirección";
+            this.Dirección.MinimumWidth = 6;
+            this.Dirección.Name = "Dirección";
+            this.Dirección.ReadOnly = true;
+            this.Dirección.Width = 125;
+            // 
             // FormProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1371, 732);
+            this.ClientSize = new System.Drawing.Size(1633, 732);
             this.Controls.Add(this.txtDireccionProveedor);
             this.Controls.Add(this.lblDireccionProveedor);
             this.Controls.Add(this.pictureBox1);
@@ -450,5 +545,13 @@ namespace proyecto1
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblDireccionProveedor;
         private System.Windows.Forms.TextBox txtDireccionProveedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdProveedor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Distribuidor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Dirección;
     }
 }
