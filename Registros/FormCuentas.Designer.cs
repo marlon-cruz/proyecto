@@ -52,12 +52,16 @@ namespace proyecto1
             this.lblCuentas = new System.Windows.Forms.Label();
             this.lblRolCuenta = new System.Windows.Forms.Label();
             this.dgvCuentas = new System.Windows.Forms.DataGridView();
-            this.IdCuenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBoxCuentas = new System.Windows.Forms.PictureBox();
+            this.chkAdministrador = new System.Windows.Forms.CheckBox();
+            this.chkUsuario = new System.Windows.Forms.CheckBox();
+            this.lblRol = new System.Windows.Forms.Label();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Contraseña = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBoxCuentas = new System.Windows.Forms.PictureBox();
+            this.TipoUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCuentas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCuentas)).BeginInit();
@@ -68,10 +72,9 @@ namespace proyecto1
             this.lblBuscarCuenta.AutoSize = true;
             this.lblBuscarCuenta.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBuscarCuenta.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblBuscarCuenta.Location = new System.Drawing.Point(879, 82);
-            this.lblBuscarCuenta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblBuscarCuenta.Location = new System.Drawing.Point(659, 67);
             this.lblBuscarCuenta.Name = "lblBuscarCuenta";
-            this.lblBuscarCuenta.Size = new System.Drawing.Size(173, 33);
+            this.lblBuscarCuenta.Size = new System.Drawing.Size(135, 26);
             this.lblBuscarCuenta.TabIndex = 64;
             this.lblBuscarCuenta.Text = "Buscar Cuenta";
             // 
@@ -81,11 +84,10 @@ namespace proyecto1
             this.txtBuscar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBuscar.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold);
             this.txtBuscar.ForeColor = System.Drawing.Color.White;
-            this.txtBuscar.Location = new System.Drawing.Point(833, 132);
-            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.txtBuscar.Location = new System.Drawing.Point(625, 107);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.txtBuscar.Size = new System.Drawing.Size(251, 36);
+            this.txtBuscar.Size = new System.Drawing.Size(189, 31);
             this.txtBuscar.TabIndex = 63;
             this.txtBuscar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBuscar_KeyUp);
@@ -96,10 +98,9 @@ namespace proyecto1
             this.btnCerrarCuentas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCerrarCuentas.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnCerrarCuentas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCerrarCuentas.Location = new System.Drawing.Point(903, 518);
-            this.btnCerrarCuentas.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCerrarCuentas.Location = new System.Drawing.Point(677, 475);
             this.btnCerrarCuentas.Name = "btnCerrarCuentas";
-            this.btnCerrarCuentas.Size = new System.Drawing.Size(183, 53);
+            this.btnCerrarCuentas.Size = new System.Drawing.Size(137, 43);
             this.btnCerrarCuentas.TabIndex = 61;
             this.btnCerrarCuentas.Text = "Cerrar";
             this.btnCerrarCuentas.UseVisualStyleBackColor = false;
@@ -111,10 +112,9 @@ namespace proyecto1
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnGuardar.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnGuardar.Location = new System.Drawing.Point(360, 518);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGuardar.Location = new System.Drawing.Point(270, 475);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(147, 53);
+            this.btnGuardar.Size = new System.Drawing.Size(110, 43);
             this.btnGuardar.TabIndex = 60;
             this.btnGuardar.Text = "Actualizar";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -126,10 +126,9 @@ namespace proyecto1
             this.btnEditarCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEditarCuenta.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnEditarCuenta.ForeColor = System.Drawing.Color.White;
-            this.btnEditarCuenta.Location = new System.Drawing.Point(205, 518);
-            this.btnEditarCuenta.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditarCuenta.Location = new System.Drawing.Point(154, 475);
             this.btnEditarCuenta.Name = "btnEditarCuenta";
-            this.btnEditarCuenta.Size = new System.Drawing.Size(147, 53);
+            this.btnEditarCuenta.Size = new System.Drawing.Size(110, 43);
             this.btnEditarCuenta.TabIndex = 59;
             this.btnEditarCuenta.Text = "Editar";
             this.btnEditarCuenta.UseVisualStyleBackColor = false;
@@ -141,10 +140,9 @@ namespace proyecto1
             this.btnEliminarCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEliminarCuenta.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnEliminarCuenta.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnEliminarCuenta.Location = new System.Drawing.Point(51, 518);
-            this.btnEliminarCuenta.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEliminarCuenta.Location = new System.Drawing.Point(38, 475);
             this.btnEliminarCuenta.Name = "btnEliminarCuenta";
-            this.btnEliminarCuenta.Size = new System.Drawing.Size(147, 53);
+            this.btnEliminarCuenta.Size = new System.Drawing.Size(110, 43);
             this.btnEliminarCuenta.TabIndex = 58;
             this.btnEliminarCuenta.Text = "Eliminar";
             this.btnEliminarCuenta.UseVisualStyleBackColor = false;
@@ -156,10 +154,9 @@ namespace proyecto1
             this.btnBuscarCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnBuscarCuenta.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold);
             this.btnBuscarCuenta.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnBuscarCuenta.Location = new System.Drawing.Point(885, 190);
-            this.btnBuscarCuenta.Margin = new System.Windows.Forms.Padding(4);
+            this.btnBuscarCuenta.Location = new System.Drawing.Point(664, 154);
             this.btnBuscarCuenta.Name = "btnBuscarCuenta";
-            this.btnBuscarCuenta.Size = new System.Drawing.Size(167, 53);
+            this.btnBuscarCuenta.Size = new System.Drawing.Size(125, 43);
             this.btnBuscarCuenta.TabIndex = 57;
             this.btnBuscarCuenta.Text = "Buscar";
             this.btnBuscarCuenta.UseVisualStyleBackColor = false;
@@ -171,10 +168,9 @@ namespace proyecto1
             this.btnCrearCuenta.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCrearCuenta.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCrearCuenta.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnCrearCuenta.Location = new System.Drawing.Point(525, 233);
-            this.btnCrearCuenta.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCrearCuenta.Location = new System.Drawing.Point(394, 228);
             this.btnCrearCuenta.Name = "btnCrearCuenta";
-            this.btnCrearCuenta.Size = new System.Drawing.Size(200, 53);
+            this.btnCrearCuenta.Size = new System.Drawing.Size(150, 43);
             this.btnCrearCuenta.TabIndex = 56;
             this.btnCrearCuenta.Text = "Nuevo";
             this.btnCrearCuenta.UseVisualStyleBackColor = false;
@@ -186,11 +182,10 @@ namespace proyecto1
             this.txtUsuarioCuentas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUsuarioCuentas.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold);
             this.txtUsuarioCuentas.ForeColor = System.Drawing.Color.White;
-            this.txtUsuarioCuentas.Location = new System.Drawing.Point(496, 127);
-            this.txtUsuarioCuentas.Margin = new System.Windows.Forms.Padding(4);
+            this.txtUsuarioCuentas.Location = new System.Drawing.Point(372, 103);
             this.txtUsuarioCuentas.Name = "txtUsuarioCuentas";
             this.txtUsuarioCuentas.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtUsuarioCuentas.Size = new System.Drawing.Size(251, 36);
+            this.txtUsuarioCuentas.Size = new System.Drawing.Size(189, 31);
             this.txtUsuarioCuentas.TabIndex = 55;
             this.txtUsuarioCuentas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -200,11 +195,11 @@ namespace proyecto1
             this.txtContraseñaCuentas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtContraseñaCuentas.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold);
             this.txtContraseñaCuentas.ForeColor = System.Drawing.Color.White;
-            this.txtContraseñaCuentas.Location = new System.Drawing.Point(496, 172);
-            this.txtContraseñaCuentas.Margin = new System.Windows.Forms.Padding(4);
+            this.txtContraseñaCuentas.Location = new System.Drawing.Point(372, 140);
             this.txtContraseñaCuentas.Name = "txtContraseñaCuentas";
+            this.txtContraseñaCuentas.PasswordChar = '*';
             this.txtContraseñaCuentas.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtContraseñaCuentas.Size = new System.Drawing.Size(251, 36);
+            this.txtContraseñaCuentas.Size = new System.Drawing.Size(189, 31);
             this.txtContraseñaCuentas.TabIndex = 54;
             this.txtContraseñaCuentas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtContraseñaCuentas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContraseñaCuentas_KeyPress);
@@ -215,11 +210,10 @@ namespace proyecto1
             this.txtNombreCuentas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNombreCuentas.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreCuentas.ForeColor = System.Drawing.Color.White;
-            this.txtNombreCuentas.Location = new System.Drawing.Point(496, 82);
-            this.txtNombreCuentas.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNombreCuentas.Location = new System.Drawing.Point(372, 67);
             this.txtNombreCuentas.Name = "txtNombreCuentas";
             this.txtNombreCuentas.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.txtNombreCuentas.Size = new System.Drawing.Size(251, 36);
+            this.txtNombreCuentas.Size = new System.Drawing.Size(189, 31);
             this.txtNombreCuentas.TabIndex = 53;
             this.txtNombreCuentas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -228,10 +222,9 @@ namespace proyecto1
             this.lblContraseña.AutoSize = true;
             this.lblContraseña.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold);
             this.lblContraseña.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblContraseña.Location = new System.Drawing.Point(340, 172);
-            this.lblContraseña.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblContraseña.Location = new System.Drawing.Point(255, 140);
             this.lblContraseña.Name = "lblContraseña";
-            this.lblContraseña.Size = new System.Drawing.Size(148, 33);
+            this.lblContraseña.Size = new System.Drawing.Size(115, 26);
             this.lblContraseña.TabIndex = 52;
             this.lblContraseña.Text = "Contraseña:";
             // 
@@ -240,10 +233,9 @@ namespace proyecto1
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold);
             this.lblUsuario.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblUsuario.Location = new System.Drawing.Point(378, 127);
-            this.lblUsuario.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUsuario.Location = new System.Drawing.Point(284, 103);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(110, 33);
+            this.lblUsuario.Size = new System.Drawing.Size(84, 26);
             this.lblUsuario.TabIndex = 51;
             this.lblUsuario.Text = "Usuario:";
             // 
@@ -252,10 +244,9 @@ namespace proyecto1
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblNombre.Location = new System.Drawing.Point(373, 85);
-            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombre.Location = new System.Drawing.Point(280, 69);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(115, 33);
+            this.lblNombre.Size = new System.Drawing.Size(89, 26);
             this.lblNombre.TabIndex = 50;
             this.lblNombre.Text = "Nombre:";
             // 
@@ -264,10 +255,9 @@ namespace proyecto1
             this.lblCuentas.AutoSize = true;
             this.lblCuentas.Font = new System.Drawing.Font("Calibri", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCuentas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblCuentas.Location = new System.Drawing.Point(532, 11);
-            this.lblCuentas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCuentas.Location = new System.Drawing.Point(399, 9);
             this.lblCuentas.Name = "lblCuentas";
-            this.lblCuentas.Size = new System.Drawing.Size(182, 58);
+            this.lblCuentas.Size = new System.Drawing.Size(145, 45);
             this.lblCuentas.TabIndex = 49;
             this.lblCuentas.Text = "Cuentas";
             // 
@@ -276,10 +266,9 @@ namespace proyecto1
             this.lblRolCuenta.AutoSize = true;
             this.lblRolCuenta.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold);
             this.lblRolCuenta.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblRolCuenta.Location = new System.Drawing.Point(403, 217);
-            this.lblRolCuenta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblRolCuenta.Location = new System.Drawing.Point(302, 176);
             this.lblRolCuenta.Name = "lblRolCuenta";
-            this.lblRolCuenta.Size = new System.Drawing.Size(0, 33);
+            this.lblRolCuenta.Size = new System.Drawing.Size(0, 26);
             this.lblRolCuenta.TabIndex = 66;
             // 
             // dgvCuentas
@@ -301,10 +290,11 @@ namespace proyecto1
             this.dgvCuentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCuentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCuentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.IdCuenta,
+            this.Id,
             this.Nombre,
             this.Usuario,
-            this.Contraseña});
+            this.Contraseña,
+            this.TipoUsuario});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(199)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -315,8 +305,7 @@ namespace proyecto1
             this.dgvCuentas.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvCuentas.EnableHeadersVisualStyles = false;
             this.dgvCuentas.GridColor = System.Drawing.Color.Black;
-            this.dgvCuentas.Location = new System.Drawing.Point(331, 306);
-            this.dgvCuentas.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvCuentas.Location = new System.Drawing.Point(218, 277);
             this.dgvCuentas.Name = "dgvCuentas";
             this.dgvCuentas.ReadOnly = true;
             this.dgvCuentas.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -333,20 +322,78 @@ namespace proyecto1
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvCuentas.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvCuentas.Size = new System.Drawing.Size(578, 187);
+            this.dgvCuentas.Size = new System.Drawing.Size(519, 152);
             this.dgvCuentas.TabIndex = 67;
             this.dgvCuentas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCuentas_CellClick);
             this.dgvCuentas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCuentas_CellContentClick_1);
             // 
-            // IdCuenta
+            // pictureBox1
             // 
-            this.IdCuenta.DataPropertyName = "IdCuenta";
-            this.IdCuenta.HeaderText = "IdCuenta";
-            this.IdCuenta.MinimumWidth = 6;
-            this.IdCuenta.Name = "IdCuenta";
-            this.IdCuenta.ReadOnly = true;
-            this.IdCuenta.Visible = false;
-            this.IdCuenta.Width = 125;
+            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(133)))));
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(584, 102);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(35, 35);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 65;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBoxCuentas
+            // 
+            this.pictureBoxCuentas.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxCuentas.Image")));
+            this.pictureBoxCuentas.Location = new System.Drawing.Point(38, 38);
+            this.pictureBoxCuentas.Name = "pictureBoxCuentas";
+            this.pictureBoxCuentas.Size = new System.Drawing.Size(175, 156);
+            this.pictureBoxCuentas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxCuentas.TabIndex = 48;
+            this.pictureBoxCuentas.TabStop = false;
+            // 
+            // chkAdministrador
+            // 
+            this.chkAdministrador.AutoSize = true;
+            this.chkAdministrador.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkAdministrador.ForeColor = System.Drawing.Color.White;
+            this.chkAdministrador.Location = new System.Drawing.Point(372, 176);
+            this.chkAdministrador.Name = "chkAdministrador";
+            this.chkAdministrador.Size = new System.Drawing.Size(127, 23);
+            this.chkAdministrador.TabIndex = 68;
+            this.chkAdministrador.Text = "Administrador";
+            this.chkAdministrador.UseVisualStyleBackColor = true;
+            this.chkAdministrador.CheckedChanged += new System.EventHandler(this.chkAdministrador_CheckedChanged);
+            // 
+            // chkUsuario
+            // 
+            this.chkUsuario.AutoSize = true;
+            this.chkUsuario.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
+            this.chkUsuario.ForeColor = System.Drawing.Color.White;
+            this.chkUsuario.Location = new System.Drawing.Point(372, 199);
+            this.chkUsuario.Name = "chkUsuario";
+            this.chkUsuario.Size = new System.Drawing.Size(96, 23);
+            this.chkUsuario.TabIndex = 69;
+            this.chkUsuario.Text = "Empleado";
+            this.chkUsuario.UseVisualStyleBackColor = true;
+            this.chkUsuario.CheckedChanged += new System.EventHandler(this.chkUsuario_CheckedChanged);
+            // 
+            // lblRol
+            // 
+            this.lblRol.AutoSize = true;
+            this.lblRol.Font = new System.Drawing.Font("Calibri", 15.75F, System.Drawing.FontStyle.Bold);
+            this.lblRol.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lblRol.Location = new System.Drawing.Point(323, 183);
+            this.lblRol.Name = "lblRol";
+            this.lblRol.Size = new System.Drawing.Size(46, 26);
+            this.lblRol.TabIndex = 70;
+            this.lblRol.Text = "Rol:";
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Id";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
+            this.Id.Width = 125;
             // 
             // Nombre
             // 
@@ -373,38 +420,26 @@ namespace proyecto1
             this.Contraseña.MinimumWidth = 6;
             this.Contraseña.Name = "Contraseña";
             this.Contraseña.ReadOnly = true;
+            this.Contraseña.Visible = false;
             this.Contraseña.Width = 125;
             // 
-            // pictureBox1
+            // TipoUsuario
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(133)))));
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(778, 125);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(47, 43);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 65;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBoxCuentas
-            // 
-            this.pictureBoxCuentas.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxCuentas.Image")));
-            this.pictureBoxCuentas.Location = new System.Drawing.Point(51, 47);
-            this.pictureBoxCuentas.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBoxCuentas.Name = "pictureBoxCuentas";
-            this.pictureBoxCuentas.Size = new System.Drawing.Size(233, 192);
-            this.pictureBoxCuentas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxCuentas.TabIndex = 48;
-            this.pictureBoxCuentas.TabStop = false;
+            this.TipoUsuario.DataPropertyName = "TipoUsuario";
+            this.TipoUsuario.HeaderText = "Rol";
+            this.TipoUsuario.Name = "TipoUsuario";
+            this.TipoUsuario.ReadOnly = true;
             // 
             // FormCuentas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(133)))));
-            this.ClientSize = new System.Drawing.Size(1155, 617);
+            this.ClientSize = new System.Drawing.Size(866, 530);
+            this.Controls.Add(this.lblRol);
+            this.Controls.Add(this.chkUsuario);
+            this.Controls.Add(this.chkAdministrador);
             this.Controls.Add(this.dgvCuentas);
             this.Controls.Add(this.lblRolCuenta);
             this.Controls.Add(this.pictureBox1);
@@ -425,7 +460,6 @@ namespace proyecto1
             this.Controls.Add(this.lblCuentas);
             this.Controls.Add(this.pictureBoxCuentas);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormCuentas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Farmacia Divino Niño - Cuentas";
@@ -459,9 +493,13 @@ namespace proyecto1
         private System.Windows.Forms.PictureBox pictureBoxCuentas;
         private System.Windows.Forms.Label lblRolCuenta;
         private System.Windows.Forms.DataGridView dgvCuentas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn IdCuenta;
+        private System.Windows.Forms.CheckBox chkAdministrador;
+        private System.Windows.Forms.CheckBox chkUsuario;
+        private System.Windows.Forms.Label lblRol;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Contraseña;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TipoUsuario;
     }
 }

@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Mail;//Utilizada para enviar un correo
 using System.Diagnostics;
+using proyecto1.Clases;
+using proyecto1.Funciones;
 
 namespace proyecto1
 {
@@ -36,9 +38,20 @@ namespace proyecto1
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            FormMenu formMn = new FormMenu();
-            formMn.Show();
-            this.Close();
+            string tipo = Conexion.tipoUsuario;
+
+            if (tipo == "Administrador")
+            {
+                FormMenu formMenu = new FormMenu();
+                formMenu.Show();
+                this.Close();
+            }
+            else
+            {
+                MenuEmpleados formMenu = new MenuEmpleados();
+                formMenu.Show();
+                this.Close();
+            }
         }
 
         private void btnCorreo_Click(object sender, EventArgs e)

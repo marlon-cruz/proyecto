@@ -1,4 +1,6 @@
-﻿using System;
+﻿using proyecto1.Clases;
+using proyecto1.Funciones;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -56,9 +58,20 @@ namespace proyecto1
 
         private void btnCerrarInventario_Click(object sender, EventArgs e)
         {
-            FormMenu formMenu = new FormMenu();
-            formMenu.Show();
-            this.Close();
+            string tipo = Conexion.tipoUsuario;
+
+            if (tipo == "Administrador")
+            {
+                FormMenu formMenu = new FormMenu();
+                formMenu.Show();
+                this.Close();
+            }
+            else
+            {
+                MenuEmpleados formMenu = new MenuEmpleados();
+                formMenu.Show();
+                this.Close();
+            }
         }
 
         private void btnEditarInventario_Click(object sender, EventArgs e)

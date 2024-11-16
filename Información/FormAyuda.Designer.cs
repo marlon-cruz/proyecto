@@ -102,7 +102,7 @@
             // 
             this.btnCerrar.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrar.Location = new System.Drawing.Point(588, 287);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(103, 40);
             this.btnCerrar.TabIndex = 10;
@@ -124,7 +124,7 @@
             this.btnGuiaUsuario.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuiaUsuario.Image = global::proyecto1.Properties.Resources.guia_del_usuario;
             this.btnGuiaUsuario.Location = new System.Drawing.Point(568, 202);
-            this.btnGuiaUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGuiaUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuiaUsuario.Name = "btnGuiaUsuario";
             this.btnGuiaUsuario.Size = new System.Drawing.Size(133, 54);
             this.btnGuiaUsuario.TabIndex = 14;
@@ -138,7 +138,7 @@
             this.btnTelefono.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTelefono.Image = global::proyecto1.Properties.Resources.llamada_telefonica_2;
             this.btnTelefono.Location = new System.Drawing.Point(568, 140);
-            this.btnTelefono.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTelefono.Margin = new System.Windows.Forms.Padding(2);
             this.btnTelefono.Name = "btnTelefono";
             this.btnTelefono.Size = new System.Drawing.Size(133, 54);
             this.btnTelefono.TabIndex = 6;
@@ -152,7 +152,7 @@
             this.btnCorreo.Font = new System.Drawing.Font("Calibri", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCorreo.Image = global::proyecto1.Properties.Resources.correo_electronico_3;
             this.btnCorreo.Location = new System.Drawing.Point(568, 82);
-            this.btnCorreo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCorreo.Margin = new System.Windows.Forms.Padding(2);
             this.btnCorreo.Name = "btnCorreo";
             this.btnCorreo.Size = new System.Drawing.Size(133, 54);
             this.btnCorreo.TabIndex = 4;
@@ -190,6 +190,7 @@
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormAyuda";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Farmacia Divino Niño-Ayuda y soporte";
             this.Load += new System.EventHandler(this.FormAyuda_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

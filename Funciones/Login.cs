@@ -1,4 +1,5 @@
 ﻿using MySqlConnector;
+using proyecto1.Clases;
 using proyecto1.Funciones;
 using System;
 using System.Collections.Generic;
@@ -16,15 +17,23 @@ namespace proyecto1
 {
     public partial class FormLogin : Form
     {
+
+
+        private Timer mensajeTimer; // Timer para ocultar el mensaje
         public FormLogin()
         {
+            mensajeTimer = new Timer();
+            mensajeTimer.Interval = 4000; // 4 segundos
+            mensajeTimer.Tick += OcultarMensaje; // Suscribir el evento Tick
+
             InitializeComponent();
+
             TemaColor.colorFondoVentana(this);
 
             TemaColor.colorBtn(btnCerrar);
             TemaColor.colorBtn(btnIniciarSesion);
             TemaColor.colorLbl(lblBienvenido);
-           // TemaColor.colorLbl(lblSaludo);
+            // TemaColor.colorLbl(lblSaludo);
         }
 
         private void FormLogin_Load(object sender, EventArgs e)
@@ -58,61 +67,92 @@ namespace proyecto1
         {
 
         }
+        public int intentos = 0;
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
+            try
             {
-                try
+                // Validar campos vacíos
+                if (string.IsNullOrWhiteSpace(textUsuario.Text) || string.IsNullOrWhiteSpace(textContraseña.Text))
                 {
-                    MySqlConnection conn = new MySqlConnection("server=localhost;user id=unkcode;password=12345;database=divino_niño");
-                    conn.Open();
+                    MessageBox.Show("Por favor, completa ambos campos.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
 
-                    string query = "SELECT Nombre, Contraseña, TipoUsuario FROM usuariosingreso WHERE Nombre = @Nombre AND Contraseña = @Contraseña";
-                    MySqlCommand cmd = new MySqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@Nombre", textUsuario.Text);
-                    cmd.Parameters.AddWithValue("@Contraseña", textContraseña.Text);
+                // Iniciar conexión
+                MySqlConnection conn = new MySqlConnection("server=localhost;user id=unkcode;password=12345;database=divino_niño");
+                conn.Open();
 
-                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-                    DataTable dt = new DataTable();
-                    adapter.Fill(dt);
+                string query = "SELECT Nombre, Usuario, Contraseña, TipoUsuario FROM usuariosingreso WHERE Usuario = @Usuario AND Contraseña = @Contraseña";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@Usuario", textUsuario.Text);
+                cmd.Parameters.AddWithValue("@Contraseña", textContraseña.Text);
 
-                    if (dt.Rows.Count > 0)
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                DataTable dt = new DataTable();
+                adapter.Fill(dt);
+
+                // Verificar si los datos son correctos
+                string tipoUsuario = dt.Rows.Count > 0 ? dt.Rows[0]["TipoUsuario"].ToString() : "";
+
+                if (dt.Rows.Count > 0)
+                {
+                    if (tipoUsuario == "Administrador")
                     {
-                        string tipoUsuario = dt.Rows[0]["TipoUsuario"].ToString();
+                        MessageBox.Show("BIENVENIDO ADMINISTRADOR", "Farmacia Divino Niño - BIENVENIDA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        FormMenu fprincipal = new FormMenu();
+                        fprincipal.Show();
+                    }
+                    else if (tipoUsuario == "Empleado")
+                    {
+                        MessageBox.Show("BIENVENIDO EMPLEADO", "Farmacia Divino Niño - BIENVENIDA", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MenuEmpleados fempleado = new MenuEmpleados();
+                        fempleado.Show();
+                    }
 
-                        if (tipoUsuario == "Administrador")
-                        {
-                            MessageBox.Show("BIENVENIDO ADMINISTRADOR", "Farmacia Divino Niño - BIENVENIDA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            FormMenu fprincipal = new FormMenu(); // Cambiar por el menú para administrador
-                            fprincipal.Show();
-                        }
-                        else if (tipoUsuario == "Empleado")
-                        {
-                            MessageBox.Show("BIENVENIDO EMPLEADO", "Farmacia Divino Niño - BIENVENIDA", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            MenuEmpleados fempleado = new MenuEmpleados(); // Cambiar por el menú para empleado
-                            fempleado.Show();
-                        }
-                        this.Hide();
+                    Conexion.tipoUsuario = tipoUsuario;
+                    //this.Hide();
+                }
+                else
+                {
+                    // Incrementar el contador de intentos
+                    intentos++;
+
+                    if (intentos >= 5)
+                    {
+                        MessageBox.Show("Has alcanzado el límite de intentos fallidos. El programa se cerrará.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Application.Exit(); // Cierra la aplicación
                     }
                     else
                     {
-                        MessageBox.Show("Error de usuario o clave de acceso", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        textUsuario.Clear();
-                        textContraseña.Clear();
-                    }
+                        string mensaje = "Error de usuario o clave de acceso. Intentos restantes: " + (5 - intentos);
+                        MessageBox.Show(mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                    conn.Close();
+                        // Iniciar temporizador para borrar los campos
+                        mensajeTimer.Start();
+                    }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    textUsuario.Clear();
-                    textContraseña.Clear();
-                }
+
+                conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message + "\n" + ex.StackTrace, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                textUsuario.Clear();
+                textContraseña.Clear();
             }
         }
-        
+    
 
-        private void btnCerrar_Click(object sender, EventArgs e)
+private void OcultarMensaje(object sender, EventArgs e)
+{
+    // Detener el temporizador y limpiar los campos
+    mensajeTimer.Stop();
+    textUsuario.Clear();
+    textContraseña.Clear();
+}
+
+private void btnCerrar_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Estas seguro que quieres salir?", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
 

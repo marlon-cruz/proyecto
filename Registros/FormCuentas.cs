@@ -1,4 +1,5 @@
 ﻿using MySqlConnector;
+using Org.BouncyCastle.Pqc.Crypto.Falcon;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -43,7 +44,7 @@ namespace proyecto1
         private void mostrarCuentas()
         {
             //MySqlConnection myConnection = new MySqlConnection(cadena_conexion);
-            string consulta = "select * from nombre_cuentas";
+            string consulta = "select * from usuariosingreso";
 
             MySqlConnection conexion = new MySqlConnection(cadena_conexion);
             MySqlDataAdapter da = new MySqlDataAdapter(consulta, conexion);
@@ -51,9 +52,13 @@ namespace proyecto1
             da.Fill(ds, "divino_niño");
             dgvCuentas.DataSource = ds;
             dgvCuentas.DataMember = "divino_niño";
-            if (dgvCuentas.Columns.Contains("IdCuenta"))
+            if (dgvCuentas.Columns.Contains("Id"))
             {
-                dgvCuentas.Columns["IdCuenta"].Visible = false;
+                dgvCuentas.Columns["Id"].Visible = false;
+            }
+            if (dgvCuentas.Columns.Contains("Contraseña"))
+            {
+                dgvCuentas.Columns["Contraseña"].Visible = false;
             }
         }
 
@@ -66,7 +71,8 @@ namespace proyecto1
                 txtNombreCuentas.Enabled = false;
                 txtUsuarioCuentas.Enabled = false;
                 txtContraseñaCuentas.Enabled = false;
-
+                chkAdministrador.Enabled = false;
+                chkUsuario.Enabled = false;
                 try
                 {
                     mostrarCuentas();
@@ -90,9 +96,13 @@ namespace proyecto1
                     txtNombreCuentas.Enabled = true;
                     txtUsuarioCuentas.Enabled = true;
                     txtContraseñaCuentas.Enabled = true;
+                    chkAdministrador.Enabled = true;
+                    chkUsuario.Enabled = true;
                     txtNombreCuentas.Text = "";
                     txtUsuarioCuentas.Text = "";
                     txtContraseñaCuentas.Text = "";
+                    chkAdministrador.Checked = false;
+                    chkUsuario.Checked = false;
                     btnCrearCuenta.Text = "Guardar";
                     btnGuardar.Text = "Cancelar";
                 }
@@ -102,7 +112,16 @@ namespace proyecto1
                     string nombre = txtNombreCuentas.Text;
                     string usuario = txtUsuarioCuentas.Text;
                     string contra = txtContraseñaCuentas.Text;
-                    //  string rol = cmbRolCuenta.Text;
+
+                    // Validar que se haya seleccionado un tipo de usuario
+                    if (!chkAdministrador.Checked && !chkUsuario.Checked)
+                    {
+                        MessageBox.Show("¡Selecciona un tipo de usuario!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+
+                    // Determinar el tipo de usuario
+                    string tipoUsuario = chkAdministrador.Checked ? "Administrador" : "Empleado";
 
                     if (nombre == "" || usuario == "" || contra == "")
                     {
@@ -112,19 +131,20 @@ namespace proyecto1
                     {
                         MySqlConnection myConnection = new MySqlConnection(cadena_conexion);
 
-                        string myInsertQuery = "INSERT INTO nombre_cuentas(Nombre,Usuario,Contraseña) Values(?Nombre,?Usuario,?Contraseña)";
+                        string myInsertQuery = "INSERT INTO usuariosingreso(Nombre,Usuario,Contraseña,TipoUsuario) Values(?Nombre,?Usuario,?Contraseña,?TipoUsuario)";
                         MySqlCommand myCommand = new MySqlCommand(myInsertQuery);
 
                         myCommand.Parameters.Add("?Nombre", MySqlDbType.VarChar, 100).Value = txtNombreCuentas.Text;
                         myCommand.Parameters.Add("?Usuario", MySqlDbType.VarChar, 100).Value = txtUsuarioCuentas.Text;
                         myCommand.Parameters.Add("?Contraseña", MySqlDbType.VarChar, 50).Value = txtContraseñaCuentas.Text;
+                        myCommand.Parameters.Add("?TipoUsuario", MySqlDbType.VarChar, 50).Value = tipoUsuario;
 
                         myCommand.Connection = myConnection;
                         myConnection.Open();
                         myCommand.ExecuteNonQuery();
                         myCommand.Connection.Close();
 
-                        MessageBox.Show("Cuenta agregado con éxito", "Farmacia Divino Niño - CONFIRMACION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Cuenta agregada con éxito", "Farmacia Divino Niño - CONFIRMACION", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         mostrarCuentas();
 
                         nombre = "";
@@ -133,9 +153,15 @@ namespace proyecto1
                         txtNombreCuentas.Enabled = false;
                         txtUsuarioCuentas.Enabled = false;
                         txtContraseñaCuentas.Enabled = false;
+                        chkAdministrador.Enabled = false;
+                        chkUsuario.Enabled = false;
                         txtNombreCuentas.Text = "";
                         txtUsuarioCuentas.Text = "";
                         txtContraseñaCuentas.Text = "";
+                        chkUsuario.Checked = false;
+                        chkAdministrador.Checked = false;
+                        chkAdministrador.Checked = false;
+                        chkUsuario.Checked = false;
                         btnCrearCuenta.Text = "Nuevo";
                     }
                 }
@@ -144,6 +170,7 @@ namespace proyecto1
             {
                 MessageBox.Show("Ya existe el registro de usuario", "Farmacia Divino Niño - Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
         private void btnEliminarCuenta_Click(object sender, EventArgs e)
@@ -153,7 +180,7 @@ namespace proyecto1
             {
                 MySqlConnection myConnection = new MySqlConnection(cadena_conexion);
 
-                string myInsertQuery = "DELETE FROM nombre_cuentas WHERE IdCuenta = " + registro_modificar;
+                string myInsertQuery = "DELETE FROM usuariosingreso WHERE Id = " + registro_modificar;
                 MySqlCommand myCommand = new MySqlCommand(myInsertQuery);
 
                 myCommand.Connection = myConnection;
@@ -194,8 +221,11 @@ namespace proyecto1
                     {
                         btnEditarCuenta.Text = "Cancelar";
                         txtNombreCuentas.Enabled = true;
+                        //ESTE ES EL DE EMPLEADOS
                         txtUsuarioCuentas.Enabled = true;
                         txtContraseñaCuentas.Enabled = true;
+                        chkUsuario.Enabled = true;
+                        chkAdministrador.Enabled = true;
                     }
                 }
                 else
@@ -204,6 +234,9 @@ namespace proyecto1
                     txtNombreCuentas.Enabled = false;
                     txtUsuarioCuentas.Enabled = false;
                     txtContraseñaCuentas.Enabled = false;
+                    //ESTE ES EL DE EMPLEADOS
+                    chkUsuario.Enabled = false;
+                    chkAdministrador.Enabled = false;
                     txtNombreCuentas.Text = "";
                     txtUsuarioCuentas.Text = "";
                     txtContraseñaCuentas.Text = "";
@@ -224,63 +257,75 @@ namespace proyecto1
         //BOTON DE GUARDAR CUENTAS
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-
-            
             if (btnGuardar.Text == "Actualizar")
             {
                 try
                 {
-                    //GENERA LA CONEXION DE LA BASE DE DATOS
+                    // Genera la conexión de la base de datos
                     MySqlConnection myConnection = new MySqlConnection(cadena_conexion);
 
-                    //SE CREAN LAS VARIABLES CON STRING LUEGO SEGUIDO CON EL TEXTO CORRELATIVO
+                    // Obtiene los valores de los campos
                     string nom = txtNombreCuentas.Text;
                     string user = txtUsuarioCuentas.Text;
                     string contra = txtContraseñaCuentas.Text;
 
+                    // Validar que los campos no estén vacíos
+                    if (string.IsNullOrWhiteSpace(nom) || string.IsNullOrWhiteSpace(user) || string.IsNullOrWhiteSpace(contra))
+                    {
+                        MessageBox.Show("¡Completa todos los campos!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
 
-                    //EN ESTA LINEA PRESENTA LO QUJE ES LA ACTUALIZANCION DE TODOS LOS DATOS DE LA TABLA DE LA BASE DE DATOS
-                    string myInsertQuery = "UPDATE nombre_cuentas SET Nombre = '" + nom + "', Usuario= '" + user + "', Contraseña = '" + contra + "'  WHERE IdCuenta = '" + registro_modificar + "'";
+                    // Validar que se haya seleccionado un tipo de usuario
+                    if (!chkAdministrador.Checked && !chkUsuario.Checked)
+                    {
+                        MessageBox.Show("¡Selecciona un tipo de usuario!", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
 
+                    // Determina el tipo de usuario
+                    string tipoUsuario = chkAdministrador.Checked ? "Administrador" : "Empleado";
 
-                    //GENERA UNA CADENA DE COMANDOS
-                    MySqlCommand myCommand = new MySqlCommand(myInsertQuery);
+                    // Consulta para actualizar los datos
+                    string myUpdateQuery = "UPDATE usuariosingreso SET Nombre = @Nombre, Usuario = @Usuario, Contraseña = @Contraseña, TipoUsuario = @TipoUsuario WHERE Id = @Id";
 
+                    // Crear y configurar el comando
+                    MySqlCommand myCommand = new MySqlCommand(myUpdateQuery);
+                    myCommand.Parameters.AddWithValue("@Nombre", nom);
+                    myCommand.Parameters.AddWithValue("@Usuario", user);
+                    myCommand.Parameters.AddWithValue("@Contraseña", contra);
+                    myCommand.Parameters.AddWithValue("@TipoUsuario", tipoUsuario);
+                    myCommand.Parameters.AddWithValue("@Id", registro_modificar); // Id del registro que se está modificando
 
-                    //INICIA Y CIERRA LA CONEXION COMO SEA INDICADA
                     myCommand.Connection = myConnection;
                     myConnection.Open();
                     myCommand.ExecuteNonQuery();
-                    myCommand.Connection.Close();
+                    myConnection.Close();
 
-                    //MENSAJE DE COMPROBACION PARA VERIFICAR QUE SI FUE GUARDADO EL DATO.
-                    MessageBox.Show("Registro de cuentas actualizado con éxito", "Farmacia Divino Niño - CONFIRMACION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    // Mensaje de confirmación
+                    MessageBox.Show("Registro de cuentas actualizado con éxito", "Farmacia Divino Niño - CONFIRMACIÓN", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    //GENERAR CONSULTA A LA BASE DE DATOS CON LA TABLA INDICADA
-
-                    string consulta = "select * from nombre_cuentas";
-
-
-                    MySqlConnection conexion = new MySqlConnection(cadena_conexion);
-                    MySqlDataAdapter da = new MySqlDataAdapter(consulta, conexion);
+                    // Actualiza el DataGridView
+                    string consulta = "SELECT * FROM usuariosingreso";
+                    MySqlDataAdapter da = new MySqlDataAdapter(consulta, myConnection);
                     System.Data.DataSet ds = new System.Data.DataSet();
-                    da.Fill(ds, "divino_niño");
-                    dgvCuentas.DataSource = ds;
-                    dgvCuentas.DataMember = "divino_niño";
-
+                    da.Fill(ds, "usuariosingreso");
+                    dgvCuentas.DataSource = ds.Tables["usuariosingreso"];
                 }
-                catch (MySqlException)
+                catch (MySqlException ex)
                 {
-                    //Y SI NO REALIZA LA CONSULTA MOSTRARA LO QUE ES UN MENSAJE DE ERROR PARA PODER VERIFICAR SI FUE ACTUALIZADO O NO.
-                    MessageBox.Show("Error al actualizar el registro de cuentas", "Farmacia Divino Niño- Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    // Muestra un mensaje de error
+                    MessageBox.Show($"Error al actualizar el registro: {ex.Message}", "Farmacia Divino Niño - Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
-
-
-                //LUEGO DE INGRESAR LOS DATOS Y SE GUARDAN SE LIMPIAN CON ESTA LINEA DE CODIGO INSERTANDO CADA TEXTBOX
+                // Limpia los campos después de actualizar
                 txtNombreCuentas.Clear();
                 txtUsuarioCuentas.Clear();
                 txtContraseñaCuentas.Clear();
+                chkAdministrador.Checked = false;
+                chkUsuario.Checked = false;
+
+                // Actualiza la lista de cuentas en la tabla
                 mostrarCuentas();
             }
             else
@@ -289,18 +334,18 @@ namespace proyecto1
                 txtNombreCuentas.Enabled = false;
                 txtUsuarioCuentas.Enabled = false;
                 txtContraseñaCuentas.Enabled = false;
+                chkAdministrador.Enabled = false;
+                chkUsuario.Enabled = false;
                 btnGuardar.Text = "Actualizar";
                 btnCrearCuenta.Text = "Nuevo";
                 mostrarCuentas();
             }
-
-
         }
 
         private void btnBuscarCuenta_Click(object sender, EventArgs e)
         {
 
-            string query = "SELECT * FROM nombre_cuentas WHERE nombre LIKE @filtro OR usuario LIKE @filtro";
+            string query = "SELECT * FROM usuariosingreso WHERE nombre LIKE @filtro OR usuario LIKE @filtro";
 
             string filtro = txtBuscar.Text;
             using (MySqlConnection connection = new MySqlConnection(cadena_conexion))
@@ -320,9 +365,9 @@ namespace proyecto1
                         // Asigna el DataTable al DataGridView
                         dgvCuentas.DataSource = dataTable;
 
-                        if (dgvCuentas.Columns.Contains("IdCuenta"))
+                        if (dgvCuentas.Columns.Contains("Id"))
                         {
-                            dgvCuentas.Columns["IdCuenta"].Visible = false;
+                            dgvCuentas.Columns["Id"].Visible = false;
                         }
                     }
                 }
@@ -361,7 +406,17 @@ namespace proyecto1
                 txtNombreCuentas.Text = row.Cells["Nombre"].Value.ToString();
                 txtUsuarioCuentas.Text = row.Cells["Usuario"].Value.ToString();
                 txtContraseñaCuentas.Text = row.Cells["Contraseña"].Value.ToString();
-                registro_modificar = row.Cells["IdCuenta"].Value.ToString();
+                string rol = row.Cells["TipoUsuario"].Value.ToString();
+
+                if (rol == "Administrador")
+                {
+                    chkAdministrador.Checked = true;
+                }
+                else
+                {
+                    chkUsuario.Checked = true;
+                }
+                registro_modificar = row.Cells["Id"].Value.ToString();
 
             }
         }
@@ -395,6 +450,22 @@ namespace proyecto1
                 mostrarCuentas();
             }
 
+        }
+
+        private void chkAdministrador_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkAdministrador.Checked)
+            {
+                chkUsuario.Checked = false;
+            }
+        }
+
+        private void chkUsuario_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkUsuario.Checked)
+            {
+                chkAdministrador.Checked = false;
+            }
         }
     }
     
