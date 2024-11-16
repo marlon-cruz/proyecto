@@ -220,5 +220,10 @@ namespace proyecto1
             alerta_cantidad_medicamentos formlong = new alerta_cantidad_medicamentos();
             formlong.Show();
         }
+
+        private void txtNombreInventario_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

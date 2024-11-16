@@ -36,18 +36,6 @@ namespace proyecto1
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInventario));
             this.dgvInventario = new System.Windows.Forms.DataGridView();
-            this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PDescuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PCaja = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pUnidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PBlister = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Area = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Vencimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblInventario = new System.Windows.Forms.Label();
             this.lblNombreInventario = new System.Windows.Forms.Label();
             this.lblTipoInventario = new System.Windows.Forms.Label();
@@ -79,6 +67,17 @@ namespace proyecto1
             this.pictureBoxCuentas = new System.Windows.Forms.PictureBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
+            this.IdProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PDescuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PCaja = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pUnidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PBlister = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Area = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Vencimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
             this.statusStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -106,12 +105,10 @@ namespace proyecto1
             this.Codigo,
             this.Nombre,
             this.Cantidad,
-            this.Precio,
             this.PDescuento,
             this.PCaja,
             this.pUnidad,
             this.PBlister,
-            this.Tipo,
             this.Area,
             this.Vencimiento});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
@@ -125,7 +122,7 @@ namespace proyecto1
             this.dgvInventario.Enabled = false;
             this.dgvInventario.EnableHeadersVisualStyles = false;
             this.dgvInventario.GridColor = System.Drawing.Color.Black;
-            this.dgvInventario.Location = new System.Drawing.Point(10, 324);
+            this.dgvInventario.Location = new System.Drawing.Point(20, 324);
             this.dgvInventario.Name = "dgvInventario";
             this.dgvInventario.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgvInventario.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
@@ -141,114 +138,9 @@ namespace proyecto1
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvInventario.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvInventario.Size = new System.Drawing.Size(1220, 159);
+            this.dgvInventario.Size = new System.Drawing.Size(1268, 207);
             this.dgvInventario.TabIndex = 63;
             this.dgvInventario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgbInventario_CellContentClick);
-            // 
-            // IdProducto
-            // 
-            this.IdProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.IdProducto.DataPropertyName = "IdProducto";
-            this.IdProducto.HeaderText = "IdProducto";
-            this.IdProducto.MinimumWidth = 6;
-            this.IdProducto.Name = "IdProducto";
-            this.IdProducto.ReadOnly = true;
-            this.IdProducto.Visible = false;
-            this.IdProducto.Width = 113;
-            // 
-            // Codigo
-            // 
-            this.Codigo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Codigo.DataPropertyName = "Codigo";
-            this.Codigo.HeaderText = "Código";
-            this.Codigo.MinimumWidth = 6;
-            this.Codigo.Name = "Codigo";
-            this.Codigo.Width = 82;
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.Width = 210;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.Cantidad.DataPropertyName = "Cantidad";
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.MinimumWidth = 6;
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.Width = 96;
-            // 
-            // Precio
-            // 
-            this.Precio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Precio.DataPropertyName = "Precio";
-            this.Precio.HeaderText = "Precio";
-            this.Precio.MinimumWidth = 6;
-            this.Precio.Name = "Precio";
-            this.Precio.Width = 78;
-            // 
-            // PDescuento
-            // 
-            this.PDescuento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.PDescuento.DataPropertyName = "PDescuento";
-            this.PDescuento.HeaderText = "Precio %";
-            this.PDescuento.MinimumWidth = 6;
-            this.PDescuento.Name = "PDescuento";
-            this.PDescuento.Width = 94;
-            // 
-            // PCaja
-            // 
-            this.PCaja.HeaderText = "Precio Caja";
-            this.PCaja.MinimumWidth = 6;
-            this.PCaja.Name = "PCaja";
-            this.PCaja.ReadOnly = true;
-            this.PCaja.Width = 150;
-            // 
-            // pUnidad
-            // 
-            this.pUnidad.HeaderText = "Precio Unidad";
-            this.pUnidad.MinimumWidth = 6;
-            this.pUnidad.Name = "pUnidad";
-            this.pUnidad.ReadOnly = true;
-            this.pUnidad.Width = 125;
-            // 
-            // PBlister
-            // 
-            this.PBlister.HeaderText = "Precio Blister";
-            this.PBlister.MinimumWidth = 6;
-            this.PBlister.Name = "PBlister";
-            this.PBlister.ReadOnly = true;
-            this.PBlister.Width = 125;
-            // 
-            // Tipo
-            // 
-            this.Tipo.DataPropertyName = "Tipo";
-            this.Tipo.HeaderText = "Tipo";
-            this.Tipo.MinimumWidth = 6;
-            this.Tipo.Name = "Tipo";
-            this.Tipo.Width = 125;
-            // 
-            // Area
-            // 
-            this.Area.DataPropertyName = "Area";
-            this.Area.HeaderText = "Área";
-            this.Area.MinimumWidth = 6;
-            this.Area.Name = "Area";
-            this.Area.ReadOnly = true;
-            this.Area.Width = 125;
-            // 
-            // Vencimiento
-            // 
-            this.Vencimiento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.Vencimiento.DataPropertyName = "Vencimiento";
-            this.Vencimiento.HeaderText = "Vencimiento";
-            this.Vencimiento.MinimumWidth = 6;
-            this.Vencimiento.Name = "Vencimiento";
-            this.Vencimiento.Width = 123;
             // 
             // lblInventario
             // 
@@ -265,7 +157,7 @@ namespace proyecto1
             // 
             this.lblNombreInventario.AutoSize = true;
             this.lblNombreInventario.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreInventario.Location = new System.Drawing.Point(329, 104);
+            this.lblNombreInventario.Location = new System.Drawing.Point(330, 98);
             this.lblNombreInventario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombreInventario.Name = "lblNombreInventario";
             this.lblNombreInventario.Size = new System.Drawing.Size(108, 29);
@@ -276,7 +168,7 @@ namespace proyecto1
             // 
             this.lblTipoInventario.AutoSize = true;
             this.lblTipoInventario.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipoInventario.Location = new System.Drawing.Point(369, 241);
+            this.lblTipoInventario.Location = new System.Drawing.Point(368, 222);
             this.lblTipoInventario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTipoInventario.Name = "lblTipoInventario";
             this.lblTipoInventario.Size = new System.Drawing.Size(69, 29);
@@ -287,7 +179,7 @@ namespace proyecto1
             // 
             this.lblPdescuentoInventario.AutoSize = true;
             this.lblPdescuentoInventario.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPdescuentoInventario.Location = new System.Drawing.Point(291, 207);
+            this.lblPdescuentoInventario.Location = new System.Drawing.Point(291, 191);
             this.lblPdescuentoInventario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPdescuentoInventario.Name = "lblPdescuentoInventario";
             this.lblPdescuentoInventario.Size = new System.Drawing.Size(147, 29);
@@ -298,7 +190,7 @@ namespace proyecto1
             // 
             this.lblPrecioInventario.AutoSize = true;
             this.lblPrecioInventario.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrecioInventario.Location = new System.Drawing.Point(350, 173);
+            this.lblPrecioInventario.Location = new System.Drawing.Point(349, 160);
             this.lblPrecioInventario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPrecioInventario.Name = "lblPrecioInventario";
             this.lblPrecioInventario.Size = new System.Drawing.Size(88, 29);
@@ -309,7 +201,7 @@ namespace proyecto1
             // 
             this.lblCantidadInventario.AutoSize = true;
             this.lblCantidadInventario.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCantidadInventario.Location = new System.Drawing.Point(323, 134);
+            this.lblCantidadInventario.Location = new System.Drawing.Point(322, 131);
             this.lblCantidadInventario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCantidadInventario.Name = "lblCantidadInventario";
             this.lblCantidadInventario.Size = new System.Drawing.Size(115, 29);
@@ -320,7 +212,7 @@ namespace proyecto1
             // 
             this.lblCodigoInventario.AutoSize = true;
             this.lblCodigoInventario.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigoInventario.Location = new System.Drawing.Point(342, 69);
+            this.lblCodigoInventario.Location = new System.Drawing.Point(343, 64);
             this.lblCodigoInventario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCodigoInventario.Name = "lblCodigoInventario";
             this.lblCodigoInventario.Size = new System.Drawing.Size(94, 29);
@@ -330,17 +222,18 @@ namespace proyecto1
             // txtNombreInventario
             // 
             this.txtNombreInventario.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombreInventario.Location = new System.Drawing.Point(442, 104);
-            this.txtNombreInventario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombreInventario.Location = new System.Drawing.Point(442, 100);
+            this.txtNombreInventario.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombreInventario.Name = "txtNombreInventario";
             this.txtNombreInventario.Size = new System.Drawing.Size(134, 27);
             this.txtNombreInventario.TabIndex = 72;
+            this.txtNombreInventario.TextChanged += new System.EventHandler(this.txtNombreInventario_TextChanged);
             // 
             // txtPdescuentoInventario
             // 
             this.txtPdescuentoInventario.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPdescuentoInventario.Location = new System.Drawing.Point(442, 207);
-            this.txtPdescuentoInventario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPdescuentoInventario.Location = new System.Drawing.Point(442, 193);
+            this.txtPdescuentoInventario.Margin = new System.Windows.Forms.Padding(2);
             this.txtPdescuentoInventario.Name = "txtPdescuentoInventario";
             this.txtPdescuentoInventario.Size = new System.Drawing.Size(134, 27);
             this.txtPdescuentoInventario.TabIndex = 74;
@@ -348,8 +241,8 @@ namespace proyecto1
             // txtPrecioInventario
             // 
             this.txtPrecioInventario.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecioInventario.Location = new System.Drawing.Point(442, 173);
-            this.txtPrecioInventario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPrecioInventario.Location = new System.Drawing.Point(442, 162);
+            this.txtPrecioInventario.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrecioInventario.Name = "txtPrecioInventario";
             this.txtPrecioInventario.Size = new System.Drawing.Size(134, 27);
             this.txtPrecioInventario.TabIndex = 75;
@@ -357,8 +250,8 @@ namespace proyecto1
             // txtCantidadInventario
             // 
             this.txtCantidadInventario.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCantidadInventario.Location = new System.Drawing.Point(442, 136);
-            this.txtCantidadInventario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCantidadInventario.Location = new System.Drawing.Point(442, 131);
+            this.txtCantidadInventario.Margin = new System.Windows.Forms.Padding(2);
             this.txtCantidadInventario.Name = "txtCantidadInventario";
             this.txtCantidadInventario.Size = new System.Drawing.Size(134, 27);
             this.txtCantidadInventario.TabIndex = 76;
@@ -367,7 +260,7 @@ namespace proyecto1
             // 
             this.txtCodigoInventario.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigoInventario.Location = new System.Drawing.Point(442, 69);
-            this.txtCodigoInventario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCodigoInventario.Margin = new System.Windows.Forms.Padding(2);
             this.txtCodigoInventario.Name = "txtCodigoInventario";
             this.txtCodigoInventario.Size = new System.Drawing.Size(134, 27);
             this.txtCodigoInventario.TabIndex = 77;
@@ -382,8 +275,8 @@ namespace proyecto1
             "Unidad",
             "Blister",
             "Caja"});
-            this.cmbTipoInventario.Location = new System.Drawing.Point(442, 241);
-            this.cmbTipoInventario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cmbTipoInventario.Location = new System.Drawing.Point(442, 224);
+            this.cmbTipoInventario.Margin = new System.Windows.Forms.Padding(2);
             this.cmbTipoInventario.Name = "cmbTipoInventario";
             this.cmbTipoInventario.Size = new System.Drawing.Size(134, 27);
             this.cmbTipoInventario.TabIndex = 78;
@@ -392,7 +285,7 @@ namespace proyecto1
             // 
             this.lblVencimintoInventario.AutoSize = true;
             this.lblVencimintoInventario.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVencimintoInventario.Location = new System.Drawing.Point(685, 55);
+            this.lblVencimintoInventario.Location = new System.Drawing.Point(684, 67);
             this.lblVencimintoInventario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblVencimintoInventario.Name = "lblVencimintoInventario";
             this.lblVencimintoInventario.Size = new System.Drawing.Size(151, 29);
@@ -403,7 +296,7 @@ namespace proyecto1
             // 
             this.lblBuscarInventario.AutoSize = true;
             this.lblBuscarInventario.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBuscarInventario.Location = new System.Drawing.Point(917, 46);
+            this.lblBuscarInventario.Location = new System.Drawing.Point(1056, 58);
             this.lblBuscarInventario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBuscarInventario.Name = "lblBuscarInventario";
             this.lblBuscarInventario.Size = new System.Drawing.Size(225, 29);
@@ -413,8 +306,8 @@ namespace proyecto1
             // txtBuscarInventario
             // 
             this.txtBuscarInventario.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscarInventario.Location = new System.Drawing.Point(949, 88);
-            this.txtBuscarInventario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBuscarInventario.Location = new System.Drawing.Point(1088, 100);
+            this.txtBuscarInventario.Margin = new System.Windows.Forms.Padding(2);
             this.txtBuscarInventario.Name = "txtBuscarInventario";
             this.txtBuscarInventario.Size = new System.Drawing.Size(162, 31);
             this.txtBuscarInventario.TabIndex = 81;
@@ -425,8 +318,8 @@ namespace proyecto1
             this.dtpCalendarioInventario.CalendarTitleBackColor = System.Drawing.SystemColors.ControlText;
             this.dtpCalendarioInventario.CalendarTitleForeColor = System.Drawing.Color.AliceBlue;
             this.dtpCalendarioInventario.Font = new System.Drawing.Font("Calibri", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpCalendarioInventario.Location = new System.Drawing.Point(607, 88);
-            this.dtpCalendarioInventario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpCalendarioInventario.Location = new System.Drawing.Point(606, 100);
+            this.dtpCalendarioInventario.Margin = new System.Windows.Forms.Padding(2);
             this.dtpCalendarioInventario.Name = "dtpCalendarioInventario";
             this.dtpCalendarioInventario.Size = new System.Drawing.Size(301, 30);
             this.dtpCalendarioInventario.TabIndex = 82;
@@ -434,8 +327,8 @@ namespace proyecto1
             // btnEliminarInventario
             // 
             this.btnEliminarInventario.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarInventario.Location = new System.Drawing.Point(10, 493);
-            this.btnEliminarInventario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminarInventario.Location = new System.Drawing.Point(11, 558);
+            this.btnEliminarInventario.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarInventario.Name = "btnEliminarInventario";
             this.btnEliminarInventario.Size = new System.Drawing.Size(102, 42);
             this.btnEliminarInventario.TabIndex = 83;
@@ -446,8 +339,8 @@ namespace proyecto1
             // btnEditarInventario
             // 
             this.btnEditarInventario.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarInventario.Location = new System.Drawing.Point(134, 493);
-            this.btnEditarInventario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditarInventario.Location = new System.Drawing.Point(135, 558);
+            this.btnEditarInventario.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditarInventario.Name = "btnEditarInventario";
             this.btnEditarInventario.Size = new System.Drawing.Size(101, 42);
             this.btnEditarInventario.TabIndex = 84;
@@ -458,10 +351,10 @@ namespace proyecto1
             // btnCerrarInventario
             // 
             this.btnCerrarInventario.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarInventario.Location = new System.Drawing.Point(1043, 488);
-            this.btnCerrarInventario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCerrarInventario.Location = new System.Drawing.Point(1203, 558);
+            this.btnCerrarInventario.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrarInventario.Name = "btnCerrarInventario";
-            this.btnCerrarInventario.Size = new System.Drawing.Size(99, 47);
+            this.btnCerrarInventario.Size = new System.Drawing.Size(99, 42);
             this.btnCerrarInventario.TabIndex = 85;
             this.btnCerrarInventario.Text = "Cerrar";
             this.btnCerrarInventario.UseVisualStyleBackColor = true;
@@ -470,8 +363,8 @@ namespace proyecto1
             // btnBuscarInventario
             // 
             this.btnBuscarInventario.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarInventario.Location = new System.Drawing.Point(984, 129);
-            this.btnBuscarInventario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscarInventario.Location = new System.Drawing.Point(1123, 141);
+            this.btnBuscarInventario.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscarInventario.Name = "btnBuscarInventario";
             this.btnBuscarInventario.Size = new System.Drawing.Size(100, 40);
             this.btnBuscarInventario.TabIndex = 86;
@@ -482,8 +375,8 @@ namespace proyecto1
             // btnGuardarInventario
             // 
             this.btnGuardarInventario.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardarInventario.Location = new System.Drawing.Point(254, 493);
-            this.btnGuardarInventario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGuardarInventario.Location = new System.Drawing.Point(255, 558);
+            this.btnGuardarInventario.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardarInventario.Name = "btnGuardarInventario";
             this.btnGuardarInventario.Size = new System.Drawing.Size(102, 42);
             this.btnGuardarInventario.TabIndex = 87;
@@ -495,7 +388,7 @@ namespace proyecto1
             // 
             this.btnAgregarInventario.Font = new System.Drawing.Font("Calibri", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarInventario.Location = new System.Drawing.Point(548, 282);
-            this.btnAgregarInventario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAgregarInventario.Margin = new System.Windows.Forms.Padding(2);
             this.btnAgregarInventario.Name = "btnAgregarInventario";
             this.btnAgregarInventario.Size = new System.Drawing.Size(102, 37);
             this.btnAgregarInventario.TabIndex = 88;
@@ -509,11 +402,11 @@ namespace proyecto1
             this.statusStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripSplitButton1});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 540);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 611);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 10, 0);
             this.statusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.statusStrip1.Size = new System.Drawing.Size(1286, 26);
+            this.statusStrip1.Size = new System.Drawing.Size(1310, 26);
             this.statusStrip1.TabIndex = 90;
             this.statusStrip1.Text = "Alertas";
             // 
@@ -548,7 +441,7 @@ namespace proyecto1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(133)))));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(922, 88);
+            this.pictureBox1.Location = new System.Drawing.Point(1038, 101);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(29, 30);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -587,8 +480,8 @@ namespace proyecto1
             "Antidepresivos",
             "Antihistamínicos",
             "Antiinflamatorios"});
-            this.comboBox1.Location = new System.Drawing.Point(656, 245);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox1.Location = new System.Drawing.Point(673, 224);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(134, 27);
             this.comboBox1.TabIndex = 92;
@@ -597,12 +490,111 @@ namespace proyecto1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(596, 241);
+            this.label1.Location = new System.Drawing.Point(596, 222);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(73, 29);
             this.label1.TabIndex = 91;
             this.label1.Text = "Área: ";
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(580, 158);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(82, 34);
+            this.button1.TabIndex = 93;
+            this.button1.Text = "Establecer";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // IdProducto
+            // 
+            this.IdProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.IdProducto.DataPropertyName = "IdProducto";
+            this.IdProducto.HeaderText = "IdProducto";
+            this.IdProducto.MinimumWidth = 6;
+            this.IdProducto.Name = "IdProducto";
+            this.IdProducto.ReadOnly = true;
+            this.IdProducto.Visible = false;
+            this.IdProducto.Width = 112;
+            // 
+            // Codigo
+            // 
+            this.Codigo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Codigo.DataPropertyName = "Codigo";
+            this.Codigo.HeaderText = "Código";
+            this.Codigo.MinimumWidth = 6;
+            this.Codigo.Name = "Codigo";
+            this.Codigo.Width = 82;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.Width = 210;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.Cantidad.DataPropertyName = "Cantidad";
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.MinimumWidth = 6;
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.Width = 96;
+            // 
+            // PDescuento
+            // 
+            this.PDescuento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.PDescuento.DataPropertyName = "PDescuento";
+            this.PDescuento.HeaderText = "Precio %";
+            this.PDescuento.MinimumWidth = 6;
+            this.PDescuento.Name = "PDescuento";
+            this.PDescuento.Width = 94;
+            // 
+            // PCaja
+            // 
+            this.PCaja.HeaderText = "Pre.Caja";
+            this.PCaja.MinimumWidth = 6;
+            this.PCaja.Name = "PCaja";
+            this.PCaja.ReadOnly = true;
+            this.PCaja.Width = 150;
+            // 
+            // pUnidad
+            // 
+            this.pUnidad.HeaderText = "Pre.Unidad";
+            this.pUnidad.MinimumWidth = 6;
+            this.pUnidad.Name = "pUnidad";
+            this.pUnidad.ReadOnly = true;
+            this.pUnidad.Width = 125;
+            // 
+            // PBlister
+            // 
+            this.PBlister.HeaderText = "Pre.Blister";
+            this.PBlister.MinimumWidth = 6;
+            this.PBlister.Name = "PBlister";
+            this.PBlister.ReadOnly = true;
+            this.PBlister.Width = 125;
+            // 
+            // Area
+            // 
+            this.Area.DataPropertyName = "Area";
+            this.Area.HeaderText = "Área";
+            this.Area.MinimumWidth = 6;
+            this.Area.Name = "Area";
+            this.Area.ReadOnly = true;
+            this.Area.Width = 125;
+            // 
+            // Vencimiento
+            // 
+            this.Vencimiento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Vencimiento.DataPropertyName = "Vencimiento";
+            this.Vencimiento.HeaderText = "Vencimiento";
+            this.Vencimiento.MinimumWidth = 6;
+            this.Vencimiento.Name = "Vencimiento";
+            this.Vencimiento.Width = 123;
             // 
             // FormInventario
             // 
@@ -610,7 +602,8 @@ namespace proyecto1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1286, 566);
+            this.ClientSize = new System.Drawing.Size(1310, 637);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.statusStrip1);
@@ -690,16 +683,15 @@ namespace proyecto1
         private System.Windows.Forms.ToolStripMenuItem stockCasiVasioToolStripMenuItem;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn PDescuento;
         private System.Windows.Forms.DataGridViewTextBoxColumn PCaja;
         private System.Windows.Forms.DataGridViewTextBoxColumn pUnidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn PBlister;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Area;
         private System.Windows.Forms.DataGridViewTextBoxColumn Vencimiento;
     }

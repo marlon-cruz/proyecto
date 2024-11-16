@@ -226,6 +226,7 @@ namespace proyecto1
                         txtContraseñaCuentas.Enabled = true;
                         chkUsuario.Enabled = true;
                         chkAdministrador.Enabled = true;
+                        txtContraseñaCuentas.UseSystemPasswordChar = false;
                     }
                 }
                 else
@@ -240,8 +241,7 @@ namespace proyecto1
                     txtNombreCuentas.Text = "";
                     txtUsuarioCuentas.Text = "";
                     txtContraseñaCuentas.Text = "";
-
-                    
+                    txtContraseñaCuentas.UseSystemPasswordChar = true;
                 }
             }
             catch (MySqlException ex)
