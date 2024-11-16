@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
 
  
@@ -58,6 +59,8 @@ namespace proyecto1
 
         private void FormCuentas_Load(object sender, EventArgs e)
         {
+            
+
 
             {
                 txtNombreCuentas.Enabled = false;

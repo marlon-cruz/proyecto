@@ -118,40 +118,61 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Facturación" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Facturación.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="correo-electronico 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\correo-electronico 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="doc" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\doc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="llamada-telefonica 1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\llamada-telefonica 1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Proveedores" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Proveedores.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Devoluciones" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Devoluciones.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Candado" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Candado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="icono de vencimiento" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icono de vencimiento.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="correo-electronico" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\correo-electronico.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Ventas" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Ventas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Persona" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Persona.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="llamada-telefonica" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\llamada-telefonica.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Facturación" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Facturación.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="poca cantidad en stock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\poca cantidad en stock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icono de vencimiento" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icono de vencimiento.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Inventario" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Inventario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Cuentas12" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Cuentas12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="doc" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\doc.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="correo-electronico 3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\correo-electronico 3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Lupa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Lupa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="poca cantidad en stock" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\poca cantidad en stock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Proveedores" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Proveedores.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Candado" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Candado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="guia-del-usuario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\guia-del-usuario.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Persona" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Persona.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Devoluciones" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Devoluciones.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Cuentas12" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Cuentas12.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="llamada-telefonica 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\llamada-telefonica 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

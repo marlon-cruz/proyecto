@@ -73,6 +73,36 @@ namespace proyecto1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap correo_electronico {
+            get {
+                object obj = ResourceManager.GetObject("correo-electronico", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap correo_electronico_1 {
+            get {
+                object obj = ResourceManager.GetObject("correo-electronico 1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap correo_electronico_3 {
+            get {
+                object obj = ResourceManager.GetObject("correo-electronico 3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Cuentas12 {
             get {
                 object obj = ResourceManager.GetObject("Cuentas12", resourceCulture);
@@ -113,6 +143,16 @@ namespace proyecto1.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap guia_del_usuario {
+            get {
+                object obj = ResourceManager.GetObject("guia-del-usuario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icono_de_vencimiento {
             get {
                 object obj = ResourceManager.GetObject("icono de vencimiento", resourceCulture);
@@ -126,6 +166,36 @@ namespace proyecto1.Properties {
         internal static System.Drawing.Bitmap Inventario {
             get {
                 object obj = ResourceManager.GetObject("Inventario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap llamada_telefonica {
+            get {
+                object obj = ResourceManager.GetObject("llamada-telefonica", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap llamada_telefonica_1 {
+            get {
+                object obj = ResourceManager.GetObject("llamada-telefonica 1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap llamada_telefonica_2 {
+            get {
+                object obj = ResourceManager.GetObject("llamada-telefonica 2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -191,12 +191,6 @@
     <Compile Include="Información\FormAyuda.Designer.cs">
       <DependentUpon>FormAyuda.cs</DependentUpon>
     </Compile>
-    <Compile Include="Información\FormAcerca.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Información\FormAcerca.Designer.cs">
-      <DependentUpon>FormAcerca.cs</DependentUpon>
-    </Compile>
     <Compile Include="Funciones\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,9 +253,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Información\FormAyuda.resx">
       <DependentUpon>FormAyuda.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Información\FormAcerca.resx">
-      <DependentUpon>FormAcerca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Funciones\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -359,6 +350,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\poca cantidad en stock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\correo-electronico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\llamada-telefonica.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\correo-electronico 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guia-del-usuario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\correo-electronico 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\llamada-telefonica 1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\llamada-telefonica 2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

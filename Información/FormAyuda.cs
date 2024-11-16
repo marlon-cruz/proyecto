@@ -24,7 +24,7 @@ namespace proyecto1
             TemaColor.colorLbl(label4);
             TemaColor.colorLbl(label5);
             TemaColor.colorBtn(btnCerrar);
-            TemaColor.colorBtn(btnChat);
+            TemaColor.colorBtn(btnGuiaUsuario);
             TemaColor.colorBtn(btnCorreo);
             TemaColor.colorBtn(btnTelefono);
         }
@@ -45,8 +45,8 @@ namespace proyecto1
         {
             { // Especifica el correo del destinatario
               string emailDestinatario = "kevinalexiscastillo14@gmail.com"; // Cambia esto por el correo electrónico deseado
-              string asunto = Asuntoo.Text; // Opcional: el asunto del correo
-              string cuerpo = Cuerpoo.Text; // Opcional: el cuerpo del correo 
+              string asunto = ""; // Opcional: el asunto del correo
+              string cuerpo = ""; // Opcional: el cuerpo del correo 
               // Construye la URL mailto (con la información que se enviara)
               // string mailtoUrl = $"mailto:{emailDestinatario}?subject={Uri.EscapeDataString(asunto)}&body={Uri.EscapeDataString(cuerpo)}"; 
              string gmailUrl = $"https://mail.google.com/mail/?view=cm&fs=1&to={Uri.EscapeDataString(emailDestinatario)}&su={Uri.EscapeDataString(asunto)}&body={Uri.EscapeDataString(cuerpo)}";
