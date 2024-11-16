@@ -1,4 +1,4 @@
-﻿using proyecto1.Funciones;
+﻿
 using proyecto1.Información;
 using System;
 using System.Collections.Generic;
