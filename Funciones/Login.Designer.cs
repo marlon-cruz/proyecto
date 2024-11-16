@@ -38,8 +38,6 @@ namespace proyecto1
             this.textUsuario = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblBienvenido = new System.Windows.Forms.Label();
-            this.lblSaludo = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -54,7 +52,6 @@ namespace proyecto1
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 23;
             this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
             // 
             // pictureBox2
             // 
@@ -65,7 +62,6 @@ namespace proyecto1
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 22;
             this.pictureBox2.TabStop = false;
-            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
             // 
             // btnCerrar
             // 
@@ -132,7 +128,6 @@ namespace proyecto1
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 17;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // lblBienvenido
             // 
@@ -144,33 +139,6 @@ namespace proyecto1
             this.lblBienvenido.Size = new System.Drawing.Size(185, 72);
             this.lblBienvenido.TabIndex = 16;
             this.lblBienvenido.Text = "\r\nBienvenido/a \r\n";
-            this.lblBienvenido.Click += new System.EventHandler(this.lblBienvenido_Click);
-            // 
-            // lblSaludo
-            // 
-            this.lblSaludo.AutoSize = true;
-            this.lblSaludo.Font = new System.Drawing.Font("Calibri", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSaludo.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblSaludo.Location = new System.Drawing.Point(227, 9);
-            this.lblSaludo.Name = "lblSaludo";
-            this.lblSaludo.Size = new System.Drawing.Size(0, 36);
-            this.lblSaludo.TabIndex = 24;
-            this.lblSaludo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblSaludo.Click += new System.EventHandler(this.lblSaludo_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(160)))), ((int)(((byte)(255)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(386, 452);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(105, 29);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Conexion";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormLogin
             // 
@@ -179,8 +147,6 @@ namespace proyecto1
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(133)))));
             this.ClientSize = new System.Drawing.Size(849, 500);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.lblSaludo);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnCerrar);
@@ -212,8 +178,6 @@ namespace proyecto1
         private System.Windows.Forms.TextBox textUsuario;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblBienvenido;
-        private System.Windows.Forms.Label lblSaludo;
-        private System.Windows.Forms.Button button1;
     }
 }
 

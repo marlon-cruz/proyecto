@@ -101,16 +101,13 @@ namespace proyecto1
                         MessageBox.Show("¡Intentalo otra vez!", "Alerta");
                    
                     }
-                   
-
                 }
-            }
-
-            
+            }            
         }
 
         private void btnCerrarVentas_Click(object sender, EventArgs e)
         {
+            
             FormMenu formMenu = new FormMenu();
             formMenu.Show();
             this.Close();

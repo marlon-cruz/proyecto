@@ -179,6 +179,12 @@
       <DependentUpon>Alerta_vencimiento_medicamentos.cs</DependentUpon>
     </Compile>
     <Compile Include="Clases\Conexion.cs" />
+    <Compile Include="Funciones\MenuEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Funciones\MenuEmpleados.Designer.cs">
+      <DependentUpon>MenuEmpleados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Información\AcercaDe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -247,6 +253,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Alertas\Alerta_vencimiento_medicamentos.resx">
       <DependentUpon>Alerta_vencimiento_medicamentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Funciones\MenuEmpleados.resx">
+      <DependentUpon>MenuEmpleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Información\AcercaDe.resx">
       <DependentUpon>AcercaDe.cs</DependentUpon>
