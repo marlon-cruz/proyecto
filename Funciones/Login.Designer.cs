@@ -99,7 +99,7 @@ namespace proyecto1
             this.textContraseña.ForeColor = System.Drawing.Color.White;
             this.textContraseña.Location = new System.Drawing.Point(338, 319);
             this.textContraseña.Name = "textContraseña";
-            this.textContraseña.PasswordChar = '*';
+            this.textContraseña.PasswordChar = '⁂';
             this.textContraseña.Size = new System.Drawing.Size(208, 31);
             this.textContraseña.TabIndex = 19;
             this.textContraseña.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

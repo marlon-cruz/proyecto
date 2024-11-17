@@ -139,14 +139,6 @@ namespace proyecto1
                         MessageBox.Show("Proveedor agregada con éxito", "Farmacia Divino Niño - CONFIRMACION", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         mostrarProveedores();
-                        /*string consulta = "select * from proveedores";
-
-                        MySqlConnection conexion = new MySqlConnection(cadena_conexion);
-                        MySqlDataAdapter da = new MySqlDataAdapter(consulta, conexion);
-                        System.Data.DataSet ds = new System.Data.DataSet();
-                        da.Fill(ds, "divino_niño");
-                        dgbProveedores.DataSource = ds;
-                        dgbProveedores.DataMember = "divino_niño";*/
 
                         codigo = "";
                         nombre = "";
@@ -249,10 +241,7 @@ namespace proyecto1
                     txtEmailProveedor.Text == "" ||
                     txtTelefonoProveedor.Text == "" ||
                     txtTelefonoProveedor.Text == "" ||
-                    txtDireccionProveedor.Text == ""
-                       
-                       
-                       )
+                    txtDireccionProveedor.Text == "")
                     {
                         MessageBox.Show("Debe seleccionar una cuenta", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
@@ -287,10 +276,6 @@ namespace proyecto1
                     txtEmailProveedor.Text = "";
                     txtTelefonoProveedor.Text = "";
                     txtDireccionProveedor.Text = "";
-
-
-
-
                 }
             }
             catch (MySqlException ex)
@@ -364,6 +349,10 @@ namespace proyecto1
 
         private void txtTelefonoProveedor_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if(txtTelefonoProveedor.Text.Length == 3)
+            {
+                txtTelefonoProveedor.Text += "-";
+            }
             if (!char.IsDigit(e.KeyChar) &&
                 !((e.KeyChar >= 33 && e.KeyChar <= 47) ||
                   (e.KeyChar >= 58 && e.KeyChar <= 64) ||
