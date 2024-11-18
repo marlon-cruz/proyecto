@@ -102,6 +102,7 @@ namespace proyecto1
                         MessageBox.Show("BIENVENIDO ADMINISTRADOR", "Farmacia Divino Niño - BIENVENIDA", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         FormMenu fprincipal = new FormMenu();
                         fprincipal.Show();
+                        this.Hide();//HIDE
                     }
                     else if (tipoUsuario == "Empleado")
                     {

@@ -1,7 +1,9 @@
 ﻿using MySqlConnector;
+using Mysqlx.Cursor;
 using proyecto1.Clases;
 using proyecto1.Funciones;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -80,10 +82,7 @@ namespace proyecto1
                 dgvInventario.Columns["IdProducto"].Visible = false;
             }
         }
-        private void dgbInventario_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
         private void FormInventario_Load(object sender, EventArgs e)
         {
             {
@@ -130,15 +129,74 @@ namespace proyecto1
 
         private void btnEditarInventario_Click(object sender, EventArgs e)
         {
-            if (dgvInventario.Enabled == false)
+            try
             {
-                dgvInventario.Enabled = true;
-                btnEditarInventario.Text = "Dejar";
+                if (btnEditarInventario.Text == "Editar")
+                {
+                    if (
+                    txtCodigoInventario.Text == "" ||
+                    txtNombreInventario.Text == "" ||
+                    cmbArea.Text == "" ||
+                    txtPrecioCaja.Text == "" ||
+                    txtPrecioBlister.Text == "" ||
+                    txtPrecioUnidad.Text == "" ||
+                    txtCantidadCaja.Text == "" ||
+                    txtCantidadBlister.Text == "" ||
+                    txtCantidadUnidad.Text == "" ||
+                    dtpCalendarioInventario.Text == "")
+                    {
+                        MessageBox.Show("Debe seleccionar una cuenta", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    }
+                    else
+                    {
+                        btnEditarInventario.Text = "Cancelar";
+                        txtCodigoInventario.Enabled = true;
+                        txtNombreInventario.Enabled = true;
+                        cmbArea.Enabled = true;
+                        txtPrecioCaja.Enabled = true;
+                        txtPrecioBlister.Enabled = true;
+                        txtPrecioUnidad.Enabled = true;
+                        txtCantidadCaja.Enabled = true;
+                        txtCantidadBlister.Enabled = true;
+                        txtCantidadUnidad.Enabled = true;
+                        dtpCalendarioInventario.Enabled = true;
+                        btnGuardarInventario.Enabled = true;
+                    }
+                }
+                else
+                {
+                    btnEditarInventario.Text = "Editar";
+                    txtCodigoInventario.Enabled = false;
+                    txtNombreInventario.Enabled = false;
+                    cmbArea.Enabled = false;
+                    txtPrecioCaja.Enabled = false;
+                    txtPrecioBlister.Enabled = false;
+                    txtPrecioUnidad.Enabled = false;
+                    txtCantidadCaja.Enabled = false;
+                    txtCantidadBlister.Enabled = false;
+                    txtCantidadUnidad.Enabled = false;
+                    dtpCalendarioInventario.Enabled = false;
+                    btnGuardarInventario.Enabled = false;
+                    txtCodigoInventario.Text = "";
+                    txtNombreInventario.Text = "";
+                    cmbArea.Text = "";
+                    txtPrecioCaja.Text = "";
+                    txtPrecioBlister.Text = "";
+                    txtPrecioUnidad.Text = "";
+                    txtCantidadCaja.Text = "";
+                    txtCantidadBlister.Text = "";
+                    txtCantidadUnidad.Text = "";
+                    dtpCalendarioInventario.Text = "";
+                }
             }
-            else
+            catch (MySqlException ex)
             {
-                dgvInventario.Enabled = false;
-                btnEditarInventario.Text = "Editar";
+                MessageBox.Show("Error al actualizar el registro de producto: " + ex.Message, "Farmacia Divino Niño - Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (FormatException ex)
+            {
+                MessageBox.Show("Formato de ID incorrecto: " + ex.Message, "Farmacia Divino Niño - Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void btnAgregarInventario_Click(object sender, EventArgs e)
@@ -241,73 +299,143 @@ namespace proyecto1
 
         private void btnGuardarInventario_Click(object sender, EventArgs e)
         {
+            if (btnGuardarInventario.Text == "Actualizar")
+            {
+                try
+                {
+                    //GENERA LA CONEXION DE LA BASE DE DATOS
+                    MySqlConnection myConnection = new MySqlConnection(cadena_conexion);
 
+                    //SE CREAN LAS VARIABLES CON STRING LUEGO SEGUIDO CON EL TEXTO CORRELATIVO
+                    string codigo = txtCodigoInventario.Text;
+                    string nombre = txtNombreInventario.Text;
+                    string area = cmbArea.Text;
+                    string precaja = txtPrecioCaja.Text;//No obligatorio
+                    string preblister = txtPrecioBlister.Text;//No obligatorio
+                    string preunidad = txtPrecioUnidad.Text;
+                    //DateTime fechaingreso = dtpCalendarioInventario.Value;
+                    string cancaja = txtCantidadCaja.Text;//No obligatorio
+                    string canblister = txtCantidadBlister.Text;//No obligatorio
+                    string canunidad = txtCantidadUnidad.Text;
+                    string vencimiento = dtpCalendarioInventario.Value.ToString("yyyy-MM-dd");
+
+
+
+                    //EN ESTA LINEA PRESENTA LO QUJE ES LA ACTUALIZANCION DE TODOS LOS DATOS DE LA TABLA DE LA BASE DE DATOS
+                    string myInsertQuery = "UPDATE productos SET " + "Codigo = '" + codigo + "', " + "Nombre = '" + nombre + "', " + "Area = '" + area + "', " + "PreCaja = '" + precaja + "', " + "PreBlister = '" + preblister + "', " + "PreUnidad = '" + preunidad + "', " + "CCaja = '" + cancaja + "', " + "CBlister = '" + canblister +"', " + "CUnidad = '" + canunidad + "', " + "Vencimiento = '" + vencimiento + "' "+ "WHERE IdProducto = '" + registro_modificar + "'";
+
+                    //GENERA UNA CADENA DE COMANDOS
+                    MySqlCommand myCommand = new MySqlCommand(myInsertQuery);
+
+
+                    //INICIA Y CIERRA LA CONEXION COMO SEA INDICADA
+                    myCommand.Connection = myConnection;
+                    myConnection.Open();
+                    myCommand.ExecuteNonQuery();
+                    myCommand.Connection.Close();
+
+                    //MENSAJE DE COMPROBACION PARA VERIFICAR QUE SI FUE GUARDADO EL DATO.
+                    MessageBox.Show("Registro de producto actualizado con éxito", "Farmacia Divino Niño - CONFIRMACION", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    //GENERAR CONSULTA A LA BASE DE DATOS CON LA TABLA INDICADA
+                    mostrarInventario();
+
+                }
+                catch (MySqlException)
+                {
+                    //Y SI NO REALIZA LA CONSULTA MOSTRARA LO QUE ES UN MENSAJE DE ERROR PARA PODER VERIFICAR SI FUE ACTUALIZADO O NO.
+                    MessageBox.Show("Error al actualizar el registro de producto", "Farmacia Divino Niño- Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+
+
+                //LUEGO DE INGRESAR LOS DATOS Y SE GUARDAN SE LIMPIAN CON ESTA LINEA DE CODIGO INSERTANDO CADA TEXTBOX
+                txtCodigoInventario.Clear();
+                txtNombreInventario.Clear();
+                //cmbArea.Clear();
+                txtPrecioCaja.Clear();
+                txtPrecioBlister.Clear();
+                txtPrecioUnidad.Clear();
+                txtCantidadCaja.Clear();
+                txtCantidadBlister.Clear();
+                txtCantidadUnidad.Clear();
+                //dtpCalendarioInventario.Clear();
+                mostrarInventario();
+            }
+            else
+            {
+                btnGuardarInventario.Text = "Cancelar";
+                txtCodigoInventario.Enabled = false;
+                txtNombreInventario.Enabled = false;
+                cmbArea.Enabled = false;
+                txtPrecioCaja.Enabled = false;
+                txtPrecioBlister.Enabled = false;
+                txtPrecioUnidad.Enabled = false;
+                txtCantidadCaja.Enabled = false;
+                txtCantidadBlister.Enabled = false;
+                txtCantidadUnidad.Enabled = false;
+                dtpCalendarioInventario.Enabled = false;
+
+                btnGuardarInventario.Text = "Actualizar";
+                btnCerrarInventario.Text = "Nuevo";
+                mostrarInventario();
+            }
         }
 
         private void btnBuscarInventario_Click(object sender, EventArgs e)
         {
-            int indice = dgvInventario.RowCount - 1;
-            string busqueda = txtBuscarInventario.Text;
-            if(indice == 0)
+            string query = "SELECT * FROM productos WHERE Codigo LIKE @filtro OR Nombre LIKE @filtro OR Area LIKE @filtro";
+            string filtro = txtBuscarInventario.Text;
+            using (MySqlConnection connection = new MySqlConnection(cadena_conexion))
             {
-                MessageBox.Show("Aun no hay medicamentos en el inventario");
-            }
-            else
-            {
-                if (busqueda == "")
+                connection.Open();
+                try
                 {
-                    MessageBox.Show("Por favor, Ingrese un medicamento para realizar la busqueda.");
-                }
-                else
-                {
-                    for (int i = 0; i < indice; i++)
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
-                        string dato = Convert.ToString(dgvInventario.Rows[i].Cells[1].Value);
-                        if (dato == busqueda)
-                        {
+                        // Agregar el parámetro 
+                        command.Parameters.AddWithValue("@filtro", "%" + filtro + "%");
 
-                            DataGridViewRow fila = dgvInventario.Rows[i];
-                            string nombre = fila.Cells["ColumnaNombre"].Value.ToString();
-                            string cant = Convert.ToString(fila.Cells["ColumnaCantidad"].Value);
-                            string precio = Convert.ToString(fila.Cells["ColumnaPrecio"].Value);
-                            string precioDes = Convert.ToString(fila.Cells["ColumnaPDescuento"].Value);
-                            string vencimiento = Convert.ToString(fila.Cells["ColumnaVencimiento"].Value);
-                            MessageBox.Show("Medicamento encontrado\nNombre: " + nombre + "\ncantidad: " + cant + "\nPrecio: " + precio + "\nPrecio con descuento: " + precioDes + "Vencimiento: " + vencimiento);
-                            break;
-                        }
-                        if (i == indice - 1)
+                        MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+
+                        // Asigna el DataTable al DataGridView
+                        dgvInventario.DataSource = dataTable;
+
+                        // Opcional: ocultar la columna "IdProducto" si existe
+                        if (dgvInventario.Columns.Contains("IdProducto"))
                         {
-                            MessageBox.Show("El medicamento " + busqueda + " no se ha encontrado.");
-                            break;
+                            dgvInventario.Columns["IdProducto"].Visible = false;
                         }
                     }
                 }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
             }
+
         }
+
 
         private void btnEliminarInventario_Click(object sender, EventArgs e)
         {
-            if (dgvInventario.RowCount == 1)
+            if (MessageBox.Show("Esta seguro de eliminar a " + txtNombreInventario.Text.Trim() + "?", "Eliminar producto", MessageBoxButtons.YesNo,
+             MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                MessageBox.Show("Aun no existen medicamentos");
-            }
-            else
-            {
-                if (dgvInventario.SelectedRows.Count > 0)
-                {
+                MySqlConnection myConnection = new MySqlConnection(cadena_conexion);
 
-                    int rowIndex = dgvInventario.SelectedRows[0].Index;
+                string myInsertQuery = "DELETE FROM productos WHERE IdProducto = " + registro_modificar;
+                MySqlCommand myCommand = new MySqlCommand(myInsertQuery);
 
-                    if (MessageBox.Show("¿Estás seguro de eliminar este medicamento?", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                    {
+                myCommand.Connection = myConnection;
+                myConnection.Open();
+                myCommand.ExecuteNonQuery();
+                myCommand.Connection.Close();
+                MessageBox.Show("Registro eliminado con exito", "Farmacia Divino Niño-Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                mostrarInventario();
 
-                        dgvInventario.Rows.RemoveAt(rowIndex);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Por favor, selecciona un medicamento a eliminar.");
-                }
             }
         }
 
@@ -337,6 +465,7 @@ namespace proyecto1
 
         private void dgvInventario_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+
             //COMEN
             // Verifica que la celda seleccionada no sea un encabezado
             if (e.RowIndex >= 0)
@@ -344,18 +473,18 @@ namespace proyecto1
                 // Obtén la fila seleccionada
                 DataGridViewRow row = dgvInventario.Rows[e.RowIndex];
                 // Asigna los valores de la fila seleccionada a los TextBox
-
                 txtCodigoInventario.Text = row.Cells["Codigo"].Value.ToString();
                 txtNombreInventario.Text = row.Cells["Nombre"].Value.ToString();
                 cmbArea.Text = row.Cells["Area"].Value.ToString();
                 txtPrecioCaja.Text = row.Cells["PreCaja"].Value.ToString();
                 txtPrecioBlister.Text = row.Cells["PreBlister"].Value.ToString();
                 txtPrecioUnidad.Text = row.Cells["PreUnidad"].Value.ToString();
-                //Falta
+                //Fecha ingreso
                 txtCantidadCaja.Text = row.Cells["CCaja"].Value.ToString();
                 txtCantidadBlister.Text = row.Cells["CBlister"].Value.ToString();
                 txtCantidadUnidad.Text = row.Cells["CUnidad"].Value.ToString();
-                dtpCalendarioInventario.Text = row.Cells["CInventario"].Value.ToString();
+                dtpCalendarioInventario.Text = row.Cells["Vencimiento"].Value.ToString();
+               //Codigo,Nombre,Area,PreCaja,PreBlister,PreUnidad,FechaIngreso,CCaja,CBlister,CUnidad,Vencimiento
                 registro_modificar = row.Cells["IdProducto"].Value.ToString();
 
             }

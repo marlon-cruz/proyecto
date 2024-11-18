@@ -175,7 +175,7 @@ namespace proyecto1
 
         private void btnEliminarProveedor_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Esta seguro de eliminar a " + txtNombreProveedor.Text.Trim() + "?", "Eliminar cuenta", MessageBoxButtons.YesNo,
+            if (MessageBox.Show("Esta seguro de eliminar a " + txtNombreProveedor.Text.Trim() + "?", "Eliminar proveedor", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 MySqlConnection myConnection = new MySqlConnection(cadena_conexion);
@@ -187,7 +187,7 @@ namespace proyecto1
                 myConnection.Open();
                 myCommand.ExecuteNonQuery();
                 myCommand.Connection.Close();
-                MessageBox.Show("Registro eliminado con exito", "Farmacia Divino Niño-Confirmación");
+                MessageBox.Show("Registro eliminado con exito", "Farmacia Divino Niño-Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 mostrarProveedores();
 
             }
@@ -234,7 +234,7 @@ namespace proyecto1
                 if (btnEditarProveedores.Text == "Editar")
                 {
                     if (
-                     txtCodigoProveedor.Text == ""  ||
+                    txtCodigoProveedor.Text == ""  ||
                     txtNombreProveedor.Text == "" ||
                     txtDistribuidorProveedor.Text == "" ||
                     txtProductoProveedor.Text == "" ||
@@ -244,7 +244,6 @@ namespace proyecto1
                     txtDireccionProveedor.Text == "")
                     {
                         MessageBox.Show("Debe seleccionar una cuenta", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
                     }
                     else
                     {
@@ -256,6 +255,7 @@ namespace proyecto1
                         txtEmailProveedor.Enabled = true;
                         txtTelefonoProveedor.Enabled = true;
                         txtDireccionProveedor.Enabled = true;
+                        btnGuardarProveedor.Enabled = true;
                     }
                 }
                 else
@@ -268,6 +268,7 @@ namespace proyecto1
                     txtEmailProveedor.Enabled = false;
                     txtTelefonoProveedor.Enabled = false;
                     txtDireccionProveedor.Enabled = false;
+                    btnGuardarProveedor.Enabled = false;
 
                     txtCodigoProveedor.Text = "";
                     txtNombreProveedor.Text = "";
@@ -424,21 +425,13 @@ namespace proyecto1
 
                     //GENERAR CONSULTA A LA BASE DE DATOS CON LA TABLA INDICADA
 
-                    string consulta = "select * from proveedores";
-
-
-                    MySqlConnection conexion = new MySqlConnection(cadena_conexion);
-                    MySqlDataAdapter da = new MySqlDataAdapter(consulta, conexion);
-                    System.Data.DataSet ds = new System.Data.DataSet();
-                    da.Fill(ds, "divino_niño");
-                    dgbProveedores.DataSource = ds;
-                    dgbProveedores.DataMember = "divino_niño";
+                    mostrarProveedores();
 
                 }
                 catch (MySqlException)
                 {
                     //Y SI NO REALIZA LA CONSULTA MOSTRARA LO QUE ES UN MENSAJE DE ERROR PARA PODER VERIFICAR SI FUE ACTUALIZADO O NO.
-                    MessageBox.Show("Error al actualizar el registro de cuentas", "Farmacia Divino Niño- Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error al actualizar el registro de proveedores", "Farmacia Divino Niño- Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
 

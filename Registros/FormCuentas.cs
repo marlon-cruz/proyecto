@@ -64,8 +64,6 @@ namespace proyecto1
 
         private void FormCuentas_Load(object sender, EventArgs e)
         {
-            
-
 
             {
                 txtNombreCuentas.Enabled = false;
@@ -187,7 +185,7 @@ namespace proyecto1
                 myConnection.Open();
                 myCommand.ExecuteNonQuery();
                 myCommand.Connection.Close();
-                MessageBox.Show("Registro eliminado con exito","Farmacia Divino Niño-Confirmación");
+                MessageBox.Show("Registro eliminado con exito","Farmacia Divino Niño-Confirmación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 mostrarCuentas();
 
             }
@@ -227,6 +225,7 @@ namespace proyecto1
                         chkUsuario.Enabled = true;
                         chkAdministrador.Enabled = true;
                         txtContraseñaCuentas.UseSystemPasswordChar = false;
+                        btnGuardar.Enabled = true;
                     }
                 }
                 else
@@ -238,6 +237,7 @@ namespace proyecto1
                     //ESTE ES EL DE EMPLEADOS
                     chkUsuario.Enabled = false;
                     chkAdministrador.Enabled = false;
+                    btnGuardar.Enabled = false;
                     txtNombreCuentas.Text = "";
                     txtUsuarioCuentas.Text = "";
                     txtContraseñaCuentas.Text = "";

@@ -31,42 +31,42 @@ namespace proyecto1
         {
             FormLogin formlong = new FormLogin();
             formlong.Show();
-            this.Hide();//Cambiar
+            this.Close();//Cambiar
         }
 
         private void btnCuentasMenu_Click(object sender, EventArgs e)
         {
             FormCuentas formCuent = new FormCuentas();
             formCuent.Show();
-            this.Hide();//cambiar a clouse
+            this.Close();//cambiar a clouse
         }
 
         private void btnInventarioMenu_Click(object sender, EventArgs e)
         {
             FormInventario formInvent = new FormInventario();
             formInvent.Show();
-            this.Hide();//Cambiar
+            this.Close();//Cambiar
         }
 
         private void btnVentasMenu_Click(object sender, EventArgs e)
         {
             FormVentas formvent = new FormVentas();
             formvent.Show();
-            this.Hide();//Cambiar
+            this.Close();//Cambiar
         }
 
         private void btnDevolucionesMenu_Click(object sender, EventArgs e)
         {
             FormDevolucionescs formDev = new FormDevolucionescs();
             formDev.Show();
-            this.Hide();//Cambiar
+            this.Close();//Cambiar
         }
 
         private void btnProveedoresMenu_Click(object sender, EventArgs e)
         {
             FormProveedores formprov = new FormProveedores();
             formprov.Show();
-            this.Hide();//Cambiar
+            this.Close();//Cambiar
         }
 
         private void btnFacturacionMenu_Click(object sender, EventArgs e)
@@ -74,14 +74,14 @@ namespace proyecto1
 
             FormAyuda formAyu = new FormAyuda();
             formAyu.Show();
-            this.Hide();//Cambiar
+            this.Close();//Cambiar
         }
 
         private void btnAcerca_Click(object sender, EventArgs e)
         {
             Conocenos acerca = new Conocenos();
             acerca.Show();
-            this.Hide();//cambiar
+            this.Close();//cambiar
         }
     }
 }
