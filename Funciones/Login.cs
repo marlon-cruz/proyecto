@@ -155,9 +155,11 @@ private void OcultarMensaje(object sender, EventArgs e)
 
 private void btnCerrar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Estas seguro que quieres salir?", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-
-            Application.Exit();
+            DialogResult result = MessageBox.Show("Estas seguro que quieres salir?", "CONFIRMACION", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
     }
 }

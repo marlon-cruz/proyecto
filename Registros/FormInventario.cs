@@ -145,7 +145,7 @@ namespace proyecto1
                     txtCantidadUnidad.Text == "" ||
                     dtpCalendarioInventario.Text == "")
                     {
-                        MessageBox.Show("Debe seleccionar una cuenta", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Debe seleccionar un producto", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                     }
                     else
