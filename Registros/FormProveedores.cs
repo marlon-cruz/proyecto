@@ -175,6 +175,7 @@ namespace proyecto1
 
         private void btnEliminarProveedor_Click(object sender, EventArgs e)
         {
+
             if (MessageBox.Show("Esta seguro de eliminar a " + txtNombreProveedor.Text.Trim() + "?", "Eliminar proveedor", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question) == DialogResult.Yes)
             {
@@ -243,7 +244,7 @@ namespace proyecto1
                     txtTelefonoProveedor.Text == "" ||
                     txtDireccionProveedor.Text == "")
                     {
-                        MessageBox.Show("Debe seleccionar una cuenta", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show("Debe seleccionar una proveedor", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
                     else
                     {
