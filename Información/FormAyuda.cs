@@ -90,6 +90,7 @@ namespace proyecto1
             MessageBox.Show("7839-3245", "Telefono", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
      
+
         private void btnGuiaUsuario_Click(object sender, EventArgs e)
         {
             // Ruta local del archivo
