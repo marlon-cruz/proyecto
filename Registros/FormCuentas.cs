@@ -369,6 +369,10 @@ namespace proyecto1
                         {
                             dgvCuentas.Columns["Id"].Visible = false;
                         }
+                        if (dgvCuentas.Columns.Contains("Contraseña"))
+                        {
+                            dgvCuentas.Columns["Contraseña"].Visible = false;
+                        }
                     }
                 }
                 catch (Exception ex)
