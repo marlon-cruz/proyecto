@@ -127,7 +127,6 @@ namespace proyecto1
             }
 
 
-
             // Verifica si el archivo existe
             if (File.Exists(rutaArchivo))
             {
