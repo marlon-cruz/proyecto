@@ -75,13 +75,19 @@ namespace proyecto1
             System.Data.DataSet ds = new System.Data.DataSet();
             da.Fill(ds, "divino_niño");
             dgvInventario.DataSource = ds;
+            DataGrid venta = new DataGrid();
+
             dgvInventario.DataMember = "divino_niño";
 
             if (dgvInventario.Columns.Contains("IdProducto"))
             {
                 dgvInventario.Columns["IdProducto"].Visible = false;
             }
+           
+
+
         }
+            
 
         private void FormInventario_Load(object sender, EventArgs e)
         {

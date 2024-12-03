@@ -35,18 +35,22 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Alerta_vencimiento_medicamentos));
             this.dgvInventario = new System.Windows.Forms.DataGridView();
-            this.ColumnaCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnaVencimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBoxCuentas = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CCaja = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CBlister = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CUnidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Vencimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCuentas)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvInventario
             // 
+            this.dgvInventario.AllowUserToAddRows = false;
+            this.dgvInventario.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
             this.dgvInventario.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvInventario.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
@@ -62,30 +66,32 @@
             this.dgvInventario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvInventario.ColumnHeadersHeight = 29;
             this.dgvInventario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ColumnaCodigo,
-            this.ColumnaNombre,
-            this.ColumnaCantidad,
-            this.ColumnaVencimiento});
+            this.Codigo,
+            this.Nombre,
+            this.CCaja,
+            this.CBlister,
+            this.CUnidad,
+            this.Vencimiento});
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvInventario.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvInventario.Enabled = false;
             this.dgvInventario.EnableHeadersVisualStyles = false;
             this.dgvInventario.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.dgvInventario.Location = new System.Drawing.Point(128, 261);
+            this.dgvInventario.Location = new System.Drawing.Point(62, 261);
             this.dgvInventario.Margin = new System.Windows.Forms.Padding(4);
             this.dgvInventario.Name = "dgvInventario";
+            this.dgvInventario.ReadOnly = true;
             this.dgvInventario.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dgvInventario.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.Yellow;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
@@ -94,44 +100,13 @@
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvInventario.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvInventario.Size = new System.Drawing.Size(786, 187);
+            this.dgvInventario.Size = new System.Drawing.Size(1323, 279);
             this.dgvInventario.TabIndex = 64;
-            // 
-            // ColumnaCodigo
-            // 
-            this.ColumnaCodigo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.ColumnaCodigo.HeaderText = "Código";
-            this.ColumnaCodigo.MinimumWidth = 6;
-            this.ColumnaCodigo.Name = "ColumnaCodigo";
-            this.ColumnaCodigo.Width = 103;
-            // 
-            // ColumnaNombre
-            // 
-            this.ColumnaNombre.HeaderText = "Nombre";
-            this.ColumnaNombre.MinimumWidth = 6;
-            this.ColumnaNombre.Name = "ColumnaNombre";
-            this.ColumnaNombre.Width = 210;
-            // 
-            // ColumnaCantidad
-            // 
-            this.ColumnaCantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            this.ColumnaCantidad.HeaderText = "Cantidad";
-            this.ColumnaCantidad.MinimumWidth = 6;
-            this.ColumnaCantidad.Name = "ColumnaCantidad";
-            this.ColumnaCantidad.Width = 123;
-            // 
-            // ColumnaVencimiento
-            // 
-            this.ColumnaVencimiento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.ColumnaVencimiento.HeaderText = "Vencimiento";
-            this.ColumnaVencimiento.MinimumWidth = 6;
-            this.ColumnaVencimiento.Name = "ColumnaVencimiento";
-            this.ColumnaVencimiento.Width = 155;
             // 
             // pictureBoxCuentas
             // 
             this.pictureBoxCuentas.Image = global::proyecto1.Properties.Resources.icono_de_vencimiento;
-            this.pictureBoxCuentas.Location = new System.Drawing.Point(420, 13);
+            this.pictureBoxCuentas.Location = new System.Drawing.Point(688, 13);
             this.pictureBoxCuentas.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBoxCuentas.Name = "pictureBoxCuentas";
             this.pictureBoxCuentas.Size = new System.Drawing.Size(188, 156);
@@ -143,18 +118,74 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(255, 173);
+            this.label1.Location = new System.Drawing.Point(540, 185);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(483, 58);
             this.label1.TabIndex = 66;
             this.label1.Text = "Vencimientos Proximos";
+            // 
+            // Codigo
+            // 
+            this.Codigo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Codigo.DataPropertyName = "Codigo";
+            this.Codigo.HeaderText = "Código";
+            this.Codigo.MinimumWidth = 6;
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            this.Codigo.Width = 103;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.MinimumWidth = 6;
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 210;
+            // 
+            // CCaja
+            // 
+            this.CCaja.DataPropertyName = "CCaja";
+            this.CCaja.HeaderText = "Cantidad caja";
+            this.CCaja.MinimumWidth = 6;
+            this.CCaja.Name = "CCaja";
+            this.CCaja.ReadOnly = true;
+            this.CCaja.Width = 175;
+            // 
+            // CBlister
+            // 
+            this.CBlister.DataPropertyName = "CBlister";
+            this.CBlister.HeaderText = "Cantidad Blíster";
+            this.CBlister.MinimumWidth = 6;
+            this.CBlister.Name = "CBlister";
+            this.CBlister.ReadOnly = true;
+            this.CBlister.Width = 175;
+            // 
+            // CUnidad
+            // 
+            this.CUnidad.DataPropertyName = "CUnidad";
+            this.CUnidad.HeaderText = "Cantidad Unidad";
+            this.CUnidad.MinimumWidth = 6;
+            this.CUnidad.Name = "CUnidad";
+            this.CUnidad.ReadOnly = true;
+            this.CUnidad.Width = 175;
+            // 
+            // Vencimiento
+            // 
+            this.Vencimiento.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.Vencimiento.DataPropertyName = "Vencimiento";
+            this.Vencimiento.HeaderText = "Vencimiento";
+            this.Vencimiento.MinimumWidth = 6;
+            this.Vencimiento.Name = "Vencimiento";
+            this.Vencimiento.ReadOnly = true;
+            this.Vencimiento.Width = 155;
             // 
             // Alerta_vencimiento_medicamentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(1050, 517);
+            this.ClientSize = new System.Drawing.Size(1430, 599);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBoxCuentas);
             this.Controls.Add(this.dgvInventario);
@@ -172,11 +203,13 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvInventario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaCodigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaNombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaCantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaVencimiento;
         private System.Windows.Forms.PictureBox pictureBoxCuentas;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CCaja;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CBlister;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CUnidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Vencimiento;
     }
 }

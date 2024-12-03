@@ -381,5 +381,8 @@
   <ItemGroup>
     <None Include="Resources\llamada-telefonica 2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Guia usuario\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
