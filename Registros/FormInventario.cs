@@ -68,7 +68,7 @@ namespace proyecto1
         private void mostrarInventario()
         {
 
-            string consulta = "select * from productos";
+            string consulta = "SELECT IdProducto, Codigo, Nombre, Area, PreCaja, PreBlister, PreUnidad, FechaIngreso, CCaja, CBlister, CUnidad, Vencimiento FROM productos";
 
             MySqlConnection conexion = new MySqlConnection(cadena_conexion);
             MySqlDataAdapter da = new MySqlDataAdapter(consulta, conexion);
@@ -140,6 +140,7 @@ namespace proyecto1
                 if (btnEditarInventario.Text == "Editar")
                 {
                     if (
+
                     txtCodigoInventario.Text == "" ||
                     txtNombreInventario.Text == "" ||
                     cmbArea.Text == "" ||
@@ -168,6 +169,19 @@ namespace proyecto1
                         txtCantidadUnidad.Enabled = true;
                         dtpCalendarioInventario.Enabled = true;
                         btnGuardarInventario.Enabled = true;
+
+                        
+                        /*nuevos datos de cantidades 
+                        int cantidadB = int.Parse(txtCantidadBlister.Text) / int.Parse(txtCantidadCaja.Text);
+
+
+
+                        int unidad = int.Parse(txtCantidadUnidad.Text) / int.Parse(txtCantidadBlister.Text) ;
+                       
+                        txtCantidadBlister.Text = cantidadB.ToString();
+                        txtCantidadUnidad.Text = unidad.ToString();*/
+
+
                     }
                 }
                 else
@@ -235,7 +249,16 @@ namespace proyecto1
                     string cancaja = txtCantidadCaja.Text;//No obligatorio
                     string canblister = txtCantidadBlister.Text;//No obligatorio
                     string canunidad = txtCantidadUnidad.Text;
+                    //Obtencion de datos de contidades vasadas en unidades
+
+                    string cCaja = txtCantidadCaja.Text;
+                    string cBlicter;
+                    string cUnidad;
+
+                   
                     
+                   
+
                     //ingreso SERA LA VARIABLE PARA GUARDAR EL INGRESO
                     if (codigo == "" || nombre == "" || area == "" || precaja == "" || preblister == "" || preunidad == "" || cancaja == "" || canblister == "" || canunidad == "")
                     {
@@ -243,13 +266,35 @@ namespace proyecto1
                     }
                     else
                     {
+
+                        if (txtCantidadCaja.Text == "0")
+                        {
+                            cCaja = txtCantidadCaja.Text;
+                        }
+
+
+                        cBlicter = (int.Parse(txtCantidadCaja.Text) * int.Parse(txtCantidadBlister.Text)).ToString();
+
+                        if (cBlicter.ToString() == "0")
+                        {
+                            cBlicter = txtCantidadBlister.Text;
+                        }
+                        cUnidad = (int.Parse(cBlicter) * int.Parse(txtCantidadUnidad.Text)).ToString();
+
+                        if (cUnidad == "0")
+                        {
+                            cUnidad = txtCantidadUnidad.Text;
+                        }
+
+
+
                         DateTime fecha = DateTime.Now;
                         string fechaIngreso = fecha.ToString("yyyy-MM-dd");
                         string vencimiento = dtpCalendarioInventario.Value.ToString("yyyy-MM-dd");
 
                         MySqlConnection myConnection = new MySqlConnection(cadena_conexion);
 
-                        string myInsertQuery = "INSERT INTO productos(Codigo,Nombre,Area,PreCaja,PreBlister,PreUnidad,FechaIngreso,CCaja,CBlister,CUnidad,Vencimiento) Values(?Codigo,?Nombre,?Area,?PreCaja,?PreBlister,?PreUnidad,?FechaIngreso,?CCaja,?CBlister,?CUnidad,?Vencimiento)";
+                        string myInsertQuery = "INSERT INTO productos(Codigo,Nombre,Area,PreCaja,PreBlister,PreUnidad,FechaIngreso,CCaja,CBlister,CUnidad,Vencimiento,CantCaja,CantBlister,CantUnidad) Values(?Codigo,?Nombre,?Area,?PreCaja,?PreBlister,?PreUnidad,?FechaIngreso,?CCaja,?CBlister,?CUnidad,?Vencimiento,?cantCaja,?cantblister, ?cantUnidad)";
                         MySqlCommand myCommand = new MySqlCommand(myInsertQuery);
 
                         myCommand.Parameters.Add("?Codigo", MySqlDbType.VarChar, 50).Value = txtCodigoInventario.Text;
@@ -259,16 +304,19 @@ namespace proyecto1
                         myCommand.Parameters.Add("?PreBlister", MySqlDbType.Double).Value = txtPrecioBlister.Text;
                         myCommand.Parameters.Add("?PreUnidad", MySqlDbType.Double).Value = txtPrecioUnidad.Text;
                         myCommand.Parameters.Add("?FechaIngreso", MySqlDbType.Date).Value = fechaIngreso;
-                        myCommand.Parameters.Add("?CCaja", MySqlDbType.Int32, 100).Value = txtCantidadCaja.Text;
-                        myCommand.Parameters.Add("?CBlister", MySqlDbType.Int32, 100).Value = txtCantidadBlister.Text;
-                        myCommand.Parameters.Add("?CUnidad", MySqlDbType.Int32, 100).Value = txtCantidadUnidad.Text;
+                        myCommand.Parameters.Add("?CCaja", MySqlDbType.Int32, 100).Value = cCaja;
+                        myCommand.Parameters.Add("?CBlister", MySqlDbType.Int32, 100).Value = cBlicter;
+                        myCommand.Parameters.Add("?CUnidad", MySqlDbType.Int32, 100).Value = cUnidad;
                         myCommand.Parameters.Add("?Vencimiento", MySqlDbType.Date).Value = vencimiento;
+                        myCommand.Parameters.Add("?cantCaja", MySqlDbType.Int32, 100).Value = txtCantidadCaja.Text;
+                        myCommand.Parameters.Add("?cantblister", MySqlDbType.Int32).Value = txtCantidadBlister.Text;
+                        myCommand.Parameters.Add("?cantUnidad", MySqlDbType.Int32).Value = txtCantidadUnidad.Text;
 
                         myCommand.Connection = myConnection;
                         myConnection.Open();
                         myCommand.ExecuteNonQuery();
                         myCommand.Connection.Close();
-
+                      
                         MessageBox.Show("Producto agregada con éxito", "Farmacia Divino Niño - CONFIRMACION", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         mostrarInventario();
@@ -323,8 +371,31 @@ namespace proyecto1
                     string cancaja = txtCantidadCaja.Text;//No obligatorio
                     string canblister = txtCantidadBlister.Text;//No obligatorio
                     string canunidad = txtCantidadUnidad.Text;
+
                     string vencimiento = dtpCalendarioInventario.Value.ToString("yyyy-MM-dd");
 
+                   /* string cancaja = txtCantidadCaja.Text;
+                    string canblister;
+                    string canunidad;
+
+                    if (txtCantidadCaja.Text == "0")
+                    {
+                        cancaja = "0";
+                    }
+
+
+                    canblister = (int.Parse(txtCantidadCaja.Text) * int.Parse(txtCantidadBlister.Text)).ToString();
+
+                    if (txtCantidadBlister.Text == "0")
+                    {
+                        canblister = "0";
+                    }
+                    canunidad = (int.Parse(canblister) * int.Parse(txtCantidadUnidad.Text)).ToString();
+
+                    if (canunidad == "0")
+                    {
+                        canunidad = "0";
+                    }*/
 
 
                     //EN ESTA LINEA PRESENTA LO QUJE ES LA ACTUALIZANCION DE TODOS LOS DATOS DE LA TABLA DE LA BASE DE DATOS
@@ -390,7 +461,8 @@ namespace proyecto1
 
         private void btnBuscarInventario_Click(object sender, EventArgs e)
         {
-            string query = "SELECT * FROM productos WHERE Codigo LIKE @filtro OR Nombre LIKE @filtro OR Area LIKE @filtro";
+            
+            string query = "SELECT IdProducto, Codigo, Nombre, Area, PreCaja, PreBlister, PreUnidad, FechaIngreso, CCaja, CBlister, CUnidad, Vencimiento FROM productos WHERE Codigo LIKE @filtro OR Nombre LIKE @filtro OR Area LIKE @filtro";
             string filtro = txtBuscarInventario.Text;
             using (MySqlConnection connection = new MySqlConnection(cadena_conexion))
             {
@@ -476,8 +548,11 @@ namespace proyecto1
             // Verifica que la celda seleccionada no sea un encabezado
             if (e.RowIndex >= 0)
             {
+               
                 // Obtén la fila seleccionada
                 DataGridViewRow row = dgvInventario.Rows[e.RowIndex];
+                
+               
                 // Asigna los valores de la fila seleccionada a los TextBox
                 txtCodigoInventario.Text = row.Cells["Codigo"].Value.ToString();
                 txtNombreInventario.Text = row.Cells["Nombre"].Value.ToString();
@@ -504,5 +579,7 @@ namespace proyecto1
                 mostrarInventario();
             }
         }
+
+       
     }
 }

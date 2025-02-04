@@ -1,19 +1,51 @@
-﻿using proyecto1.Clases;
+﻿using MySqlConnector;
+using Mysqlx.Crud;
+using Mysqlx.Cursor;
+using proyecto1.Clases;
 using proyecto1.Funciones;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Common;
+using System.Data.SqlClient;
+using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Input;
+using static Mysqlx.Crud.Order.Types;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using KeyEventArgs = System.Windows.Forms.KeyEventArgs;
 
 namespace proyecto1
 {
     public partial class FormVentas : Form
-    {
+    {  
+        public string cadena_conexion = "server=localhost;user id=unkcode;password=12345;persistsecurityinfo=False;database=divino_niño";
+
+        //conexiones de funcion de botones
+        int [,]cantidadActual = new int[20, 20];
+        int [,]cantidadDefaul = new int[20, 20];
+        int contador = 0;
+        private string productoId;
+        private string medicamento;
+
+        private string precioCaja;
+        private string precioBlister;
+        private string precioUnidad;
+        //cantidad por defecto
+        private string defailtCantCaja;
+        private string defailtCantblister;
+        private string defailtCantunidad;
+        //cantidad actual
+        private string CantidadCaja;
+        private string Cantidadblister;
+        private string Cantidadunidad;
         public FormVentas()
         {
             InitializeComponent();
@@ -24,11 +56,11 @@ namespace proyecto1
             TemaColor.colorBtn(btnRealizarVentas);
             TemaColor.colorBtn(btnEditarVentas);
             TemaColor.colorBtn(btnFacturacion);
-           
+
             //LBL
             TemaColor.colorLbl(lblCambioVentas);
             TemaColor.colorLbl(lblCantidadVentas);
-            TemaColor.colorLbl(lblClienteVentas);
+
             TemaColor.colorLbl(lblCodigoVentas);
             TemaColor.colorLbl(lblMedicamentoVentas);
             TemaColor.colorLbl(lblRecibidoVentas);
@@ -42,25 +74,23 @@ namespace proyecto1
             //Textbox
             //TemaColor.colorTextBox(txtCambioVentas);
             TemaColor.colorTextBox(txtCantidadVentas);
-            TemaColor.colorTextBox(txtClienteVenta);
+
             TemaColor.colorTextBox(txtCodigoVentas);
             TemaColor.colorTextBox(txtMedicamentoVentas);
             TemaColor.colorTextBox(txtRecibidoVentas);
-           // TemaColor.colorTextBox(txtTotalVentas);
-           
+            // TemaColor.colorTextBox(txtTotalVentas);
+
             //ComboBox
             TemaColor.colorCombo(cmbTipoVentas);
         }
 
         private void btnAgregarVentas_Click(object sender, EventArgs e)
         {
-            string medicamento = txtMedicamentoVentas.Text;
             string codigo = txtCodigoVentas.Text;
             string cantidad = txtCantidadVentas.Text;
-            string cliente = txtClienteVenta.Text;
             string tipo = cmbTipoVentas.Text;
-           
-            if(btnAgregarVentas.Text == "Nuevo")
+
+            if (btnAgregarVentas.Text == "Nuevo")
             {
                 dgvVentas.Rows.Clear();
 
@@ -69,12 +99,17 @@ namespace proyecto1
                 txtCambioVentas.Text = "0.00";
                 txtTotalVentas.Text = "0.00";
                 txtRecibidoVentas.Text = "";
-                txtClienteVenta.Text = "";
                 btnAgregarVentas.Text = "Agregar";
+
+                txtMedicamentoVentas.Text = "";
+                txtCodigoVentas.Text = "";
+                txtCantidadVentas.Text = "";
+
+
             }
             else
             {
-                if (medicamento == "" || tipo == "" || cliente == "" || cantidad == "" || codigo == "")
+                if (medicamento == "" || tipo == "" || cantidad == "" || codigo == "")
                 {
                     MessageBox.Show("¡Ingresa todos los datos!", "Alerta");
                 }
@@ -82,36 +117,58 @@ namespace proyecto1
                 {
                     try
                     {
-                        double total = int.Parse(cantidad) * 2;
+                        
 
-                        dgvVentas.Rows.Add(codigo, medicamento, cantidad, 3, 2, total);
+                        string total = txtTotalVentas.Text;
+                        string subTotal;
+                        
 
+                        if (tipo == "Caja")
+                        {
+                           subTotal = (float.Parse(cantidad) * float.Parse(precioCaja)).ToString();
+                           dgvVentas.Rows.Add(codigo, medicamento, tipo, cantidad, precioCaja, subTotal);
+                           contador++;
+                                 
+                        }
+                        else if (tipo == "Blister")
+                        {
+                           subTotal = ((float.Parse(cantidad) * float.Parse(precioBlister))).ToString();
+                           dgvVentas.Rows.Add(codigo, medicamento, tipo, cantidad, precioBlister, subTotal);
+                           contador++;  
+                        }
+                        else
+                        {
+                           subTotal = ((float.Parse(cantidad) * float.Parse(precioUnidad))).ToString();
+                           dgvVentas.Rows.Add(codigo, medicamento, tipo, cantidad, precioUnidad, subTotal);
+                           contador++;
+                        }
+
+                       
+                       
+                        for (int i = dgvInventarioOpcion.Rows.Count - 1; i >= 0; i--)
+                        {
+                            dgvInventarioOpcion.Rows.RemoveAt(i);
+                        }
+                        total = (float.Parse(total) + float.Parse(subTotal)).ToString();
+                        txtTotalVentas.Text = total;
                         txtMedicamentoVentas.Text = "";
                         txtCodigoVentas.Text = "";
                         txtCantidadVentas.Text = "";
-                        cmbTipoVentas.Text = "";
-                        txtCantidadVentas.Text = "";
-
-
-
-                        double ventaTotal = double.Parse(txtTotalVentas.Text);
-                        ventaTotal += total;
-                        txtTotalVentas.Text = ventaTotal.ToString();
                     }
                     catch (Exception)
                     {
                         MessageBox.Show("¡Intentalo otra vez!", "Alerta");
-                   
+
                     }
                 }
-            }            
+            }
         }
 
         private void btnCerrarVentas_Click(object sender, EventArgs e)
         {
             string tipo = Conexion.tipoUsuario;
 
-            if ( tipo == "Administrador")
+            if (tipo == "Administrador")
             {
                 FormMenu formMenu = new FormMenu();
                 formMenu.Show();
@@ -124,7 +181,7 @@ namespace proyecto1
                 this.Close();
             }
 
-            
+
         }
 
         private void btnRealizarVentas_Click(object sender, EventArgs e)
@@ -135,77 +192,184 @@ namespace proyecto1
                 double total = double.Parse(txtTotalVentas.Text);
                 double cambio = recibido - total;
 
-                if(cambio < 0)
+                if (cambio < 0)
                 {
                     MessageBox.Show("La cantidad ingresada es menor al total a pagar", "Alerta");
                 }
                 else
                 {
-                    txtCambioVentas.Text = "$ " + cambio;
-                    btnAgregarVentas.Text = "Nuevo";
-                    btnEditarVentas.Enabled = false;
-                    btnCancelarVentas.Enabled = false;
 
-                }
+                string myInsertQuery = "";
+                MySqlConnection myConnection = new MySqlConnection(cadena_conexion);
+                    int cantidad = 0;
+                for (int i = 0; i < dgvVentas.Rows.Count; i++)
+                {
+
+                    DataGridViewRow row = dgvVentas.Rows[i];
+
+                        if (row.Cells["Tipo"].Value.ToString() == "Unidad")
+                        {
+                            MessageBox.Show("Venta unidad");
+                            cantidad = int.Parse(row.Cells["ColumnaCantidad"].Value.ToString());
+
+                        }
+                        else if (row.Cells["Tipo"].Value.ToString() == "Blister")
+                        {
+                            MessageBox.Show("Venta blister");
+                            cantidad = int.Parse(row.Cells["ColumnaCantidad"].Value.ToString()) * cantidadDefaul[i, 2];
+
+                        }
+                        else if (row.Cells["Tipo"].Value.ToString() == "Caja")
+                        { 
+                            MessageBox.Show("Venta caja");
+                            int apoyoBlister = int.Parse(row.Cells["ColumnaCantidad"].Value.ToString()) * cantidadDefaul[i, 2];
+
+                            cantidad = apoyoBlister * cantidadDefaul[i, 3];
+                        }
+
+                        int codigo = cantidadActual[i, 0];
+                        myInsertQuery += "UPDATE productos SET CUnidad = (CUnidad - " + cantidad.ToString() + ") WHERE IdProducto = " + codigo.ToString() + "; ";
+
+
+                        //comprobacion de caja
+                        int div_blister = (cantidadActual[i, 3] - cantidad) / cantidadDefaul[i, 3];
+                        int blister_modificar = div_blister;
+
+                        int div_caja = blister_modificar / cantidadDefaul[i, 2];
+                        int caja_modificar = div_caja;
+                        if (caja_modificar < cantidadActual[i, 1])
+                        {
+                            cantidadActual[i, 1] = caja_modificar;
+                            myInsertQuery += "UPDATE productos SET CCaja = " + caja_modificar + " WHERE IdProducto = " + codigo.ToString() + "; ";
+
+                        }
+                        if (blister_modificar < cantidadActual[i, 2])
+                        {
+                            cantidadActual[i, 2] = blister_modificar;
+                            myInsertQuery += "UPDATE productos SET CBlister = " + blister_modificar + " WHERE IdProducto = " + codigo.ToString() + "; ";
+
+                        }
+
+                        cantidadActual[i, 3] -= cantidad;
+
+                        
+                    }
+                MessageBox.Show(myInsertQuery);
+                MySqlCommand myCommand = new MySqlCommand(myInsertQuery);
+                myCommand.Connection = myConnection;
+                myConnection.Open();
+                myCommand.ExecuteNonQuery();
+                myCommand.Connection.Close();
+                contador = 0;
+            }
+                txtCambioVentas.Text = "$ " + cambio;
+                btnAgregarVentas.Text = "Nuevo";
+                btnEditarVentas.Enabled = false;
+                btnCancelarVentas.Enabled = false;
+
             }
             catch (Exception)
             {
                 MessageBox.Show("¡Intentalo otra vez!", "Alerta");
-                
+
             }
-           
-
         }
-
-        private void btnCancelarVentas_Click(object sender, EventArgs e)
+        
+       private void btnCancelarVentas_Click(object sender, EventArgs e)
         {
             txtMedicamentoVentas.Text = "";
-           // txtCodigoVentas.Text = "";
+            txtCodigoVentas.Text = "";
             txtCantidadVentas.Text = "";
-            txtClienteVenta.Text = "";
+    
             cmbTipoVentas.Text = "";
-            txtTotalVentas.Text = "";
+            txtTotalVentas.Text = "0.00";
             txtRecibidoVentas.Text = "";
             dgvVentas.Rows.Clear();
         }
 
-        private void txtCodigoVentas_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FormVentas_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblClienteVentas_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtClienteVenta_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void btnEditarVentas_Click(object sender, EventArgs e)
         {
-            if (dgvVentas.Enabled == false)
+           
+        }
+
+        private void txtMedicamentoVentas_KeyUp(object sender, KeyEventArgs e)
+        {
+            //Agregar las cantidades base
+            string query = "SELECT IdProducto,Codigo, Nombre, PreCaja, PreBlister, PreUnidad, CCaja, CBlister, CUnidad,CantCaja,CantBlister,CantUnidad FROM productos WHERE Nombre LIKE @filtro  AND Vencimiento > CURDATE();";
+            string filtro = txtMedicamentoVentas.Text;
+            using (MySqlConnection connection = new MySqlConnection(cadena_conexion))
             {
-                dgvVentas.Enabled = true;
-                btnEditarVentas.Text = "Dejar";
-            }
-            else
-            {
-                dgvVentas.Enabled = false;
-                btnEditarVentas.Text = "Editar";
+                connection.Open();
+                try
+                {
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
+                    {
+                        // Agregar el parámetro 
+                        command.Parameters.AddWithValue("@filtro", "%" + filtro + "%");
+
+                        MySqlDataAdapter adapter = new MySqlDataAdapter(command);
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+
+                        // Asigna el DataTable al DataGridView
+                        dgvInventarioOpcion.DataSource = dataTable;
+
+                        // Opcional: ocultar la columna "IdProducto" si existe
+                        if (dgvInventarioOpcion.Columns.Contains("IdProducto"))
+                        {
+                            dgvInventarioOpcion.Columns["IdProducto"].Visible = false;
+                            dgvInventarioOpcion.Columns["CantCaja"].Visible = false;
+                            dgvInventarioOpcion.Columns["CantBlister"].Visible = false;
+                            dgvInventarioOpcion.Columns["CantUnidad"].Visible = false;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
             }
         }
 
-        private void btnFacturacion_Click(object sender, EventArgs e)
+        private void dgvInventarioOpcion_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.RowIndex >= 0)
+            {
 
+                // Obtén la fila seleccionada
+                DataGridViewRow row = dgvInventarioOpcion.Rows[e.RowIndex];
+                // Asigna los valores de la fila seleccionada a los TextBox
+
+                txtCodigoVentas.Text = row.Cells["Codigo"].Value.ToString();
+                txtMedicamentoVentas.Text = row.Cells["Nombre"].Value.ToString();
+                medicamento = row.Cells["Nombre"].Value.ToString();
+                //precios
+                precioCaja = row.Cells["PreCaja"].Value.ToString();
+                precioBlister = row.Cells["PreBlister"].Value.ToString();
+                precioUnidad = row.Cells["PreUnidad"].Value.ToString();
+
+
+                defailtCantCaja = row.Cells["CantCaja"].Value.ToString();
+                defailtCantblister = row.Cells["CantBlister"].Value.ToString();
+                defailtCantunidad = row.Cells["CantUnidad"].Value.ToString();
+                string producto_id = row.Cells["IdProducto"].Value.ToString();
+                //cantidad actual
+                CantidadCaja = row.Cells["CCaja"].Value.ToString();
+                Cantidadblister = row.Cells["CBlister"].Value.ToString();
+                Cantidadunidad = row.Cells["CUnidad"].Value.ToString();
+                //cantidad actual de productos
+                cantidadActual[contador,0] = int.Parse(producto_id);
+                cantidadActual[contador,1] = int.Parse(defailtCantCaja);
+                cantidadDefaul[contador,2] = int.Parse(defailtCantblister);
+                cantidadDefaul[contador,3] = int.Parse(defailtCantunidad);
+                //cantidad base de producto
+                cantidadActual[contador,1] = int.Parse(CantidadCaja);
+                cantidadActual[contador,2] = int.Parse(Cantidadblister);
+                cantidadActual[contador,3] = int.Parse(Cantidadunidad);
+
+            }
         }
     }
 }
