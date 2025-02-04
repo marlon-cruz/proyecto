@@ -339,22 +339,22 @@ namespace proyecto1
 
         private void txtCodigoProveedor_KeyPress(object sender, KeyPressEventArgs e)
         {
-            {
+/*            {
                 if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
                 {
                     MessageBox.Show("INGRESAR SOLO NUMEROS", "ALERTA", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     e.Handled = true;
                     return;
                 }
-            }
+            }*/
         }
 
         private void txtTelefonoProveedor_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(txtTelefonoProveedor.Text.Length == 3)
+/*            if(txtTelefonoProveedor.Text.Length == 4)
             {
                 txtTelefonoProveedor.Text += "-";
-            }
+            }*/
             if (!char.IsDigit(e.KeyChar) &&
                 !((e.KeyChar >= 33 && e.KeyChar <= 47) ||
                   (e.KeyChar >= 58 && e.KeyChar <= 64) ||

@@ -35,14 +35,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Alerta_vencimiento_medicamentos));
             this.dgvInventario = new System.Windows.Forms.DataGridView();
-            this.pictureBoxCuentas = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CCaja = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CBlister = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CUnidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Vencimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBoxCuentas = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxCuentas)).BeginInit();
             this.SuspendLayout();
@@ -82,8 +82,7 @@
             this.dgvInventario.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvInventario.EnableHeadersVisualStyles = false;
             this.dgvInventario.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.dgvInventario.Location = new System.Drawing.Point(62, 261);
-            this.dgvInventario.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvInventario.Location = new System.Drawing.Point(46, 212);
             this.dgvInventario.Name = "dgvInventario";
             this.dgvInventario.ReadOnly = true;
             this.dgvInventario.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -100,29 +99,8 @@
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvInventario.RowsDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvInventario.Size = new System.Drawing.Size(1323, 279);
+            this.dgvInventario.Size = new System.Drawing.Size(992, 227);
             this.dgvInventario.TabIndex = 64;
-            // 
-            // pictureBoxCuentas
-            // 
-            this.pictureBoxCuentas.Image = global::proyecto1.Properties.Resources.icono_de_vencimiento;
-            this.pictureBoxCuentas.Location = new System.Drawing.Point(688, 13);
-            this.pictureBoxCuentas.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBoxCuentas.Name = "pictureBoxCuentas";
-            this.pictureBoxCuentas.Size = new System.Drawing.Size(188, 156);
-            this.pictureBoxCuentas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxCuentas.TabIndex = 65;
-            this.pictureBoxCuentas.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(540, 185);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(483, 58);
-            this.label1.TabIndex = 66;
-            this.label1.Text = "Vencimientos Proximos";
             // 
             // Codigo
             // 
@@ -132,7 +110,7 @@
             this.Codigo.MinimumWidth = 6;
             this.Codigo.Name = "Codigo";
             this.Codigo.ReadOnly = true;
-            this.Codigo.Width = 103;
+            this.Codigo.Width = 82;
             // 
             // Nombre
             // 
@@ -178,18 +156,40 @@
             this.Vencimiento.MinimumWidth = 6;
             this.Vencimiento.Name = "Vencimiento";
             this.Vencimiento.ReadOnly = true;
-            this.Vencimiento.Width = 155;
+            this.Vencimiento.Width = 123;
+            // 
+            // pictureBoxCuentas
+            // 
+            this.pictureBoxCuentas.Image = global::proyecto1.Properties.Resources.icono_de_vencimiento;
+            this.pictureBoxCuentas.Location = new System.Drawing.Point(516, 11);
+            this.pictureBoxCuentas.Name = "pictureBoxCuentas";
+            this.pictureBoxCuentas.Size = new System.Drawing.Size(141, 127);
+            this.pictureBoxCuentas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxCuentas.TabIndex = 65;
+            this.pictureBoxCuentas.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Calibri", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(405, 150);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(385, 46);
+            this.label1.TabIndex = 66;
+            this.label1.Text = "Vencimientos Proximos";
             // 
             // Alerta_vencimiento_medicamentos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(1430, 599);
+            this.ClientSize = new System.Drawing.Size(1091, 487);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBoxCuentas);
             this.Controls.Add(this.dgvInventario);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Alerta_vencimiento_medicamentos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Farmacia Divino Niño - Alerta vencimientos";
