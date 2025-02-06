@@ -14,6 +14,7 @@ using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Net;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -31,6 +32,7 @@ namespace proyecto1
         //conexiones de funcion de botones
         int [,]cantidadActual = new int[20, 20];
         int [,]cantidadDefaul = new int[20, 20];
+        int [,]cantidadesCompra = new int[20, 20];
         int contador = 0;
         private string productoId;
         private string medicamento;
@@ -117,49 +119,155 @@ namespace proyecto1
                 {
                     try
                     {
-                        
 
-                        string total = txtTotalVentas.Text;
+                        /*
+                            cantidadesCompra[contador, 1] = int.Parse(producto_id);
+                            cantidadesCompra[contador, 1] = int.Parse(CantidadCaja);
+                            cantidadesCompra[contador, 1] = int.Parse(Cantidadblister);
+                            cantidadesCompra[contador, 1] = int.Parse(Cantidadunidad);
+                          */
+                        // string total = txtTotalVentas.Text;
                         string subTotal;
-                        
+                        int AcantidadActualizada = 0;
+                        bool actualizado = false;
+                        bool reaizacion = false;
+
+                        int cantidadActualCaja = cantidadesCompra[contador, 1];
+                        int cantidadActualBlister = cantidadesCompra[contador, 2];
+                        int cantidadActualUnidad = cantidadesCompra[contador, 3];
+
+                        int unidadesDisminucion = 0;
+                        for (int i = 0; i < dgvVentas.Rows.Count; i++)
+                        {
+                            DataGridViewRow row = dgvVentas.Rows[i];
+                            if (tipo == "Caja")
+                            {
+                                unidadesDisminucion = (int.Parse(cantidad) * cantidadesCompra[i, 5]) * cantidadesCompra[i, 6];
+                            }
+                            else if (tipo == "Blister")
+                            {
+                                unidadesDisminucion = int.Parse(cantidad) * cantidadesCompra[i, 6];
+                            }
+                            else if (tipo == "Unidad")
+                            {
+                                unidadesDisminucion = int.Parse(cantidad);
+                            }
+
+                            cantidadActualUnidad = cantidadesCompra[contador, 3] - unidadesDisminucion;
+                            cantidadActualBlister = cantidadActualUnidad - cantidadesCompra[i, 2];
+                            cantidadActualCaja = cantidadActualBlister / cantidadesCompra[i, 1];
+
+                            if (cantidadesCompra[contador, 0].ToString() == cantidadesCompra[i, 0].ToString())
+                            {
+                                cantidadesCompra[contador, 1] = cantidadActualCaja;
+                                cantidadesCompra[contador, 2] = cantidadActualBlister;
+                                cantidadesCompra[contador, 3] = cantidadActualUnidad;
+                            }
+
+                            if (cantidadesCompra[contador, 0].ToString() == cantidadesCompra[i, 0].ToString() && tipo == row.Cells["Tipo"].Value.ToString())
+                            {
+
+                                if (cantidadActualUnidad < 0)
+                                {
+                                    AcantidadActualizada = int.Parse(row.Cells["ColumnaCantidad"].Value.ToString()) + int.Parse(cantidad);
+                                    row.Cells["ColumnaCantidad"].Value = AcantidadActualizada;
+
+                                    row.Cells["ColumnaTotal"].Value = double.Parse(row.Cells["ColumnaPrecio"].Value.ToString()) * AcantidadActualizada;
+                                    contador++;
+                                    actualizado = true;
+
+                                    if (cantidadesCompra[contador, 0].ToString() == cantidadesCompra[i, 0].ToString())
+                                    {
+                                        cantidadesCompra[i, 1] = cantidadActualCaja;
+                                        cantidadesCompra[i, 2] = cantidadActualBlister;
+                                        cantidadesCompra[i, 3] = cantidadActualUnidad;
+                                    }
+                                }
+                               
+
+                            }
+                        }
+                        //Si es un producto nuevo
 
                         if (tipo == "Caja")
                         {
-                           subTotal = (float.Parse(cantidad) * float.Parse(precioCaja)).ToString();
-                           dgvVentas.Rows.Add(codigo, medicamento, tipo, cantidad, precioCaja, subTotal);
-                           contador++;
-                                 
+
+                            unidadesDisminucion = (int.Parse(cantidad) * cantidadesCompra[contador, 5]) * cantidadesCompra[contador, 6];
                         }
                         else if (tipo == "Blister")
                         {
-                           subTotal = ((float.Parse(cantidad) * float.Parse(precioBlister))).ToString();
-                           dgvVentas.Rows.Add(codigo, medicamento, tipo, cantidad, precioBlister, subTotal);
-                           contador++;  
+                            MessageBox.Show(contador.ToString());
+                            unidadesDisminucion = int.Parse(cantidad) * cantidadesCompra[contador, 6];
                         }
                         else
                         {
-                           subTotal = ((float.Parse(cantidad) * float.Parse(precioUnidad))).ToString();
-                           dgvVentas.Rows.Add(codigo, medicamento, tipo, cantidad, precioUnidad, subTotal);
-                           contador++;
+                            unidadesDisminucion = int.Parse(cantidad);
                         }
 
+                        MessageBox.Show(unidadesDisminucion.ToString());
+                        MessageBox.Show(cantidadesCompra[contador, 3].ToString());
                        
-                       
+                        cantidadActualUnidad = cantidadesCompra[contador, 3] - unidadesDisminucion;
+
+                        cantidadActualBlister = cantidadActualUnidad - cantidadesCompra[contador, 2];
+
+                        cantidadActualCaja = cantidadActualBlister / cantidadesCompra[contador, 1];
+
+
+
+                        if ((int)cantidadActualUnidad < 0)
+                        {
+                            MessageBox.Show("La cantidad en stock no es suficiente para realizar esta venta", "Alerta");
+                        }
+                        else
+                        {
+
+                            if (actualizado != true)
+                            {
+                                if (tipo == "Caja" )
+                                {
+                                    subTotal = (float.Parse(cantidad) * float.Parse(precioCaja)).ToString();
+                                    dgvVentas.Rows.Add(codigo, medicamento, tipo, cantidad, precioCaja, subTotal);
+                                    contador++;
+
+                                }
+                                else if (tipo == "Blister")
+                                {
+                                    subTotal = ((float.Parse(cantidad) * float.Parse(precioBlister))).ToString();
+                                    dgvVentas.Rows.Add(codigo, medicamento, tipo, cantidad, precioBlister, subTotal);
+                                    contador++;
+                                }
+                                else
+                                {
+                                    subTotal = ((float.Parse(cantidad) * float.Parse(precioUnidad))).ToString();
+                                    dgvVentas.Rows.Add(codigo, medicamento, tipo, cantidad, precioUnidad, subTotal);
+                                    contador++;
+                                }
+                                
+                            }
+                            actualizado = false;
+                            reaizacion = false;
+                        }
+
+
+
+
                         for (int i = dgvInventarioOpcion.Rows.Count - 1; i >= 0; i--)
                         {
                             dgvInventarioOpcion.Rows.RemoveAt(i);
                         }
-                        total = (float.Parse(total) + float.Parse(subTotal)).ToString();
-                        txtTotalVentas.Text = total;
+
+                        txtTotalVentas.Text = comprobandoTotal().ToString();
                         txtMedicamentoVentas.Text = "";
                         txtCodigoVentas.Text = "";
                         txtCantidadVentas.Text = "";
                     }
                     catch (Exception)
                     {
-                        MessageBox.Show("¡Intentalo otra vez!", "Alerta");
+                        MessageBox.Show("¡Intentalo otra vez, la cantidad ingresada no es suficiente para esta venta!", "Alerta");
 
                     }
+
                 }
             }
         }
@@ -320,9 +428,9 @@ namespace proyecto1
                         if (dgvInventarioOpcion.Columns.Contains("IdProducto"))
                         {
                             dgvInventarioOpcion.Columns["IdProducto"].Visible = false;
-                            dgvInventarioOpcion.Columns["CantCaja"].Visible = false;
+                            /*dgvInventarioOpcion.Columns["CantCaja"].Visible = false;
                             dgvInventarioOpcion.Columns["CantBlister"].Visible = false;
-                            dgvInventarioOpcion.Columns["CantUnidad"].Visible = false;
+                            dgvInventarioOpcion.Columns["CantUnidad"].Visible = false;*/
                         }
                     }
                 }
@@ -345,6 +453,9 @@ namespace proyecto1
                 txtCodigoVentas.Text = row.Cells["Codigo"].Value.ToString();
                 txtMedicamentoVentas.Text = row.Cells["Nombre"].Value.ToString();
                 medicamento = row.Cells["Nombre"].Value.ToString();
+
+               
+
                 //precios
                 precioCaja = row.Cells["PreCaja"].Value.ToString();
                 precioBlister = row.Cells["PreBlister"].Value.ToString();
@@ -354,13 +465,13 @@ namespace proyecto1
                 defailtCantCaja = row.Cells["CantCaja"].Value.ToString();
                 defailtCantblister = row.Cells["CantBlister"].Value.ToString();
                 defailtCantunidad = row.Cells["CantUnidad"].Value.ToString();
-                string producto_id = row.Cells["IdProducto"].Value.ToString();
+                
                 //cantidad actual
                 CantidadCaja = row.Cells["CCaja"].Value.ToString();
                 Cantidadblister = row.Cells["CBlister"].Value.ToString();
                 Cantidadunidad = row.Cells["CUnidad"].Value.ToString();
                 //cantidad actual de productos
-                cantidadActual[contador,0] = int.Parse(producto_id);
+               
                 cantidadActual[contador,1] = int.Parse(defailtCantCaja);
                 cantidadDefaul[contador,2] = int.Parse(defailtCantblister);
                 cantidadDefaul[contador,3] = int.Parse(defailtCantunidad);
@@ -369,7 +480,33 @@ namespace proyecto1
                 cantidadActual[contador,2] = int.Parse(Cantidadblister);
                 cantidadActual[contador,3] = int.Parse(Cantidadunidad);
 
+                //cantidades compra 
+                cantidadesCompra[contador, 0] = int.Parse(row.Cells["IdProducto"].Value.ToString());
+                //cantidades actuales
+                cantidadesCompra[contador, 1] = int.Parse(CantidadCaja);
+                cantidadesCompra[contador, 2] = int.Parse(Cantidadblister);
+                cantidadesCompra[contador, 3] = int.Parse(Cantidadunidad);
+                //cantidades ingresadas
+                cantidadesCompra[contador, 4] = int.Parse(defailtCantCaja);
+                cantidadesCompra[contador, 5] = int.Parse(defailtCantblister);
+                cantidadesCompra[contador, 6] = int.Parse(defailtCantunidad);
+
+                
+
             }
+            
+        }
+      
+        public double comprobandoTotal()
+        {
+            double totalPagar = 0;
+            for (int i = 0; i < dgvVentas.Rows.Count; i++)
+            {
+                DataGridViewRow row = dgvVentas.Rows[i];
+
+                totalPagar += double.Parse(row.Cells["ColumnaTotal"].Value.ToString());
+            }
+                return totalPagar;
         }
     }
 }

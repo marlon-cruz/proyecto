@@ -100,7 +100,7 @@ namespace proyecto1
             // 
             this.pictureBoxCuentas.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxCuentas.Image")));
             this.pictureBoxCuentas.Location = new System.Drawing.Point(13, 14);
-            this.pictureBoxCuentas.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBoxCuentas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBoxCuentas.Name = "pictureBoxCuentas";
             this.pictureBoxCuentas.Size = new System.Drawing.Size(260, 219);
             this.pictureBoxCuentas.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -140,7 +140,7 @@ namespace proyecto1
             // 
             this.lblCodigoVentas.AutoSize = true;
             this.lblCodigoVentas.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold);
-            this.lblCodigoVentas.Location = new System.Drawing.Point(778, 81);
+            this.lblCodigoVentas.Location = new System.Drawing.Point(779, 81);
             this.lblCodigoVentas.Name = "lblCodigoVentas";
             this.lblCodigoVentas.Size = new System.Drawing.Size(117, 37);
             this.lblCodigoVentas.TabIndex = 81;
@@ -239,7 +239,7 @@ namespace proyecto1
             this.dgvVentas.EnableHeadersVisualStyles = false;
             this.dgvVentas.GridColor = System.Drawing.Color.Black;
             this.dgvVentas.Location = new System.Drawing.Point(69, 432);
-            this.dgvVentas.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvVentas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvVentas.Name = "dgvVentas";
             this.dgvVentas.ReadOnly = true;
             this.dgvVentas.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -260,6 +260,7 @@ namespace proyecto1
             // 
             // ColumnaCodigo
             // 
+            this.ColumnaCodigo.DataPropertyName = "Codigo";
             this.ColumnaCodigo.HeaderText = "Código";
             this.ColumnaCodigo.MinimumWidth = 6;
             this.ColumnaCodigo.Name = "ColumnaCodigo";
@@ -268,6 +269,7 @@ namespace proyecto1
             // 
             // ColumnaMedicamento
             // 
+            this.ColumnaMedicamento.DataPropertyName = "ColumnaMedicamento";
             this.ColumnaMedicamento.HeaderText = "Medicamento";
             this.ColumnaMedicamento.MinimumWidth = 6;
             this.ColumnaMedicamento.Name = "ColumnaMedicamento";
@@ -276,6 +278,7 @@ namespace proyecto1
             // 
             // Tipo
             // 
+            this.Tipo.DataPropertyName = "Tipo";
             this.Tipo.HeaderText = "tipo";
             this.Tipo.MinimumWidth = 6;
             this.Tipo.Name = "Tipo";
@@ -284,6 +287,7 @@ namespace proyecto1
             // 
             // ColumnaCantidad
             // 
+            this.ColumnaCantidad.DataPropertyName = "ColumnaCantidad";
             this.ColumnaCantidad.HeaderText = "Cantidad";
             this.ColumnaCantidad.MinimumWidth = 6;
             this.ColumnaCantidad.Name = "ColumnaCantidad";
@@ -292,6 +296,7 @@ namespace proyecto1
             // 
             // ColumnaPrecio
             // 
+            this.ColumnaPrecio.DataPropertyName = "ColumnaPrecio";
             this.ColumnaPrecio.HeaderText = "Precio";
             this.ColumnaPrecio.MinimumWidth = 6;
             this.ColumnaPrecio.Name = "ColumnaPrecio";
@@ -300,6 +305,7 @@ namespace proyecto1
             // 
             // ColumnaTotal
             // 
+            this.ColumnaTotal.DataPropertyName = "ColumnaTotal";
             this.ColumnaTotal.HeaderText = "total";
             this.ColumnaTotal.MinimumWidth = 6;
             this.ColumnaTotal.Name = "ColumnaTotal";
@@ -376,7 +382,7 @@ namespace proyecto1
             // txtRecibidoVentas
             // 
             this.txtRecibidoVentas.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold);
-            this.txtRecibidoVentas.Location = new System.Drawing.Point(1222, 109);
+            this.txtRecibidoVentas.Location = new System.Drawing.Point(1221, 110);
             this.txtRecibidoVentas.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtRecibidoVentas.Name = "txtRecibidoVentas";
             this.txtRecibidoVentas.Size = new System.Drawing.Size(177, 32);
@@ -386,7 +392,7 @@ namespace proyecto1
             // 
             this.lblRecibidoVentas.AutoSize = true;
             this.lblRecibidoVentas.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold);
-            this.lblRecibidoVentas.Location = new System.Drawing.Point(1242, 59);
+            this.lblRecibidoVentas.Location = new System.Drawing.Point(1243, 59);
             this.lblRecibidoVentas.Name = "lblRecibidoVentas";
             this.lblRecibidoVentas.Size = new System.Drawing.Size(124, 37);
             this.lblRecibidoVentas.TabIndex = 97;
@@ -412,7 +418,7 @@ namespace proyecto1
             this.btnEditarVentas.Name = "btnEditarVentas";
             this.btnEditarVentas.Size = new System.Drawing.Size(149, 57);
             this.btnEditarVentas.TabIndex = 100;
-            this.btnEditarVentas.Text = "Editar";
+            this.btnEditarVentas.Text = "Eliminar";
             this.btnEditarVentas.UseVisualStyleBackColor = true;
             this.btnEditarVentas.Click += new System.EventHandler(this.btnEditarVentas_Click);
             // 
@@ -424,7 +430,7 @@ namespace proyecto1
             this.btnFacturacion.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnFacturacion.Image = ((System.Drawing.Image)(resources.GetObject("btnFacturacion.Image")));
             this.btnFacturacion.Location = new System.Drawing.Point(281, 710);
-            this.btnFacturacion.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFacturacion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnFacturacion.Name = "btnFacturacion";
             this.btnFacturacion.Size = new System.Drawing.Size(111, 53);
             this.btnFacturacion.TabIndex = 101;
@@ -472,7 +478,7 @@ namespace proyecto1
             this.dgvInventarioOpcion.EnableHeadersVisualStyles = false;
             this.dgvInventarioOpcion.GridColor = System.Drawing.Color.Black;
             this.dgvInventarioOpcion.Location = new System.Drawing.Point(281, 208);
-            this.dgvInventarioOpcion.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvInventarioOpcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvInventarioOpcion.Name = "dgvInventarioOpcion";
             this.dgvInventarioOpcion.ReadOnly = true;
             this.dgvInventarioOpcion.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -502,7 +508,7 @@ namespace proyecto1
             this.IdProducto.Name = "IdProducto";
             this.IdProducto.ReadOnly = true;
             this.IdProducto.Visible = false;
-            this.IdProducto.Width = 125;
+            this.IdProducto.Width = 143;
             // 
             // Codigo
             // 
@@ -590,27 +596,24 @@ namespace proyecto1
             this.CantCaja.MinimumWidth = 6;
             this.CantCaja.Name = "CantCaja";
             this.CantCaja.ReadOnly = true;
-            this.CantCaja.Visible = false;
             this.CantCaja.Width = 125;
             // 
             // CantBlister
             // 
             this.CantBlister.DataPropertyName = "CantBlister";
-            this.CantBlister.HeaderText = "Column2";
+            this.CantBlister.HeaderText = "CantBlister";
             this.CantBlister.MinimumWidth = 6;
             this.CantBlister.Name = "CantBlister";
             this.CantBlister.ReadOnly = true;
-            this.CantBlister.Visible = false;
             this.CantBlister.Width = 125;
             // 
             // CantUnidad
             // 
             this.CantUnidad.DataPropertyName = "CantUnidad";
-            this.CantUnidad.HeaderText = "Column3";
+            this.CantUnidad.HeaderText = "CantUnidad";
             this.CantUnidad.MinimumWidth = 6;
             this.CantUnidad.Name = "CantUnidad";
             this.CantUnidad.ReadOnly = true;
-            this.CantUnidad.Visible = false;
             this.CantUnidad.Width = 125;
             // 
             // FormVentas
@@ -619,7 +622,7 @@ namespace proyecto1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(1620, 782);
+            this.ClientSize = new System.Drawing.Size(1540, 782);
             this.Controls.Add(this.dgvInventarioOpcion);
             this.Controls.Add(this.btnFacturacion);
             this.Controls.Add(this.btnEditarVentas);
@@ -646,7 +649,7 @@ namespace proyecto1
             this.Controls.Add(this.lblVentas);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.MinimumSize = new System.Drawing.Size(1363, 717);
+            this.MinimumSize = new System.Drawing.Size(1362, 715);
             this.Name = "FormVentas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Farmacia Divino Niño - Ventas";
@@ -684,6 +687,12 @@ namespace proyecto1
         private System.Windows.Forms.Button btnEditarVentas;
         private System.Windows.Forms.Button btnFacturacion;
         private System.Windows.Forms.DataGridView dgvInventarioOpcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaCodigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaMedicamento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaCantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaPrecio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaTotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn IdProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
@@ -696,11 +705,5 @@ namespace proyecto1
         private System.Windows.Forms.DataGridViewTextBoxColumn CantCaja;
         private System.Windows.Forms.DataGridViewTextBoxColumn CantBlister;
         private System.Windows.Forms.DataGridViewTextBoxColumn CantUnidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaCodigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaMedicamento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaCantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaPrecio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaTotal;
     }
 }
